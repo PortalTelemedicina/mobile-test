@@ -49,7 +49,7 @@ Para consumir o serviço da API Rest
 
 **Como usar:**
 
-> - **URL** https://github.com/PortalTelemedicina/mobile-test/blob/main/api/doctors.json
+> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/doctors.json
 > - **Método**: GET
 
 Exemplo de resposta
