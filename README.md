@@ -11,12 +11,6 @@ O Desafio
 
 Seu objetivo é criar um app com duas telas, uma que exibe uma tela principal que exibe opções de acesso e outra mostra uma listagem de especialistas que estão mais próximos do usuário
 
-> **Notas:**
-
-> - A ideia é avaliar a criação de telas com o padrão material design usando todos os componentes do androidx
-> - Lembre-se de seguir toda guideline material design (https://material.io/)
-> - Para o desenho das telas, não precisa se preocupar com a interface na horizontal;
-> - Material de ajuda segue no link (https://material.io/components/lists/)
 
 
 #### <i class="icon-file"></i> Telas
