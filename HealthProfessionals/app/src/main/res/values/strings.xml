@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HealthProfessionals</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_home_title_bottom_navigation">Home</string>
+    <string name="string_chat_title_bottom_navigation">Chat</string>
+    <string name="string_notification_title_bottom_navigation">Notification</string>
+    <string name="string_more_title_bottom_navigation">More</string>
+</resources>
