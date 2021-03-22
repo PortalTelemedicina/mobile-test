@@ -6,8 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import com.hugothomaz.telemedicina.mobiletest.R
 import com.hugothomaz.telemedicina.mobiletest.base.ViewFragment
+import com.hugothomaz.telemedicina.mobiletest.domain.model.Specialist
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +29,8 @@ class HomeFragment : Fragment(), ViewFragment {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val viewModel: HomeViewModel by viewModel<HomeViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,8 +43,33 @@ class HomeFragment : Fragment(), ViewFragment {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getSpecialists()
+
+        lifecycleScope.launch {
+            viewModel.uiSpecialistStateFlow.collect {
+                when (it) {
+                    is UiState.Loading -> {
+
+                    }
+                    is UiState.Success<*> -> {
+                        val list = it.data as List<Specialist>
+                        list.forEach {
+                            Log.d("app_list_filme", "Filme: ${it.name}")
+                        }
+                    }
+                    is UiState.Error -> {
+
+                    }
+                    UiState.Initial -> {
+                    }
+                }
+            }
+        }
     }
 
     override fun getFragmentName() = "Home"
