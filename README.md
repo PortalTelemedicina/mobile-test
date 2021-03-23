@@ -45,11 +45,11 @@ Seu objetivo é criar um app com duas telas, uma que exibe uma tela principal qu
 
 #### <i class="icon-folder-open"></i> Consumindo Serviço
 
-Para consumir o serviço da API Rest
+Para consumir o serviço da API Rest use o método GET para obter os dados do arquivo json do github
 
 **Como usar:**
 
-> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/doctors.json
+> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
 > - **Método**: GET
 
 Exemplo de resposta

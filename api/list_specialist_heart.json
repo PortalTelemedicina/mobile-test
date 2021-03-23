@@ -47,7 +47,7 @@
         "description": "Aenean id placerat leo. Sed consequat ex sed tempus commodo.",
         "distance": 7.87,
         "actions": {
-            "chat": "https://portaltelemedicina.com.br/",
+            "chat": "https://portaltelemedicina.com.br/"
         }
     },
     {
@@ -55,7 +55,7 @@
         "description": "Aenean id placerat leo. Sed consequat ex sed tempus commodo.",
         "distance": 9.21,
         "actions": {
-            "chat": "https://portaltelemedicina.com.br/",
+            "chat": "https://portaltelemedicina.com.br/"
         }
     },
     {
@@ -69,7 +69,7 @@
     },
     {
         "name": "Paula Bartlett",
-        "description": "Aenean non diam in mi consequat efficitur eget at enim. Duis vitae odio eget mauris consequat tempus. Duis non erat vitae quam feugiat interdum. Aenean sit amet molestie quam. Vivamus sed nunc vitae nulla egestas varius. Donec facilisis sodales orci quis tempus. Nullam auctor faucibus justo vel semper",,
+        "description": "Aenean non diam in mi consequat efficitur eget at enim. Duis vitae odio eget mauris consequat tempus. Duis non erat vitae quam feugiat interdum. Aenean sit amet molestie quam. Vivamus sed nunc vitae nulla egestas varius. Donec facilisis sodales orci quis tempus. Nullam auctor faucibus justo vel semper",
         "distance": 9.64,
         "actions": {
             "chat": "https://portaltelemedicina.com.br/",
@@ -81,7 +81,7 @@
         "description": "Aenean id placerat leo. Sed consequat ex sed tempus commodo.",
         "distance": 10.10,
         "actions": {
-            "chat": "https://portaltelemedicina.com.br/",
+            "chat": "https://portaltelemedicina.com.br/"
         }
     }
 ]

@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Keri Crouch",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec est lorem. Duis nec pretium arcu. Vivamus pretium leo felis",
+        "distance": 0.62,
+        "actions": {
+            "chat": "https://portaltelemedicina.com.br/",
+            "call": "(00) 91234-1234"
+        }
+    },
+    {
+        "name": "Rabia Tang",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec est lorem. Duis nec pretium arcu. Vivamus pretium leo felis",
+        "distance": 3.23,
+        "actions": {
+            "chat": "https://portaltelemedicina.com.br/",
+            "call": "(00) 91234-1234"
+        }
+    },
+    {
+        "name": "Mackenzie Kaur",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec est lorem",
+        "distance": 4.34,
+        "actions": {
+            "chat": "https://portaltelemedicina.com.br/"
+        }
+    },
+    {
+        "name": "Nick",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec est lorem",
+        "actions": {
+            "chat": "https://portaltelemedicina.com.br/",
+            "call": "(00) 91234-1234"
+        }
+    }
+]
