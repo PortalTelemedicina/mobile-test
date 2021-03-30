@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.hugothomaz.telemedicina.mobiletest.R
-import com.hugothomaz.telemedicina.mobiletest.screen.adapter.MainPagerAdapter
+import com.hugothomaz.telemedicina.mobiletest.domain.model.SpecialtyModel
 
 class MainFragment : Fragment() {
     private lateinit var mainHelperViewPager: MainHelperViewPager
@@ -20,7 +18,9 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main, container, false)
         mainHelperViewPager = MainHelperViewPager(view, this)
+        mainHelperViewPager
 
         return view
     }
+
 }

@@ -1,8 +1,9 @@
 package com.hugothomaz.telemedicina.mobiletest.domain.model
 
-data class Specialist (
+data class SpecialistModel (
     val name: String,
     val description: String,
     val distance: Double? = null,
-    val actions: Actions
+    val actions: ActionModel,
+    var specialty: SpecialtyModel? = null
 )
