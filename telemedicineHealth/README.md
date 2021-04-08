@@ -23,17 +23,17 @@
 ## Features
 
 - ⚛️ **React Native** —  Mobile framework that provides an efficient way to create native applications for Android and iOS.
-       - Use of the styled-components library.
-       - Use of the react-navigation library for navigation between screens.
-       - Use of axios for communication with api.
-       - Use of Redux with Middleware Redux-Sagas.
-       - Use of Jest and Testing Library React Native for tests units in app.
-       - Use of ⚛️ React Hooks.
-       - Use of react-native-animatable for animateds in home app
-       - Use of Typescript with React.
-       - Use react-native-svg and react-native-svg-transformer for use cache images
+    - Use of the styled-components library.
+    - Use of the react-navigation library for navigation between screens.
+    - Use of axios for communication with api.
+    - Use of Redux with Middleware Redux-Sagas.
+    - Use of Jest and Testing Library React Native for tests units in app.
+    - Use of ⚛️ React Hooks.
+    - Use of react-native-animatable for animateds in home app
+    - Use of Typescript with React.
+    - Use react-native-svg and react-native-svg-transformer for use cache images
 
-      Functional requirements met:
+    Functional requirements met:
 
         - use of an organized architecture with redux-saga [x]
         - Unitary tests [x]
