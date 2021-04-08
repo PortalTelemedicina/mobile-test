@@ -4,8 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { RoutesSpecialists } from '../navigation/INavigationApp';
 import TabRoutes from './tab.routes';
 
-import ListSpecialists from '../pages/ListSpecialists';
-
 const App = createStackNavigator<RoutesSpecialists>();
 
 const AppRoutes: React.FC = () => (
@@ -19,7 +17,6 @@ const AppRoutes: React.FC = () => (
           gestureEnabled: false,
         }}
       />
-      {/* <App.Screen name="ListSpecialists" component={ListSpecialists} /> */}
     </App.Navigator>
   </NavigationContainer>
 );

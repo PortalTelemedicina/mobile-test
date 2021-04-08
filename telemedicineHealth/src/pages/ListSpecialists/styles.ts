@@ -45,9 +45,3 @@ export const ListSpecialistsItems = styled(
 ).attrs({})`
   margin-top: 10px;
 `;
-
-// export const CardSpecialistList = styled(
-//   FlatList as new () => FlatList<CardSpecialistsProps>,
-// ).attrs({})`
-//   margin-top: 10px;
-// `;

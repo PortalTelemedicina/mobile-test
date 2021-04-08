@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
-import * as Animatable from 'react-native-animatable';
 
-interface CardSpecialistsProps {
+export interface CardSpecialistsProps {
   color: string;
   image_url: string;
   total: number;
@@ -49,8 +48,3 @@ export const CardAttendanceList = styled(
 })`
   margin-top: 20px;
 `;
-// export const CardAttendanceList = styled(FlatList).attrs({
-//   numColumns: 3,
-// })`
-//   margin-top: 20px;
-// `;

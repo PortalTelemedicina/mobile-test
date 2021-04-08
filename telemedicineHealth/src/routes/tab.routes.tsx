@@ -3,7 +3,6 @@ import { SvgUri } from 'react-native-svg';
 import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { RoutesSpecialists } from '../navigation/INavigationApp';
 import Chat from '../../assets/images/chat';
 import Home from '../pages/Home';
 import ListSpecialists from '../pages/ListSpecialists';

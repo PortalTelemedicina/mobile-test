@@ -10,6 +10,7 @@ import {
   CardAttendanceList,
   Title,
   TextQuestion,
+  CardSpecialistsProps,
 } from './styles';
 import Header from '../../components/Header';
 import CardSpecialists from '../../components/CardSpecialists';
@@ -22,13 +23,6 @@ import { ITypeAttendances } from '../../utils/interfaces';
 import typeAttendancesValues from '../../utils/constants';
 
 type IHomeProps = SpecilaistScreenProp<RouteNames.Home>;
-
-interface CardSpecialistsProps {
-  color: string;
-  image_url: string;
-  total: number;
-  name: string;
-}
 
 const Home = ({ navigation }: IHomeProps): JSX.Element => {
   const { items } = useSelector((state: IState) => state.specialist);
