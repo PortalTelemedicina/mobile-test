@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-
+import { Alert } from 'react-native';
 import { ActionTypes } from './types';
 import {
   getSpecialistsTypesRequestAction,
@@ -29,6 +29,7 @@ export function* getTypeSpecialists({
     yield put(getSpecialistsTypesRequestSuccessAction(response.data));
   } catch (e) {
     yield put(getSpecialistsTypesFailureAction());
+    Alert.alert('Informação', 'Serviço indisponivel');
   }
 }
 
