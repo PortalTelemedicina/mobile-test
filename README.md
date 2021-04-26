@@ -9,7 +9,7 @@ Criar um app com duas telas, uma que exibe uma tela principal que exibe opções
 
 
 #### <i class="icon-file"></i> Vídeo funcional
-[![Demo](https://github.com/diogoroos/mobile-test/TM.png)](https://www.youtube.com/watch?v=GbB4gaQxlBw)
+[![Demo](https://github.com/diogoroos/mobile-test/blob/main/TM.png)](https://www.youtube.com/watch?v=GbB4gaQxlBw)
 
 #### <i class="icon-folder-open"></i> Serviço
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
