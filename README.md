@@ -2,25 +2,14 @@ Teste de Mobile
 ===================
 
 
-O Desafio
+Desafio
 -------------
-
-Seu objetivo é criar um app com duas telas, uma que exibe uma tela principal que exibe opções de acesso e outra mostra uma listagem de especialistas que estão mais próximos do usuário
+Criar um app com duas telas, uma que exibe uma tela principal que exibe opções de acesso e outra mostra uma listagem de especialistas que estão mais próximos do usuário
 
 
 
 #### <i class="icon-file"></i> Vídeo funcional
-<table>
-<tbody>
-<tr><th>Home</th>
-  <th>Listagem</th>
-</tr>
-<tr>
-<td><img src="https://www.youtube.com/watch?v=GbB4gaQxlBw" style="height:300px">
-</td>
-</tr>
-</tbody>
-</table>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GbB4gaQxlBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### <i class="icon-folder-open"></i> Serviço
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
