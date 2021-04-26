@@ -9,7 +9,8 @@ Criar um app com duas telas, uma que exibe uma tela principal que exibe opções
 
 
 #### <i class="icon-file"></i> Vídeo funcional
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GbB4gaQxlBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GbB4gaQxlBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 #### <i class="icon-folder-open"></i> Serviço
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
