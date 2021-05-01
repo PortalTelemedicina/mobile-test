@@ -54,7 +54,7 @@ export const ContentFooter = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Poppins-Bold';
+  font-family: 'Segoe UI Bold';
   font-size: 32px;
 
   text-align: center;
