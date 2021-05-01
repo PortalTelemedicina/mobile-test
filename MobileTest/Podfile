@@ -1,0 +1,23 @@
+platform :ios, '14.0'
+
+target 'MobileTest' do
+  use_frameworks!
+
+  pod 'Moya/RxSwift', '~> 14.0'
+  pod 'Swinject'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
+  target 'MobileTestTests' do
+    inherit! :search_paths
+    
+    pod 'Nimble'
+    pod 'Quick'
+    pod 'RxTest'
+  end
+
+  target 'MobileTestUITests' do
+    # Pods for testing
+  end
+
+end
