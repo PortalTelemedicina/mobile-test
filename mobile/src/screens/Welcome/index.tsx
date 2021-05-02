@@ -1,10 +1,16 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { View, ScrollView, Dimensions, BackHandler, Alert } from 'react-native';
+import React, { useCallback } from 'react';
+import { 
+  SafeAreaView, 
+  ScrollView, 
+  StyleSheet, 
+  Alert, 
+  StatusBar 
+} from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
+import { useAuth } from '../../hooks/auth';
 
-import SvgIllustration1 from './svg/illustration1';
-1
+import SvgIllustration from '../../assets/svg/logo-welcome/illustration';
+
 import Button from '../../components/Button';
 
 import {
@@ -13,61 +19,81 @@ import {
   ContentHeader,
   ContentBody,
   ContentFooter,
-  Title,
   TitleBlue,
-  TitleGreen,
+  TitleBlush,
   Description,
 } from './styles';
 
-const deviceWidth = Dimensions.get('window').width;
-
 const Welcome: React.FC = () => {
-  const appNavigation = useNavigation();
-  const scrollViewRef = useRef<ScrollView>(null);
+  const { signIn } = useAuth();
 
-  const handleScrollView = useCallback(async (data: number) => {
-    try {
-      await scrollViewRef.current?.scrollTo({
-        x: data * deviceWidth,
-        y: 0,
-        animated: true,
-      });
-    } catch (err) {
-      // console.log(err);
-    }
-  }, []);
+  const handleSignIn = useCallback(
+    async () => {
+      try {
+        await signIn({
+          email: "lorelle.luna@telemedicina.com.br",
+          password: '123456',
+        });
+
+        //navigate('Dashboard');
+      } catch (err) {
+        Alert.alert('Atencão', 'Não foi possível realizar login. Verifique se seus dados estão corretos.', 
+          [
+            {
+              text: 'Cancel',
+              onPress: () => null,
+              style: 'cancel',
+            },
+            { text: 'Ok', onPress: () => null },
+          ]
+        );        
+      }
+    },
+    [signIn],
+  );
 
   return (
-    <>
-      <Container>
-        <Content style={{ width: deviceWidth }}>
-          <ContentHeader style={{ width: deviceWidth }}>
-            <SvgIllustration1 />
-          </ContentHeader>
+    
+    <SafeAreaView style={ styles.container }>  
+      <ScrollView
+        scrollEventThrottle={16}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{
+          flex: 1,
+        }}
+      >   
+        <Container>  
+          <Content>
+            <ContentHeader>
+              <SvgIllustration />
+            </ContentHeader>
 
-          <ContentBody style={{ width: deviceWidth }}>
-            <TitleBlue>
-              <TitleGreen>Hi! </TitleGreen>
-              Bem-vindo
-            </TitleBlue>
+            <ContentBody>
+              <TitleBlue> Olá! </TitleBlue>
+              <TitleBlush> Seja bem-vindo </TitleBlush>
 
-            <Description>
-              {`Sua conta digital completa\n e descomplicada!`}
-            </Description>
-          </ContentBody>
+              <Description>
+                {`Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.`}
+              </Description>
+            </ContentBody>
 
-          <ContentFooter style={{ width: deviceWidth }}>
-            <Button
-              icon="long-arrow-alt-right"
-              onPress={() => appNavigation.navigate('SignIn')}
-            >
-              AVANÇAR
-            </Button>
-          </ContentFooter>
-        </Content>
-      </Container>
-    </>
+            <ContentFooter>
+              <Button icon="long-arrow-alt-right" onPress={ handleSignIn } >
+                COMEÇAR
+              </Button>
+            </ContentFooter>
+          </Content>
+        </Container>
+      </ScrollView>
+    </SafeAreaView>          
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  }
+});
 
 export default Welcome;

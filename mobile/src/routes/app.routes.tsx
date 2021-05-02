@@ -9,7 +9,7 @@ const App = createStackNavigator();
 const AppRoutes: React.FC = () => (
   <>
     <StatusBar
-      barStyle="light-content"
+      barStyle="dark-content"
       hidden={false}
       translucent
       backgroundColor="transparent"

@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import api from '../../services/api';
 
-import { AuthState, AuthContextData } from './interfaces';
+import { AuthState, AuthContextData } from './interface';
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
@@ -21,12 +21,11 @@ export const AuthProvider: React.FC = ({ children }) => {
   useEffect(() => {
     async function loadStorageData(): Promise<void> {
       const [token, user] = await AsyncStorage.multiGet([
-        '@eBarber:token',
-        '@eBarber:user',
+        '@eSpecDoctors:token',
+        '@eSpecDoctors:user',
       ]);
 
       if (token[1] && user[1]) {
-        // SETANDO TOKEN DE AUTENTICAĆÃO PARA CONSUMO DA API DENTRO DO APP
         api.defaults.headers.authorization = `Bearer ${token[1]}`;
 
         setData({ token: token[1], user: JSON.parse(user[1]) });
@@ -39,26 +38,26 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('/api/login', {
-      email,
-      password,
-    });
-
-    const { token, user } = response.data;
+    const token = "das32d54as186d4asd3a8s6";
+    const user  = {
+      id: "74ea1a4c-949c-4ad7-974b-21aed82d842c",
+      name: "Lorelle Luna",
+      email: email,
+      avatar_url: "https://cinefilmesbrasil.com/wp-content/uploads/2020/07/assistir-pelo-celular-Avatar-3-dublado-rapido.jpg"
+    } 
 
     await AsyncStorage.multiSet([
-      ['@eBarber:token', token],
-      ['@eBarber:user', JSON.stringify(user)],
+      ['@eSpecDoctors:token',  token],
+      ['@eSpecDoctors:user', JSON.stringify(user)],
     ]);
 
-    // SETANDO TOKEN DE AUTENTICAĆÃO PARA CONSUMO DA API DENTRO DO APP
-    api.defaults.headers.authorization = `Bearer ${token}`;
+    api.defaults.headers.authorization = `Bearer ${ token }`;
 
     setData({ token, user });
   }, []);
 
   const signOut = useCallback(async () => {
-    await AsyncStorage.multiRemove(['@eBarber:token', '@eBarber:user']);
+    await AsyncStorage.multiRemove(['@eSpecDoctors:token', '@eSpecDoctors:user']);
 
     setData({} as AuthState);
   }, []);

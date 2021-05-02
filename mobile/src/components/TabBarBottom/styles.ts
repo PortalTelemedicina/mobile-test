@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import FeatherIcon from 'react-native-vector-icons/FontAwesome5';
 
 interface IconProps {
@@ -13,7 +13,7 @@ export const TabArea = styled.View`
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
 
-  background-color: #001d5b;
+  background-color: #ffffff;
 `;
 
 export const TabItem = styled.TouchableOpacity`
@@ -23,34 +23,16 @@ export const TabItem = styled.TouchableOpacity`
 `;
 
 export const TabItemText = styled.Text`
-  font-family: 'DMSans-Regular';
+  font-family: 'Segoe UI';
   font-size: 8px;
 
   text-align: center;
 
-  color: #ffffff;
+  color: #7C8494;
 
   margin-top: 5px;
-
-  /* background: #ff9000; */
-`;
-
-export const TabItemLarge = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-
-  width: 70px;
-  height: 70px;
-
-  margin-top: -25px;
-
-  border-width: 4px;
-  border-radius: 35px;
-  border-color: #ffffff;
-
-  background-color: #001d5b;
 `;
 
 export const IconTab = styled(FeatherIcon)<IconProps>`
-  color: ${props => (props.isChecked ? '#ffffff' : '#799CE7')};
+  color: ${props => (props.isChecked ? '#7349E5' : '#7C8494')};
 `;

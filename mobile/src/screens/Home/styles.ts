@@ -1,225 +1,196 @@
-import styled, { css } from 'styled-components/native';
-import { Platform } from 'react-native';
+import styled from 'styled-components/native';
+import { Platform, TextProps } from 'react-native';
+
 import {
   getBottomSpace,
   getStatusBarHeight,
 } from 'react-native-iphone-x-helper';
 
-interface TitleProps {
+import { FlatList } from 'react-native-gesture-handler';
+
+import { Specialties } from '../../interfaces/specialties';
+
+interface LabelCaptionProps extends TextProps {
   fontSize?: number;
   isBold?: boolean;
+  color?: string;
+}
+
+interface SpecialtiesProps {
+  color?: string;
+}
+
+interface NeedContainerProps {
+  color?: string;
 }
 
 export const Container = styled.View`
   flex: 1;
-
-  /* padding: 0px 0px ${16 + getBottomSpace()}px; */
-  background: #001d5b;
+  padding: 0px 0px ${16 + getBottomSpace()}px 0px;
 `;
 
-export const NotifyButton = styled.TouchableOpacity`
-  width: 24px;
-  height: 24px;
-  color: #ffffff;
-`;
-
-export const NotifyIcon = styled.Image`
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-`;
-
-export const Header = styled.View`
-  /* align-items: center; */
+export const HeaderBar = styled.View`
+  flex-direction: column;
   justify-content: center;
 
-  padding: 24px;
-  padding-top: ${Platform.OS === 'android' ? 24 : getStatusBarHeight() + 24}px;
-
-  /* background: #adff2f; */
+  padding-top: ${Platform.OS === 'android' ? 0 : getStatusBarHeight()}px;
 `;
 
-export const HeaderContent = styled.View`
-  flex-direction: row;
-  /* align-items: center; */
-  justify-content: space-between;
-
-  margin-top: 30px;
-
-  /* background: #8ca8d2; */
-`;
-
-export const HeaderCarrousel = styled.View`
-  flex-direction: row;
-  align-items: center;
+export const HeaderMenu = styled.View`
+  flex-direction: column;
   justify-content: center;
 
-  padding-left: 30px;
-
-  /* background: #8ca8d2; */
-`;
-
-export const HeaderBalanceInfo = styled.View`
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 20px;
-
-  /* background: #f474; */
-`;
-
-export const HeaderBalanceText = styled.Text<TitleProps>`
-  text-align: center;
-  /* line-height: 34px; */
-
-  font-size: ${props => props.fontSize || 14}px;
-  font-family: ${props => (props.isBold ? 'Poppins-Bold' : 'Poppins-Regular')};
-
-  color: #ffffff;
-`;
-
-export const HeaderBalanceDetail = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  /* background: #ffffff; */
-`;
-
-export const Balance = styled.View`
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-  padding: 0 10px;
-
-  /* background: #ffffff; */
-`;
-
-export const EyeButton = styled.TouchableOpacity`
-  align-items: center;
-  justify-content: center;
-
-  width: 24px;
-  height: 24px;
-
-  padding: 15px;
-`;
-
-export const EyeIcon = styled.Image`
-  width: 18px;
-  height: 18px;
+  padding: 20px 10px;
 `;
 
 export const Content = styled.View`
   flex: 1;
-  /* align-items: center; */
-  justify-content: center;
+`;
 
-  padding: 30px;
+export const ContentHeader = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ContentHeaderTitle = styled.View`
+  flex-direction: row;
+  align-items: center;
+
+  padding: 10px 20px;
+`;
+
+export const ContentHeaderTitleText = styled.Text`
+  font-family: 'Segoe UI Bold';
+  font-size: 20px;
+  color: #504C4C;
+
+  margin-top: 10px;
 `;
 
 export const ContentBody = styled.View`
   flex: 1;
-  justify-content: center;
-
-  /* background: #008; */
+  padding-bottom: 50px;
 `;
 
 export const ContentFooter = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: flex-end;
-
-  background: #b41256;
-`;
-
-export const Menu = styled.View`
-  justify-content: center;
-  padding: 10px;
-`;
-
-export const Options = styled.View`
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-
-  /* background: #eee8aa; */
+  justify-content: center;
+  align-items: center;
 `;
 
-export const OptionContainer = styled.View`
-  align-items: center;
-  justify-content: center;
+export const UserTitleHello = styled.Text`
+  font-family: 'Segoe UI';
+  font-size: 32px;
+  color: #504C4C;
+
+  margin-top: 10px;
+`;
+
+export const UserTitleName = styled.Text`
+  font-family: 'Segoe UI Bold';
+  font-size: 32px;
+  color: #504C4C;
+
+  margin-top: 10px;
+`;
+
+export const CategoryListContainer = styled.View`
+  flex: 1;
+`;
+
+export const CategoryList = styled(FlatList as new () => FlatList<Specialties>)`
+  padding: 10px;
+`;
+
+export const CategoryContainer = styled.TouchableOpacity<SpecialtiesProps>`
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 150px;
+  height: 190px;
 
   padding: 10px;
-  margin: 5px 5px;
+  margin-right: 15px;
+  border-radius: 15px;
 
-  /* background: #89ab; */
+  background: ${ props => props.color || '#CA49E5' };
 `;
 
-export const Option = styled.TouchableOpacity`
-  align-items: center;
-  justify-content: center;
+export const CategoryImage = styled.View`
+  width: 50px;
+  height: 60px;
 
-  width: 55px;
-  height: 55px;
+  margin-right: 10px;
+  border-radius: 15px;
 
-  border: 1px solid;
-  border-color: #00d931;
-  border-radius: 22px;
-
-  /* background: #cbeee9; */
-`;
-
-export const OptionIcon = styled.Image`
-  width: 24px;
-  height: 24px;
-`;
-
-export const OptionText = styled.Text`
-  font-size: 13px;
-  font-family: 'DMSans-Medium';
-  line-height: 34px;
-
-  color: #ffffff;
-`;
-
-export const Title = styled.Text<TitleProps>`
-  font-family: 'Poppins-Bold';
-  font-size: 32px;
-
-  text-align: center;
-
-  ${props =>
-    props.fontSize &&
-    css`
-      font-size: ${props.fontSize}px;
-    `}
-
-  color: #000000;
-`;
-
-export const Footer = styled.View`
-  /* align-items: center; */
-  /* justify-content: center; */
-`;
-
-export const Services = styled.View`
-  align-items: center;
-  justify-content: center;
-
-  height: 180px;
-
-  border-top-left-radius: 22px;
-  border-top-right-radius: 22px;
+  padding: 5px;
 
   background: #ffffff;
 `;
 
-export const TitleBlue = styled(Title)`
-  color: #001d5b;
+export const CategoryTitle = styled.Text`
+  font-family: 'Segoe UI Bold';
+  font-size: 20px;
+
+  margin-top: 5px;
+
+  color: #ffffff;
 `;
 
-export const TitleGreen = styled(Title)`
-  color: #00d931;
+export const NeedHorizontalContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 10px;
+`;
+
+export const NeedContainer = styled.TouchableOpacity<NeedContainerProps>`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+
+  width: 31%;
+  height: 130px;
+
+  margin-bottom: 10px;
+
+  border-radius: 15px;
+
+  background: ${ props => props.color || '#ffffff' };
+`;
+
+export const NeedImage = styled.View`
+  width: 60px;
+  height: 60px;
+
+  padding: 5px;
+`;
+
+export const NeedTitle = styled.View`
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 10px;
+`;
+
+export const NeedTitleText = styled.Text<LabelCaptionProps>`
+  font-family: 'Segoe UI Bold';
+  font-size: 12px;
+  line-height: 15px;
+
+  color: ${ props => props.color || '#7C8494' };
+`;
+
+export const LabelCaption = styled.Text<LabelCaptionProps>`
+  font-family: ${ props => (props.isBold ? 'Segoe UI Bold' : 'Segoe UI') };
+  font-size: ${ props => props.fontSize || 14 }px;
+  color: ${ props => props.color || '#ffffff' };
+
+  margin-top: 10px;
 `;

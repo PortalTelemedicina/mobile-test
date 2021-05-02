@@ -10,7 +10,7 @@ interface ButtonProps extends RectButtonProperties {
 
 const Button: React.FC<ButtonProps> = ({ children, icon, ...props }) => (
   <Container {...props}>
-    <ButtonText HaveIcon={!!icon}>{children}</ButtonText>
+    <ButtonText HaveIcon={!!icon}>{ children }</ButtonText>
     <Icon name={icon} size={20} color="#ffffff" solid />
   </Container>
 );

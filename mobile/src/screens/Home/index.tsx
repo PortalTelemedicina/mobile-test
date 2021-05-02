@@ -1,166 +1,236 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Image } from 'react-native';
+
+import {
+  SafeAreaView, 
+  ScrollView,
+  RefreshControl,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 
-import api from '../../services/api';
+import { SvgUri } from 'react-native-svg';
+
 import { useAuth } from '../../hooks/auth';
 
-import cardsCarrousel from '../../assets/cards-carrousel.png';
-import iconNotify from '../../assets/icons/notification/notify-icon.png';
-import iconEyeBalance from '../../assets/icons/eye/eye-balance.png';
+import { Specialty } from '../../interfaces/specialty';
 
-import iconBoleto from '../../assets/icons/boleto/boleto.png';
-import iconCharge from '../../assets/icons/charge/charge.png';
-import iconDeposit from '../../assets/icons/deposit/deposit.png';
-import iconExtract from '../../assets/icons/extract/extract.png';
-import iconPix from '../../assets/icons/pix/pix.png';
-import iconTransfer from '../../assets/icons/transfer/transfer.png';
+import Loading from '../../components/Loading';
+
+import { 
+  SvgAmbulance, SvgDiagnostic, SvgNurse,
+  SvgConsultation, SvgLabWork, SvgMedicine,
+} from '../../assets/svg/icons-need';
 
 import {
   Container,
-  Header,
-  HeaderContent,
-  HeaderCarrousel,
-  HeaderBalanceInfo,
-  HeaderBalanceText,
-  HeaderBalanceDetail,
-  Balance,
-  EyeButton,
-  EyeIcon,
-  NotifyButton,
-  NotifyIcon,
+  HeaderBar,
+  HeaderMenu,
+  CategoryListContainer,
+  CategoryList,
+  CategoryContainer,
+  CategoryImage,
+  CategoryTitle,
   Content,
+  ContentHeader,
   ContentBody,
-  ContentFooter,
-  Menu,
-  Options,
-  OptionContainer,
-  Option,
-  OptionIcon,
-  OptionText,
-  Footer,
-  Services,
+  ContentHeaderTitle,
+  UserTitleHello,
+  UserTitleName,
+  ContentHeaderTitleText,
+  NeedHorizontalContainer,
+  NeedContainer,
+  NeedImage,
+  NeedTitle,
+  NeedTitleText,
+  LabelCaption,
 } from './styles';
 
-interface Purchase {
-  id: string;
-  description: string;
-  detail: string;
-  value: string;
-}
-
-const Home: React.FC = () => {
-  const [purchases, setPurchases] = useState<Purchase[]>([]);
-
-  const { user, signOut } = useAuth();
+const HomeScreen: React.FC = ({}) => {
+  const { user } = useAuth();
   const { navigate } = useNavigation();
 
+  const [refreshing, setRefreshing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [specialties, setSpecialties] = useState<Specialty[]>([]);
+
   useEffect(() => {
-    // api.get('orders').then(response => {
-    //   setPurchase(response.data);
-    // });
+    async function syncAPISpecialties(): Promise<void> {
+
+      try {
+        let response = await fetch(
+          'https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/home_specialists.json'
+        );
+
+        let json = await response.json();
+
+        setSpecialties(json);
+
+        if (loading) {
+          setLoading(false);
+        }        
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    syncAPISpecialties();
   }, []);
 
-  const navigateToProfile = useCallback(() => {
-    navigate('Profile');
+  const handleNavigateToSpecialists = useCallback((itemObject: Specialty) => {
+    navigate('Specialists', itemObject);
   }, [navigate]);
 
+  const onRefresh = useCallback(async () => {
+    try {
+      setRefreshing(true);
+      setRefreshing(false);
+    } catch (error) {
+
+    }
+  }, []);
+
+  if (loading) {
+    return (
+      <Loading />
+    );
+  }
+
   return (
-    <>
-      <Container>
-        <Header>
-          <HeaderContent>
-            <HeaderCarrousel>
-              <Image source={cardsCarrousel} />
-            </HeaderCarrousel>
+    <SafeAreaView style={ styles.container }>     
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        scrollEventThrottle={16}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            progressBackgroundColor="#FFFFFF"
+            colors={["#CA49E5", "#7349E5", "#F6AF3D", "#E5495E"]}
+          />
+        }
+      >
+        <Container>
+          <HeaderBar>
+            <HeaderMenu>
+              <UserTitleHello>Hello, </UserTitleHello>
+              <UserTitleName>{ user.name }</UserTitleName>
+            </HeaderMenu>
+          </HeaderBar>      
+                  
+          <Content>
+            <ContentHeader>
+            <CategoryListContainer>
+                <ContentHeaderTitle>
+                  <ContentHeaderTitleText>Specialists</ContentHeaderTitleText>
+                </ContentHeaderTitle>
 
-            <NotifyButton
-              onPress={() => {
-                console.log('Pressed');
-              }}
-            >
-              <NotifyIcon source={iconNotify} />
-            </NotifyButton>
-          </HeaderContent>
+                <CategoryList
+                  showsHorizontalScrollIndicator={false}
+                  horizontal
+                  data={ specialties }
+                  keyExtractor={(item: any, index: any) => index} //(categoryItem: Category)  => categoryItem.
+                  renderItem={({ item: itemList }) => (
 
-          <HeaderBalanceInfo>
-            <HeaderBalanceText>SALDO</HeaderBalanceText>
-            <HeaderBalanceDetail>
-              <HeaderBalanceText fontSize={11}>R$</HeaderBalanceText>
-              <Balance>
-                <HeaderBalanceText fontSize={18} isBold>
-                  {' '}
-                  2.617.14
-                </HeaderBalanceText>
-              </Balance>
+                    <CategoryContainer 
+                      color={ itemList.color }
+                      onPress={() => { handleNavigateToSpecialists(itemList) }}> 
 
-              <EyeButton
-                onPress={() => {
-                  console.log('Pressed');
-                }}
-              >
-                <EyeIcon source={iconEyeBalance} />
-              </EyeButton>
-            </HeaderBalanceDetail>
-          </HeaderBalanceInfo>
-        </Header>
+                      <CategoryImage>
+                        <SvgUri
+                          width="100%"
+                          height="100%"
+                          fill={ itemList.color }
+                          uri={ itemList.image_url }
+                        />                       
+                      </CategoryImage>
+                
+                      <CategoryTitle>{ itemList.name }</CategoryTitle>
 
-        <Content>
-          <ContentBody>
-            <Menu>
-              <Options>
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconExtract} />
-                  </Option>
-                  <OptionText>Extrato</OptionText>
-                </OptionContainer>
+                      <LabelCaption>{ `${ itemList.total } Doctors` }</LabelCaption>
+                    </CategoryContainer>  
+                      
+                  )}
+                />
+              </CategoryListContainer>
+            </ContentHeader>
+            
+            <ContentBody>
+              <NeedHorizontalContainer>
+                <NeedContainer color="#CA49E5" onPress={() => {}}>
+                  <NeedImage>
+                    <SvgDiagnostic color="#ffffff"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1} color="#ffffff">Diagnostic</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
 
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconTransfer} />
-                  </Option>
-                  <OptionText>Transferir</OptionText>
-                </OptionContainer>
+                <NeedContainer onPress={() => {}}>
+                  <NeedImage>
+                    <SvgConsultation color="#7C8494"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1}>Consultation</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
 
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconPix} />
-                  </Option>
-                  <OptionText>Pix</OptionText>
-                </OptionContainer>
+                <NeedContainer onPress={() => {}}>
+                  <NeedImage>
+                    <SvgNurse color="#7C8494"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1}>Nurse</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
 
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconBoleto} />
-                  </Option>
-                  <OptionText>Boletos</OptionText>
-                </OptionContainer>
+                <NeedContainer onPress={() => {}}>
+                  <NeedImage>
+                    <SvgAmbulance color="#7C8494"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1}>Ambulance</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
 
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconDeposit} />
-                  </Option>
-                  <OptionText>Depositar</OptionText>
-                </OptionContainer>
+                <NeedContainer onPress={() => {}}>
+                  <NeedImage>
+                    <SvgLabWork color="#7C8494"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1}>Lab Work</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
 
-                <OptionContainer>
-                  <Option>
-                    <OptionIcon source={iconCharge} />
-                  </Option>
-                  <OptionText>Cobrar</OptionText>
-                </OptionContainer>
-              </Options>
-            </Menu>
-          </ContentBody>
-        </Content>
-
-        <Footer>
-          <Services />
-        </Footer>
-      </Container>
-    </>
+                <NeedContainer onPress={() => {}}>
+                  <NeedImage>
+                    <SvgMedicine color="#7C8494"/>  
+                  </NeedImage>
+                  
+                  <NeedTitle>
+                    <NeedTitleText numberOfLines={1}>Medicine</NeedTitleText>
+                  </NeedTitle>
+                </NeedContainer>
+              </NeedHorizontalContainer>
+            </ContentBody>
+          </Content>
+        </Container>
+      </ScrollView>      
+    </SafeAreaView>
   );
 };
 
-export default Home;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  }
+});
+
+export default HomeScreen;

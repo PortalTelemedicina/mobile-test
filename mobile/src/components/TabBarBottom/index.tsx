@@ -1,9 +1,11 @@
 import React from 'react';
-import { Image } from 'react-native';
 
-import iconHi from '../../assets/icons/hi/hi.png';
-
-import { TabArea, TabItem, TabItemText, TabItemLarge, IconTab } from './styles';
+import { 
+  TabArea, 
+  TabItem, 
+  TabItemText,
+  IconTab 
+} from './styles';
 
 const TabBottomNavigate: React.FC = ({ state, navigation }) => {
   const goTo = (screenName: string) => {
@@ -12,32 +14,24 @@ const TabBottomNavigate: React.FC = ({ state, navigation }) => {
 
   return (
     <TabArea>
-      <TabItem onPress={() => goTo('Historic')}>
-        <IconTab name="list-ul" size={24} isChecked={state.index === 0} />
-        <TabItemText>Histórico</TabItemText>
+      <TabItem onPress={ () => goTo('Home') }>
+        <IconTab name="home" size={24} isChecked={ state.index === 0 } />
+        <TabItemText>Home</TabItemText>
       </TabItem>
 
-      <TabItem onPress={() => goTo('Shopping')}>
-        <IconTab name="shopping-cart" size={24} isChecked={state.index === 1} />
-        <TabItemText>Shopping</TabItemText>
+      <TabItem onPress={ () => goTo('Specialists') }>
+        <IconTab name="comment-alt" size={24} isChecked={ state.index === 1 } />
+        <TabItemText>Chat</TabItemText>
       </TabItem>
 
-      <TabItemLarge onPress={() => goTo('Home')}>
-        <Image source={iconHi} />
-      </TabItemLarge>
-
-      <TabItem onPress={() => goTo('HiClub')}>
-        <IconTab name="star" size={24} isChecked={state.index === 3} />
-        <TabItemText>Hi-Club</TabItemText>
+      <TabItem onPress={ () => {} }>
+        <IconTab name="bolt" size={24} isChecked={ state.index === 2 } />
+        <TabItemText>Notifications</TabItemText>
       </TabItem>
 
-      <TabItem onPress={() => goTo('Profile')}>
-        <IconTab
-          name="user"
-          size={24}
-          isChecked={state.index >= 4 && state.index < 16}
-        />
-        <TabItemText>Minha Conta</TabItemText>
+      <TabItem onPress={ () => {} }>
+        <IconTab name="bars" size={24} isChecked={ state.index === 3 } />
+        <TabItemText>More</TabItemText>
       </TabItem>
     </TabArea>
   );

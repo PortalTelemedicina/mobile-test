@@ -7,28 +7,22 @@ interface IconProps {
 }
 
 export const Container = styled(RectButton)`
-  /* position: absolute;
-  bottom: 0;
-  margin-bottom: 40px; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
   height: 50px;
   padding: 0 10px;
-  background: #001d5b;
+  background: #E5495E;
   border-radius: 30px;
-
-  flex-direction: row;
-  align-items: center;
-  /* justify-content: center; */
 `;
 
 export const ButtonText = styled.Text<IconProps>`
-  /* background: #ff9000; */
-
   flex: 1;
   color: #ffffff;
 
-  font-family: 'DMSans-Medium';
+  font-family: 'Segoe UI Bold';
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -37,7 +31,7 @@ export const ButtonText = styled.Text<IconProps>`
   ${props =>
     props.HaveIcon &&
     css`
-      margin-left: 30px; /** RACK CSS PARA ALINHAR TEXTO AO CENTRO DEVIDO AO ÍCONE */
+      margin-left: 30px;
     `}
 `;
 
