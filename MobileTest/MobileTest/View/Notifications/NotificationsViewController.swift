@@ -1,13 +1,15 @@
 //
-//  HomeViewController.swift
+//  NotificationsViewController.swift
 //  MobileTest
 //
-//  Created by Victor H. Rezende Takai on 01/05/21.
+//  Created by Victor H. Rezende Takai on 02/05/21.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class NotificationsViewController: UIViewController {
+    
+    var coordinator: NotificationsCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

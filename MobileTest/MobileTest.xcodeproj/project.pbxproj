@@ -11,10 +11,20 @@
 		C58C512B47CC433DF661A41B /* Pods_MobileTest_MobileTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCCAC9C161718B316D3563B /* Pods_MobileTest_MobileTestUITests.framework */; };
 		CB1F5101D9221EA85EA6936D /* Pods_MobileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFC6D6BA1EE4B3F2E828D9A /* Pods_MobileTest.framework */; };
 		EB840609263D05C0007B39EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840608263D05C0007B39EE /* Coordinator.swift */; };
-		EB840611263D05F8007B39EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* AppCoordinator.swift */; };
+		EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* HomeCoordinator.swift */; };
 		EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840616263D06BD007B39EE /* HomeViewController.swift */; };
 		EB840619263D06BD007B39EE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB840617263D06BD007B39EE /* HomeViewController.xib */; };
 		EB84061F263D07E3007B39EE /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB84061E263D07E3007B39EE /* Container.swift */; };
+		EB865FFD263F2A1600D46D75 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB865FFB263F2A1600D46D75 /* ChatViewController.swift */; };
+		EB865FFE263F2A1600D46D75 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB865FFC263F2A1600D46D75 /* ChatViewController.xib */; };
+		EB866003263F2EF700D46D75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866002263F2EF700D46D75 /* TabBarController.swift */; };
+		EB86600B263F35F200D46D75 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB86600A263F35F200D46D75 /* ChatCoordinator.swift */; };
+		EB866014263F366400D46D75 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866012263F366400D46D75 /* MoreViewController.swift */; };
+		EB866015263F366400D46D75 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB866013263F366400D46D75 /* MoreViewController.xib */; };
+		EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866019263F367200D46D75 /* NotificationsViewController.swift */; };
+		EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB86601A263F367200D46D75 /* NotificationsViewController.xib */; };
+		EB866021263F36B100D46D75 /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866020263F36B100D46D75 /* NotificationsCoordinator.swift */; };
+		EB866026263F36BE00D46D75 /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866025263F36BE00D46D75 /* MoreCoordinator.swift */; };
 		EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBD263CD784000FD50A /* AppDelegate.swift */; };
 		EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBF263CD784000FD50A /* SceneDelegate.swift */; };
 		EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC3263CD784000FD50A /* Assets.xcassets */; };
@@ -51,13 +61,23 @@
 		B8805558E611A1980D1F06CC /* Pods-MobileTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestTests.debug.xcconfig"; path = "Target Support Files/Pods-MobileTestTests/Pods-MobileTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA4996C931409595937A0ADA /* Pods_MobileTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB840608263D05C0007B39EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		EB840610263D05F8007B39EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EB840610263D05F8007B39EE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EB840617263D06BD007B39EE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		EB84061E263D07E3007B39EE /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		EB865FDC263F190800D46D75 /* segoe-ui-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui-bold.otf"; sourceTree = "<group>"; };
 		EB865FDD263F190800D46D75 /* segoe-ui-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui-semibold.ttf"; sourceTree = "<group>"; };
 		EB865FDE263F190800D46D75 /* segoe-ui.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui.otf"; sourceTree = "<group>"; };
+		EB865FFB263F2A1600D46D75 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EB865FFC263F2A1600D46D75 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		EB866002263F2EF700D46D75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EB86600A263F35F200D46D75 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		EB866012263F366400D46D75 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		EB866013263F366400D46D75 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		EB866019263F367200D46D75 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		EB86601A263F367200D46D75 /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		EB866020263F36B100D46D75 /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
+		EB866025263F36BE00D46D75 /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
 		EBD12CBA263CD784000FD50A /* MobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CBD263CD784000FD50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD12CBF263CD784000FD50A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				EB840608263D05C0007B39EE /* Coordinator.swift */,
-				EB840610263D05F8007B39EE /* AppCoordinator.swift */,
+				EB840610263D05F8007B39EE /* HomeCoordinator.swift */,
+				EB86600A263F35F200D46D75 /* ChatCoordinator.swift */,
+				EB866020263F36B100D46D75 /* NotificationsCoordinator.swift */,
+				EB866025263F36BE00D46D75 /* MoreCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -137,8 +160,10 @@
 		EB840615263D068D007B39EE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EB840616263D06BD007B39EE /* HomeViewController.swift */,
-				EB840617263D06BD007B39EE /* HomeViewController.xib */,
+				EB865FF4263F21BD00D46D75 /* Home */,
+				EB865FF5263F21C300D46D75 /* Chat */,
+				EB865FF7263F21D400D46D75 /* Notifications */,
+				EB865FF6263F21CA00D46D75 /* More */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +184,42 @@
 				EB865FDE263F190800D46D75 /* segoe-ui.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		EB865FF4263F21BD00D46D75 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB840616263D06BD007B39EE /* HomeViewController.swift */,
+				EB840617263D06BD007B39EE /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EB865FF5263F21C300D46D75 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EB865FFB263F2A1600D46D75 /* ChatViewController.swift */,
+				EB865FFC263F2A1600D46D75 /* ChatViewController.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		EB865FF6263F21CA00D46D75 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				EB866012263F366400D46D75 /* MoreViewController.swift */,
+				EB866013263F366400D46D75 /* MoreViewController.xib */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		EB865FF7263F21D400D46D75 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				EB866019263F367200D46D75 /* NotificationsViewController.swift */,
+				EB86601A263F367200D46D75 /* NotificationsViewController.xib */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		EBD12CB1263CD784000FD50A = {
@@ -192,6 +253,7 @@
 				EB840607263D05A0007B39EE /* Coordinator */,
 				EBD12CBD263CD784000FD50A /* AppDelegate.swift */,
 				EBD12CBF263CD784000FD50A /* SceneDelegate.swift */,
+				EB866002263F2EF700D46D75 /* TabBarController.swift */,
 				EBD12CC3263CD784000FD50A /* Assets.xcassets */,
 				EBD12CC8263CD784000FD50A /* LaunchScreen.storyboard */,
 				EBD12CCB263CD784000FD50A /* Info.plist */,
@@ -335,9 +397,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */,
 				EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */,
+				EB866015263F366400D46D75 /* MoreViewController.xib in Resources */,
 				EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */,
 				EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */,
+				EB865FFE263F2A1600D46D75 /* ChatViewController.xib in Resources */,
 				EB840619263D06BD007B39EE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,11 +549,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,
+				EB866003263F2EF700D46D75 /* TabBarController.swift in Sources */,
 				EB84061F263D07E3007B39EE /* Container.swift in Sources */,
-				EB840611263D05F8007B39EE /* AppCoordinator.swift in Sources */,
+				EB866021263F36B100D46D75 /* NotificationsCoordinator.swift in Sources */,
+				EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */,
+				EB865FFD263F2A1600D46D75 /* ChatViewController.swift in Sources */,
+				EB866014263F366400D46D75 /* MoreViewController.swift in Sources */,
+				EB866026263F36BE00D46D75 /* MoreCoordinator.swift in Sources */,
 				EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */,
 				EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */,
+				EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */,
 				EB840609263D05C0007B39EE /* Coordinator.swift in Sources */,
+				EB86600B263F35F200D46D75 /* ChatCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -641,7 +713,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

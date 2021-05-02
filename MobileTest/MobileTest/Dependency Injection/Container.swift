@@ -14,6 +14,15 @@ extension Container {
         container.register(HomeViewController.self) { _ in
             HomeViewController()
         }
+        container.register(ChatViewController.self) { _ in
+            ChatViewController()
+        }
+        container.register(NotificationsViewController.self) { _ in
+            NotificationsViewController()
+        }
+        container.register(MoreViewController.self) { _ in
+            MoreViewController()
+        }
         return container
     }()
 }
