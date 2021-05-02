@@ -32,6 +32,16 @@
 		EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC8263CD784000FD50A /* LaunchScreen.storyboard */; };
 		EBD12CD5263CD784000FD50A /* MobileTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CD4263CD784000FD50A /* MobileTestTests.swift */; };
 		EBD12CE0263CD784000FD50A /* MobileTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */; };
+		EBED45F8263F3BC900FD0006 /* SpecialistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */; };
+		EBED45F9263F3BC900FD0006 /* SpecialistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */; };
+		EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED45FD263F3BDA00FD0006 /* ServiceCell.swift */; };
+		EBED4600263F3BDA00FD0006 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBED45FE263F3BDA00FD0006 /* ServiceCell.xib */; };
+		EBED4617263F3C6400FD0006 /* home_specialists.json in Resources */ = {isa = PBXBuildFile; fileRef = EBED4613263F3C6400FD0006 /* home_specialists.json */; };
+		EBED4618263F3C6400FD0006 /* list_specialist_dental_care.json in Resources */ = {isa = PBXBuildFile; fileRef = EBED4614263F3C6400FD0006 /* list_specialist_dental_care.json */; };
+		EBED4619263F3C6400FD0006 /* list_specialist_heart.json in Resources */ = {isa = PBXBuildFile; fileRef = EBED4615263F3C6400FD0006 /* list_specialist_heart.json */; };
+		EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */ = {isa = PBXBuildFile; fileRef = EBED4616263F3C6400FD0006 /* list_specialist_dermatology.json */; };
+		EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED461F263F3CB500FD0006 /* CustomView.swift */; };
+		EBED462B263F3CFF00FD0006 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED462A263F3CFF00FD0006 /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +101,16 @@
 		EBD12CDB263CD784000FD50A /* MobileTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestUITests.swift; sourceTree = "<group>"; };
 		EBD12CE1263CD784000FD50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCell.swift; sourceTree = "<group>"; };
+		EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistCell.xib; sourceTree = "<group>"; };
+		EBED45FD263F3BDA00FD0006 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		EBED45FE263F3BDA00FD0006 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		EBED4613263F3C6400FD0006 /* home_specialists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_specialists.json; path = ../../../api/home_specialists.json; sourceTree = "<group>"; };
+		EBED4614263F3C6400FD0006 /* list_specialist_dental_care.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = list_specialist_dental_care.json; path = ../../../api/list_specialist_dental_care.json; sourceTree = "<group>"; };
+		EBED4615263F3C6400FD0006 /* list_specialist_heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = list_specialist_heart.json; path = ../../../api/list_specialist_heart.json; sourceTree = "<group>"; };
+		EBED4616263F3C6400FD0006 /* list_specialist_dermatology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = list_specialist_dermatology.json; path = ../../../api/list_specialist_dermatology.json; sourceTree = "<group>"; };
+		EBED461F263F3CB500FD0006 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		EBED462A263F3CFF00FD0006 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		FE53483E13EA310A2C6FCB86 /* Pods-MobileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTest.release.xcconfig"; path = "Target Support Files/Pods-MobileTest/Pods-MobileTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +209,7 @@
 		EB865FF4263F21BD00D46D75 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EBED4627263F3CC800FD0006 /* Cell */,
 				EB840616263D06BD007B39EE /* HomeViewController.swift */,
 				EB840617263D06BD007B39EE /* HomeViewController.xib */,
 			);
@@ -247,6 +268,8 @@
 		EBD12CBC263CD784000FD50A /* MobileTest */ = {
 			isa = PBXGroup;
 			children = (
+				EBED461E263F3C9D00FD0006 /* Util */,
+				EBED4604263F3BFA00FD0006 /* Mock */,
 				EB865FDB263F18F500D46D75 /* Font */,
 				EB84061D263D07CA007B39EE /* Dependency Injection */,
 				EB840615263D068D007B39EE /* View */,
@@ -286,6 +309,53 @@
 				EBD12CE1263CD784000FD50A /* Info.plist */,
 			);
 			path = MobileTestUITests;
+			sourceTree = "<group>";
+		};
+		EBED4604263F3BFA00FD0006 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EBED4613263F3C6400FD0006 /* home_specialists.json */,
+				EBED4614263F3C6400FD0006 /* list_specialist_dental_care.json */,
+				EBED4616263F3C6400FD0006 /* list_specialist_dermatology.json */,
+				EBED4615263F3C6400FD0006 /* list_specialist_heart.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		EBED461E263F3C9D00FD0006 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EBED461F263F3CB500FD0006 /* CustomView.swift */,
+				EBED462A263F3CFF00FD0006 /* CustomImageView.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EBED4627263F3CC800FD0006 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBED4629263F3CD300FD0006 /* Service */,
+				EBED4628263F3CCE00FD0006 /* Specialist */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EBED4628263F3CCE00FD0006 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */,
+				EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */,
+			);
+			path = Specialist;
+			sourceTree = "<group>";
+		};
+		EBED4629263F3CD300FD0006 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EBED45FD263F3BDA00FD0006 /* ServiceCell.swift */,
+				EBED45FE263F3BDA00FD0006 /* ServiceCell.xib */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,10 +468,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */,
+				EBED4617263F3C6400FD0006 /* home_specialists.json in Resources */,
+				EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */,
 				EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */,
 				EB866015263F366400D46D75 /* MoreViewController.xib in Resources */,
 				EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */,
+				EBED45F9263F3BC900FD0006 /* SpecialistCell.xib in Resources */,
+				EBED4600263F3BDA00FD0006 /* ServiceCell.xib in Resources */,
 				EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */,
+				EBED4618263F3C6400FD0006 /* list_specialist_dental_care.json in Resources */,
+				EBED4619263F3C6400FD0006 /* list_specialist_heart.json in Resources */,
 				EB865FFE263F2A1600D46D75 /* ChatViewController.xib in Resources */,
 				EB840619263D06BD007B39EE /* HomeViewController.xib in Resources */,
 			);
@@ -549,7 +625,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,
+				EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */,
 				EB866003263F2EF700D46D75 /* TabBarController.swift in Sources */,
+				EBED45F8263F3BC900FD0006 /* SpecialistCell.swift in Sources */,
 				EB84061F263D07E3007B39EE /* Container.swift in Sources */,
 				EB866021263F36B100D46D75 /* NotificationsCoordinator.swift in Sources */,
 				EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */,
@@ -559,7 +637,9 @@
 				EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */,
 				EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */,
 				EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */,
+				EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */,
 				EB840609263D05C0007B39EE /* Coordinator.swift in Sources */,
+				EBED462B263F3CFF00FD0006 /* CustomImageView.swift in Sources */,
 				EB86600B263F35F200D46D75 /* ChatCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
