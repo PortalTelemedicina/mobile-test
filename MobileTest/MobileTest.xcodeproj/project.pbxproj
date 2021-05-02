@@ -55,6 +55,9 @@
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EB840617263D06BD007B39EE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		EB84061E263D07E3007B39EE /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		EB865FDC263F190800D46D75 /* segoe-ui-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui-bold.otf"; sourceTree = "<group>"; };
+		EB865FDD263F190800D46D75 /* segoe-ui-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui-semibold.ttf"; sourceTree = "<group>"; };
+		EB865FDE263F190800D46D75 /* segoe-ui.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui.otf"; sourceTree = "<group>"; };
 		EBD12CBA263CD784000FD50A /* MobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CBD263CD784000FD50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD12CBF263CD784000FD50A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,12 +143,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EB84061D263D07CA007B39EE /* DependencyInjection */ = {
+		EB84061D263D07CA007B39EE /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
 				EB84061E263D07E3007B39EE /* Container.swift */,
 			);
-			path = DependencyInjection;
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		EB865FDB263F18F500D46D75 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EB865FDC263F190800D46D75 /* segoe-ui-bold.otf */,
+				EB865FDD263F190800D46D75 /* segoe-ui-semibold.ttf */,
+				EB865FDE263F190800D46D75 /* segoe-ui.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		EBD12CB1263CD784000FD50A = {
@@ -173,7 +186,8 @@
 		EBD12CBC263CD784000FD50A /* MobileTest */ = {
 			isa = PBXGroup;
 			children = (
-				EB84061D263D07CA007B39EE /* DependencyInjection */,
+				EB865FDB263F18F500D46D75 /* Font */,
+				EB84061D263D07CA007B39EE /* Dependency Injection */,
 				EB840615263D068D007B39EE /* View */,
 				EB840607263D05A0007B39EE /* Coordinator */,
 				EBD12CBD263CD784000FD50A /* AppDelegate.swift */,
