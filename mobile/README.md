@@ -11,8 +11,7 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 ## Prints do App
 <p align="center">
   <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/icon.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/splash.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/welcome.jpg" width=300><br/>
-  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/loading.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/home.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/specialist_list.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/chat.jpg" width=300><br/>
-  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/more.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/notifications.jpg" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/loading.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/home.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/specialist_list.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/chat.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/more.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/notifications.jpg" width=300><br/>
 </p>
 
 ## Plataformas Suportadas
