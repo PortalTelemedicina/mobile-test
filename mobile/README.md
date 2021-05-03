@@ -10,9 +10,11 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 
 ## Prints do App
 <p align="center">
-  ![title](resources/prints/icon.jpg)
-  ![Alt text](resources/prints/icon.jpg?raw=true "Title")
-  <img src="" width=300><img src="" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/icon.jpg" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/splash.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/welcome.jpg" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/loading.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/home.jpg" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/specialist_list.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/chat.jpg" width=300><br/>
+  <img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/more.jpg" width=300><img src="https://github.com/thiagohenrss/mobile-test/blob/main/mobile/resources/prints/notifications.jpg" width=300><br/>
 </p>
 
 ## Plataformas Suportadas
@@ -52,7 +54,7 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 - [React Navigation Bottom Tabs](https://reactnavigation.org/docs/bottom-tab-navigator/) Menu de navegação inferior
 - [React Native Svg](https://github.com/react-native-svg/react-native-svg) Para manipulação de SVG dentro do App
 - [React Native Splash Screen](https://github.com/crazycodeboy/react-native-splash-screen) Para manipulação de Splashscreen do App
-- [React Native Gesture Handler](React Navigation) Dependência do React Navigation
+- [React Native Gesture Handler](https://reactnavigation.org/docs/getting-started#installing-dependencies-into-a-bare-react-native-project) Dependência do React Navigation
 
 
 ## Funcionalidades
