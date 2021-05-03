@@ -104,7 +104,7 @@
                 <outlet property="titleLabel" destination="I2e-td-nRU" id="xRs-MF-NrO"/>
                 <outlet property="view" destination="4iP-YP-9pY" id="Bqo-hJ-gO3"/>
             </connections>
-            <point key="canvasLocation" x="317" y="137"/>
+            <point key="canvasLocation" x="315.94202898550725" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

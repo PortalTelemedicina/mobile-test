@@ -42,6 +42,10 @@
 		EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */ = {isa = PBXBuildFile; fileRef = EBED4616263F3C6400FD0006 /* list_specialist_dermatology.json */; };
 		EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED461F263F3CB500FD0006 /* CustomView.swift */; };
 		EBED462B263F3CFF00FD0006 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED462A263F3CFF00FD0006 /* CustomImageView.swift */; };
+		EBED4630263F895B00FD0006 /* UICollectionView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED462F263F895B00FD0006 /* UICollectionView+Util.swift */; };
+		EBED4635263F897400FD0006 /* NSObject+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED4634263F897400FD0006 /* NSObject+Util.swift */; };
+		EBED463A263F91C900FD0006 /* ServiceDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED4639263F91C900FD0006 /* ServiceDelegateFlowLayout.swift */; };
+		EBED463F263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED463E263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		EBED4616263F3C6400FD0006 /* list_specialist_dermatology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = list_specialist_dermatology.json; path = ../../../api/list_specialist_dermatology.json; sourceTree = "<group>"; };
 		EBED461F263F3CB500FD0006 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EBED462A263F3CFF00FD0006 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		EBED462F263F895B00FD0006 /* UICollectionView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Util.swift"; sourceTree = "<group>"; };
+		EBED4634263F897400FD0006 /* NSObject+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Util.swift"; sourceTree = "<group>"; };
+		EBED4639263F91C900FD0006 /* ServiceDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDelegateFlowLayout.swift; sourceTree = "<group>"; };
+		EBED463E263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		FE53483E13EA310A2C6FCB86 /* Pods-MobileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTest.release.xcconfig"; path = "Target Support Files/Pods-MobileTest/Pods-MobileTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +220,8 @@
 				EBED4627263F3CC800FD0006 /* Cell */,
 				EB840616263D06BD007B39EE /* HomeViewController.swift */,
 				EB840617263D06BD007B39EE /* HomeViewController.xib */,
+				EBED4639263F91C900FD0006 /* ServiceDelegateFlowLayout.swift */,
+				EBED463E263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -327,6 +337,8 @@
 			children = (
 				EBED461F263F3CB500FD0006 /* CustomView.swift */,
 				EBED462A263F3CFF00FD0006 /* CustomImageView.swift */,
+				EBED462F263F895B00FD0006 /* UICollectionView+Util.swift */,
+				EBED4634263F897400FD0006 /* NSObject+Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -624,6 +636,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBED4630263F895B00FD0006 /* UICollectionView+Util.swift in Sources */,
+				EBED4635263F897400FD0006 /* NSObject+Util.swift in Sources */,
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,
 				EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */,
 				EB866003263F2EF700D46D75 /* TabBarController.swift in Sources */,
@@ -633,11 +647,13 @@
 				EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */,
 				EB865FFD263F2A1600D46D75 /* ChatViewController.swift in Sources */,
 				EB866014263F366400D46D75 /* MoreViewController.swift in Sources */,
+				EBED463F263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift in Sources */,
 				EB866026263F36BE00D46D75 /* MoreCoordinator.swift in Sources */,
 				EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */,
 				EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */,
 				EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */,
 				EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */,
+				EBED463A263F91C900FD0006 /* ServiceDelegateFlowLayout.swift in Sources */,
 				EB840609263D05C0007B39EE /* Coordinator.swift in Sources */,
 				EBED462B263F3CFF00FD0006 /* CustomImageView.swift in Sources */,
 				EB86600B263F35F200D46D75 /* ChatCoordinator.swift in Sources */,

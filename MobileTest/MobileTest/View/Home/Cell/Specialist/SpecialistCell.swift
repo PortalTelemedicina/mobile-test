@@ -14,6 +14,9 @@ class SpecialistCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
+    static let width: CGFloat = 150
+    static let height: CGFloat = 200
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

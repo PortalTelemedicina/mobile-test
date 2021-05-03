@@ -3,13 +3,26 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="segoe-ui-bold.otf">
+            <string>SegoeUI-Bold</string>
+        </array>
+        <array key="segoe-ui.otf">
+            <string>SegoeUI-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MobileTest" customModuleProvider="target">
             <connections>
+                <outlet property="nameLabel" destination="f2C-jt-2tg" id="VOg-ZT-AdW"/>
+                <outlet property="serviceCollectionView" destination="r4e-mQ-7YG" id="6RQ-9Y-1Ro"/>
+                <outlet property="serviceCollectionViewFlowLayout" destination="piu-hG-JAO" id="J57-UX-7yP"/>
+                <outlet property="specialistCollectionView" destination="Wpy-lY-9JX" id="E9q-Mh-lco"/>
+                <outlet property="specialistCollectionViewFlowLayout" destination="VEw-jP-0O4" id="Zvk-ai-iGJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +30,84 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Wpy-lY-9JX">
+                    <rect key="frame" x="10" y="188.5" width="394" height="200"/>
+                    <color key="backgroundColor" name="appLightGray"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="qS9-7q-rHB"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VEw-jP-0O4">
+                        <size key="itemSize" width="150" height="250"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r4e-mQ-7YG">
+                    <rect key="frame" x="10" y="452" width="394" height="410"/>
+                    <color key="backgroundColor" name="appLightGray"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="piu-hG-JAO">
+                        <size key="itemSize" width="150" height="150"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehK-aB-t7e">
+                    <rect key="frame" x="10" y="64" width="394" height="23.5"/>
+                    <fontDescription key="fontDescription" name="SegoeUI-Regular" family="Segoe UI" pointSize="20"/>
+                    <color key="textColor" name="appBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specialists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-UJ-oWF">
+                    <rect key="frame" x="15" y="150" width="97" height="23.5"/>
+                    <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="20"/>
+                    <color key="textColor" name="appBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb6-VU-7gT">
+                    <rect key="frame" x="15" y="413.5" width="175" height="23.5"/>
+                    <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="20"/>
+                    <color key="textColor" name="appBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2C-jt-2tg">
+                    <rect key="frame" x="10" y="87.5" width="101" height="37.5"/>
+                    <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="32"/>
+                    <color key="textColor" name="appBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemPurpleColor"/>
-            <point key="canvasLocation" x="141" y="122"/>
+            <color key="backgroundColor" name="appLightGray"/>
+            <constraints>
+                <constraint firstItem="f2C-jt-2tg" firstAttribute="top" secondItem="ehK-aB-t7e" secondAttribute="bottom" id="23O-I9-h63"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="r4e-mQ-7YG" secondAttribute="bottom" id="2Jn-wG-zp2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ehK-aB-t7e" secondAttribute="trailing" constant="10" id="4Ta-da-sLf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r4e-mQ-7YG" secondAttribute="trailing" constant="10" id="AZG-b7-FnJ"/>
+                <constraint firstItem="ehK-aB-t7e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="EcX-G2-nS1"/>
+                <constraint firstItem="f2C-jt-2tg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Gl1-co-SyS"/>
+                <constraint firstItem="Afj-UJ-oWF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="TdA-25-Gb4"/>
+                <constraint firstItem="Wpy-lY-9JX" firstAttribute="top" secondItem="Afj-UJ-oWF" secondAttribute="bottom" constant="15" id="VN6-T3-29J"/>
+                <constraint firstItem="Sb6-VU-7gT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="l9L-9M-hpk"/>
+                <constraint firstItem="ehK-aB-t7e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="pHh-e3-pyE"/>
+                <constraint firstItem="Wpy-lY-9JX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="q1W-2K-vGA"/>
+                <constraint firstItem="r4e-mQ-7YG" firstAttribute="top" secondItem="Sb6-VU-7gT" secondAttribute="bottom" constant="15" id="t1m-x3-JBz"/>
+                <constraint firstItem="Afj-UJ-oWF" firstAttribute="top" secondItem="f2C-jt-2tg" secondAttribute="bottom" constant="25" id="tHT-0E-NYf"/>
+                <constraint firstItem="r4e-mQ-7YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uhR-vl-Mda"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wpy-lY-9JX" secondAttribute="trailing" constant="10" id="vSZ-Fd-1yp"/>
+                <constraint firstItem="Sb6-VU-7gT" firstAttribute="top" secondItem="Wpy-lY-9JX" secondAttribute="bottom" constant="25" id="yTX-nl-dg2"/>
+            </constraints>
+            <point key="canvasLocation" x="-422" y="119"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="appBlack">
+            <color red="0.31372549019607843" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="appLightGray">
+            <color red="0.96862745098039216" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
