@@ -82,13 +82,6 @@ const Specialists: React.FC = ({}) => {
     syncAPISpecialties();
   }, [routeParams.name]);
 
-  const subName = useCallback((str: string) => {
-    var arr = str.split(' ');
-    var join = arr[0][0].concat(arr[1][0]).toUpperCase();
-    
-    return join;
-  }, []);  
-
   if (loading) {
     return (
       <Loading />
@@ -140,13 +133,17 @@ const Specialists: React.FC = ({}) => {
                       <LabelCaption numberOfLines={3}>{ itemList.description }</LabelCaption>
 
                       <SpecialistButtons>
-                        <SpecialistButtonChat>
-                          <LabelCaption color="#FFFFFF" isBold>Chat</LabelCaption>
-                        </SpecialistButtonChat>
+                        { itemList.actions.chat && 
+                          <SpecialistButtonChat>
+                            <LabelCaption color="#FFFFFF" isBold>Chat</LabelCaption>
+                          </SpecialistButtonChat>
+                        }
 
-                        <SpecialistButtonCall onPress={()=>{}}>
-                          <LabelCaption isBold>Call</LabelCaption>
-                        </SpecialistButtonCall>
+                        { itemList.actions.call && 
+                          <SpecialistButtonCall onPress={()=>{}}>
+                            <LabelCaption isBold>Call</LabelCaption>
+                          </SpecialistButtonCall>
+                        }
                       </SpecialistButtons>                      
                     </SpecialistContainerDetail>
                   </SpecialistContainer>                      

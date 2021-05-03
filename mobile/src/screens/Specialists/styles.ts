@@ -33,14 +33,6 @@ export const HeaderMenu = styled.View`
   padding: 20px;
 `;
 
-export const Content = styled.View`
-  flex: 1;
-`;
-
-export const ContentBody = styled.View`
-  flex: 1;
-`;
-
 export const HeaderTitleText = styled.Text`
   font-family: 'Segoe UI Bold';
   font-size: 20px;
@@ -55,6 +47,14 @@ export const HeaderSubTitleText = styled.Text`
   color: #504C4C;
 
   margin-top: 10px;
+`;
+
+export const Content = styled.View`
+  flex: 1;
+`;
+
+export const ContentBody = styled.View`
+  flex: 1;
 `;
 
 export const SpecialistListContainer = styled.View`

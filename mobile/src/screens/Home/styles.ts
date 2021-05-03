@@ -8,7 +8,7 @@ import {
 
 import { FlatList } from 'react-native-gesture-handler';
 
-import { Specialties } from '../../interfaces/specialties';
+import { Specialty } from '../../interfaces/specialty';
 
 interface LabelCaptionProps extends TextProps {
   fontSize?: number;
@@ -30,9 +30,11 @@ export const Container = styled.View`
 `;
 
 export const HeaderBar = styled.View`
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 0 10px;
   padding-top: ${Platform.OS === 'android' ? 0 : getStatusBarHeight()}px;
 `;
 
@@ -40,7 +42,18 @@ export const HeaderMenu = styled.View`
   flex-direction: column;
   justify-content: center;
 
-  padding: 20px 10px;
+  padding: 20px 0;
+`;
+
+export const HeaderMenuButton = styled.TouchableOpacity`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  padding: 10px;
 `;
 
 export const Content = styled.View`
@@ -99,7 +112,7 @@ export const CategoryListContainer = styled.View`
   flex: 1;
 `;
 
-export const CategoryList = styled(FlatList as new () => FlatList<Specialties>)`
+export const CategoryList = styled(FlatList as new () => FlatList<Specialty>)`
   padding: 10px;
 `;
 

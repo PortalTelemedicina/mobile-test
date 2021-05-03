@@ -12,6 +12,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import { SvgUri } from 'react-native-svg';
 
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 import { useAuth } from '../../hooks/auth';
 
 import { Specialty } from '../../interfaces/specialty';
@@ -27,6 +29,7 @@ import {
   Container,
   HeaderBar,
   HeaderMenu,
+  HeaderMenuButton,
   CategoryListContainer,
   CategoryList,
   CategoryContainer,
@@ -48,11 +51,11 @@ import {
 } from './styles';
 
 const HomeScreen: React.FC = ({}) => {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const { navigate } = useNavigation();
 
-  const [refreshing, setRefreshing] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [specialties, setSpecialties] = useState<Specialty[]>([]);
 
   useEffect(() => {
@@ -72,6 +75,8 @@ const HomeScreen: React.FC = ({}) => {
         }        
       } catch (error) {
         console.error(error);
+      } finally {
+        
       }
     }
 
@@ -117,11 +122,15 @@ const HomeScreen: React.FC = ({}) => {
               <UserTitleHello>Hello, </UserTitleHello>
               <UserTitleName>{ user.name }</UserTitleName>
             </HeaderMenu>
+
+            <HeaderMenuButton onPress={() => { signOut() }}>
+              <Icon name="sign-out-alt" size={24} color="#504C4C" />
+            </HeaderMenuButton>
           </HeaderBar>      
                   
           <Content>
             <ContentHeader>
-            <CategoryListContainer>
+              <CategoryListContainer>
                 <ContentHeaderTitle>
                   <ContentHeaderTitleText>Specialists</ContentHeaderTitleText>
                 </ContentHeaderTitle>
@@ -221,7 +230,7 @@ const HomeScreen: React.FC = ({}) => {
             </ContentBody>
           </Content>
         </Container>
-      </ScrollView>      
+      </ScrollView>
     </SafeAreaView>
   );
 };
