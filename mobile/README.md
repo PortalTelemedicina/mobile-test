@@ -11,6 +11,7 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 ## Prints do App
 <p align="center">
   ![title](resources/prints/icon.jpg)
+  ![Alt text](resources/prints/icon.jpg?raw=true "Title")
   <img src="" width=300><img src="" width=300><br/>
 </p>
 
@@ -36,7 +37,7 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 ## Descrição do projeto 
 
 <p align="justify">
-  App de "Relatório de Compras" criado para o desafio da vaga em React Native na Contele. Contém as funcionalidade listadas a seguir.
+  App de listagem e busca de espcialistas em saúde. Criado como parte do desafio para oportunidade em React Native do Portal Telemedicina. Contém as funcionalidade listadas a seguir.
 </p>
 
 
@@ -48,10 +49,10 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 - [Iphone xHelper](https://github.com/ptelad/react-native-iphone-x-helper) Biblioteca para auxiliar no desenvolviemnto para iOS
 - [React Navigation](https://reactnavigation.org/) Para uso de rotas e navegação no App
 
-- [React Navigation Bottom Tabs](https://reactnavigation.org/) Para uso de rotas e navegação no App
-- [React Native Svg](https://reactnavigation.org/) Para uso de rotas e navegação no App
-- [React Native Splash Screen](https://reactnavigation.org/) Para uso de rotas e navegação no App
-- [React Native Gesture Handler](https://reactnavigation.org/) Para uso de rotas e navegação no App
+- [React Navigation Bottom Tabs](https://reactnavigation.org/docs/bottom-tab-navigator/) Menu de navegação inferior
+- [React Native Svg](https://github.com/react-native-svg/react-native-svg) Para manipulação de SVG dentro do App
+- [React Native Splash Screen](https://github.com/crazycodeboy/react-native-splash-screen) Para manipulação de Splashscreen do App
+- [React Native Gesture Handler](React Navigation) Dependência do React Navigation
 
 
 ## Funcionalidades
@@ -61,6 +62,8 @@ App "Health Specialist" criado para o desafio da oportunidade em React Native.
 :heavy_check_mark: Dashboard de Listagem de Especialidades
 
 :heavy_check_mark: Listagem e detalhes de médicos por especialidade escolhida
+
+:heavy_check_mark: Telas internas: Chat, Notificações e Mais opções
 
 
 
@@ -127,11 +130,6 @@ $ npm start
 
 * Caso tenha iniciado o Metro Server manualmente após o comando "yarn android" ou "react-native run-android", realize o reload no terminal do Metro Server pressionando "R".
 * Caso a tela do emulador permaneça branca, execute "yarn android" ou "react-native run-android" novamente.
-
-
-## Captura em Uso
-
-![](https://user-images.githubusercontent.com/37914518/91327269-b15f9580-e79b-11ea-9cd4-4e3ef0173865.gif)
 
 
 
