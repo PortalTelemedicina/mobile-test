@@ -28,7 +28,7 @@ extension SpecialistType: Decodable {
         self.name = try container.decode(String.self, forKey: .name)
         self.imageURL = URL(string: try container.decode(String.self, forKey: .imageURL))
         self.total = try container.decode(Int.self, forKey: .total)
-        self.color = UIColor.init(hex: try container.decode(String.self, forKey: .color))
+        self.color = UIColor.hexStringToUIColor(hex: try container.decode(String.self, forKey: .color))
     }
     
 }

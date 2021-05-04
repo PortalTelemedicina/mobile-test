@@ -11,15 +11,29 @@ import Swinject
 extension Container {
     static let shared: Container = {
         let container = Container()
-        container.register(HomeViewController.self) { _ in
-            HomeViewController()
+        
+        // Home
+        container.register(SpecialistRemoteRepository.self) { _ -> SpecialistRemoteRepository in
+            SpecialistRemoteRepository()
         }
+        container.register(HomeViewModel.self) { r in
+            HomeViewModel(repository: r.resolve(SpecialistRemoteRepository.self)!)
+        }
+        container.register(HomeViewController.self) { r in
+            HomeViewController(viewModel: r.resolve(HomeViewModel.self)!)
+        }
+        
+        // Chat
         container.register(ChatViewController.self) { _ in
             ChatViewController()
         }
+        
+        // Notifications
         container.register(NotificationsViewController.self) { _ in
             NotificationsViewController()
         }
+        
+        // More
         container.register(MoreViewController.self) { _ in
             MoreViewController()
         }

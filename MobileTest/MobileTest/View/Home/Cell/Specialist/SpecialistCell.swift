@@ -17,9 +17,11 @@ class SpecialistCell: UICollectionViewCell {
     static let width: CGFloat = 150
     static let height: CGFloat = 200
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(_ viewModel: SpecialistCellViewModel) {
+        titleLabel.text = viewModel.type
+        subLabel.text = viewModel.numberOfDoctors
+        view.backgroundColor = viewModel.color
+        imageView.tintColor = viewModel.color
     }
 
 }

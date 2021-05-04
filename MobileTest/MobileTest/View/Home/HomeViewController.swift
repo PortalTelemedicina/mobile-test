@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
 
@@ -21,6 +23,10 @@ class HomeViewController: UIViewController {
     
     private let collectionViewSpacing: CGFloat = 8
     
+    private let disposeBag = DisposeBag()
+    
+    private let viewModel: HomeViewModel
+    
     private lazy var serviceDelegateFlowLayout: ServiceDelegateFlowLayout = {
         ServiceDelegateFlowLayout(collectionViewSpacing)
     }()
@@ -30,9 +36,21 @@ class HomeViewController: UIViewController {
                                      height: SpecialistCell.height)
     }()
     
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCollectionViews()
+        setupRx()
+        loadData()
     }
 
     private func setupCollectionViews() {
@@ -42,8 +60,10 @@ class HomeViewController: UIViewController {
         specialistCollectionViewFlowLayout.minimumLineSpacing = collectionViewSpacing
         specialistCollectionViewFlowLayout.minimumInteritemSpacing = collectionViewSpacing
         specialistCollectionView.registerCell(SpecialistCell.self)
-        specialistCollectionView.delegate = specialistDelegateFlowLayout
-        specialistCollectionView.dataSource = self
+        specialistCollectionView
+            .rx
+            .setDelegate(specialistDelegateFlowLayout)
+            .disposed(by: disposeBag)
         
         // Service
         serviceCollectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
@@ -54,13 +74,20 @@ class HomeViewController: UIViewController {
         serviceCollectionView.dataSource = self
     }
     
-}
-
-// Will be replaced with Rx
-extension HomeViewController: UICollectionViewDelegate {
+    private func setupRx() {
+        viewModel
+            .cellsViewModels
+            .bind(to: specialistCollectionView
+                    .rx
+                    .items(cellIdentifier: SpecialistCell.nameOfClass,
+                           cellType: SpecialistCell.self)) { _, viewModel, cell in
+                cell.configureCell(viewModel)
+            }
+            .disposed(by: disposeBag)
+    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO
+    private func loadData() {
+        viewModel.fetchSpecialists()
     }
     
 }

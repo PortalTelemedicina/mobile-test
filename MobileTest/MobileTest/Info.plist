@@ -57,6 +57,16 @@
 		<string>segoe-ui-bold.otf</string>
 		<string>segoe-ui-semibold.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://raw.githubusercontent.com</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

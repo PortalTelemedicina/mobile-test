@@ -10,12 +10,15 @@
 		96A425F13A6AB749EF2CDC59 /* Pods_MobileTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4996C931409595937A0ADA /* Pods_MobileTestTests.framework */; };
 		C58C512B47CC433DF661A41B /* Pods_MobileTest_MobileTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCCAC9C161718B316D3563B /* Pods_MobileTest_MobileTestUITests.framework */; };
 		CB1F5101D9221EA85EA6936D /* Pods_MobileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFC6D6BA1EE4B3F2E828D9A /* Pods_MobileTest.framework */; };
-		EB2DD62C2640B27900D69BFF /* MobileTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD62B2640B27900D69BFF /* MobileTestTarget.swift */; };
-		EB2DD6372640B56500D69BFF /* MobileTestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6362640B56500D69BFF /* MobileTestRepository.swift */; };
+		EB2DD62C2640B27900D69BFF /* SpecialistTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD62B2640B27900D69BFF /* SpecialistTarget.swift */; };
+		EB2DD6372640B56500D69BFF /* SpecialistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6362640B56500D69BFF /* SpecialistRepository.swift */; };
 		EB2DD63D2640C02200D69BFF /* SpecialistType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD63C2640C02200D69BFF /* SpecialistType.swift */; };
 		EB2DD6482640C1D200D69BFF /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */; };
 		EB2DD64D2640C25700D69BFF /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD64C2640C25700D69BFF /* Specialist.swift */; };
 		EB2DD6522640C29900D69BFF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6512640C29900D69BFF /* Action.swift */; };
+		EB2DD6622640C8C300D69BFF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */; };
+		EB2DD66A2640C9EB00D69BFF /* SpecialistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */; };
+		EB2DD6772640D50300D69BFF /* Decodable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6762640D50300D69BFF /* Decodable+Util.swift */; };
 		EB840609263D05C0007B39EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840608263D05C0007B39EE /* Coordinator.swift */; };
 		EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* HomeCoordinator.swift */; };
 		EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840616263D06BD007B39EE /* HomeViewController.swift */; };
@@ -80,12 +83,15 @@
 		9CFC6D6BA1EE4B3F2E828D9A /* Pods_MobileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8805558E611A1980D1F06CC /* Pods-MobileTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestTests.debug.xcconfig"; path = "Target Support Files/Pods-MobileTestTests/Pods-MobileTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA4996C931409595937A0ADA /* Pods_MobileTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB2DD62B2640B27900D69BFF /* MobileTestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestTarget.swift; sourceTree = "<group>"; };
-		EB2DD6362640B56500D69BFF /* MobileTestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestRepository.swift; sourceTree = "<group>"; };
+		EB2DD62B2640B27900D69BFF /* SpecialistTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistTarget.swift; sourceTree = "<group>"; };
+		EB2DD6362640B56500D69BFF /* SpecialistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistRepository.swift; sourceTree = "<group>"; };
 		EB2DD63C2640C02200D69BFF /* SpecialistType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistType.swift; sourceTree = "<group>"; };
 		EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		EB2DD64C2640C25700D69BFF /* Specialist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
 		EB2DD6512640C29900D69BFF /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCellViewModel.swift; sourceTree = "<group>"; };
+		EB2DD6762640D50300D69BFF /* Decodable+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Util.swift"; sourceTree = "<group>"; };
 		EB840608263D05C0007B39EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EB840610263D05F8007B39EE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -188,8 +194,8 @@
 		EB2DD62A2640B1C300D69BFF /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				EB2DD62B2640B27900D69BFF /* MobileTestTarget.swift */,
-				EB2DD6362640B56500D69BFF /* MobileTestRepository.swift */,
+				EB2DD62B2640B27900D69BFF /* SpecialistTarget.swift */,
+				EB2DD6362640B56500D69BFF /* SpecialistRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -207,8 +213,18 @@
 		EB2DD65C2640C83E00D69BFF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EB2DD6602640C8BD00D69BFF /* Home */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB2DD6602640C8BD00D69BFF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */,
+				EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EB840607263D05A0007B39EE /* Coordinator */ = {
@@ -381,6 +397,7 @@
 				EBED462F263F895B00FD0006 /* UICollectionView+Util.swift */,
 				EBED4634263F897400FD0006 /* NSObject+Util.swift */,
 				EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */,
+				EB2DD6762640D50300D69BFF /* Decodable+Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -678,10 +695,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2DD62C2640B27900D69BFF /* MobileTestTarget.swift in Sources */,
-				EB2DD6372640B56500D69BFF /* MobileTestRepository.swift in Sources */,
+				EB2DD62C2640B27900D69BFF /* SpecialistTarget.swift in Sources */,
+				EB2DD6372640B56500D69BFF /* SpecialistRepository.swift in Sources */,
 				EBED4630263F895B00FD0006 /* UICollectionView+Util.swift in Sources */,
 				EB2DD64D2640C25700D69BFF /* Specialist.swift in Sources */,
+				EB2DD66A2640C9EB00D69BFF /* SpecialistCellViewModel.swift in Sources */,
 				EBED4635263F897400FD0006 /* NSObject+Util.swift in Sources */,
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,
 				EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */,
@@ -701,8 +719,10 @@
 				EB2DD63D2640C02200D69BFF /* SpecialistType.swift in Sources */,
 				EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */,
 				EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */,
+				EB2DD6622640C8C300D69BFF /* HomeViewModel.swift in Sources */,
 				EBED463A263F91C900FD0006 /* ServiceDelegateFlowLayout.swift in Sources */,
 				EB840609263D05C0007B39EE /* Coordinator.swift in Sources */,
+				EB2DD6772640D50300D69BFF /* Decodable+Util.swift in Sources */,
 				EBED462B263F3CFF00FD0006 /* CustomImageView.swift in Sources */,
 				EB86600B263F35F200D46D75 /* ChatCoordinator.swift in Sources */,
 			);

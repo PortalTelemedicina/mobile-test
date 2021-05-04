@@ -21,7 +21,7 @@ protocol SpecialistRepository {
     
 }
 
-class MobileTestService: SpecialistRepository {
+class SpecialistRemoteRepository: SpecialistRepository {
     
     final let provider = MoyaProvider<SpecialistTarget>()
     
