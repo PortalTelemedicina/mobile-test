@@ -19,6 +19,8 @@
 		EB2DD6622640C8C300D69BFF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */; };
 		EB2DD66A2640C9EB00D69BFF /* SpecialistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */; };
 		EB2DD6772640D50300D69BFF /* Decodable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6762640D50300D69BFF /* Decodable+Util.swift */; };
+		EB2DD6822640D81600D69BFF /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */; };
+		EB2DD68D2640DAF500D69BFF /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */; };
 		EB840609263D05C0007B39EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840608263D05C0007B39EE /* Coordinator.swift */; };
 		EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* HomeCoordinator.swift */; };
 		EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840616263D06BD007B39EE /* HomeViewController.swift */; };
@@ -39,7 +41,6 @@
 		EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC3263CD784000FD50A /* Assets.xcassets */; };
 		EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC6263CD784000FD50A /* Preview Assets.xcassets */; };
 		EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC8263CD784000FD50A /* LaunchScreen.storyboard */; };
-		EBD12CD5263CD784000FD50A /* MobileTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CD4263CD784000FD50A /* MobileTestTests.swift */; };
 		EBD12CE0263CD784000FD50A /* MobileTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */; };
 		EBED45F8263F3BC900FD0006 /* SpecialistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */; };
 		EBED45F9263F3BC900FD0006 /* SpecialistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */; };
@@ -92,6 +93,8 @@
 		EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCellViewModel.swift; sourceTree = "<group>"; };
 		EB2DD6762640D50300D69BFF /* Decodable+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Util.swift"; sourceTree = "<group>"; };
+		EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
 		EB840608263D05C0007B39EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EB840610263D05F8007B39EE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +121,6 @@
 		EBD12CC9263CD784000FD50A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD12CCB263CD784000FD50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD12CD0263CD784000FD50A /* MobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBD12CD4263CD784000FD50A /* MobileTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestTests.swift; sourceTree = "<group>"; };
 		EBD12CD6263CD784000FD50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD12CDB263CD784000FD50A /* MobileTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestUITests.swift; sourceTree = "<group>"; };
@@ -363,8 +365,9 @@
 		EBD12CD3263CD784000FD50A /* MobileTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				EBD12CD4263CD784000FD50A /* MobileTestTests.swift */,
 				EBD12CD6263CD784000FD50A /* Info.plist */,
+				EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */,
+				EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */,
 			);
 			path = MobileTestTests;
 			sourceTree = "<group>";
@@ -732,7 +735,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD12CD5263CD784000FD50A /* MobileTestTests.swift in Sources */,
+				EB2DD6822640D81600D69BFF /* HomeViewModelSpec.swift in Sources */,
+				EB2DD68D2640DAF500D69BFF /* RepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,7 +941,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MobileTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -959,7 +963,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MobileTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

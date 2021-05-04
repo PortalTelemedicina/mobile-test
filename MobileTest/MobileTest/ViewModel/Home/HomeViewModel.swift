@@ -11,14 +11,14 @@ import RxCocoa
 
 class HomeViewModel {
     
-    private let repository: SpecialistRemoteRepository
+    private let repository: SpecialistRepository
     
     private(set) var cellsViewModels = BehaviorRelay<[SpecialistCellViewModel]>(value: [])
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _error = BehaviorRelay<Error?>(value: nil)
     private let disposeBag = DisposeBag()
     
-    init(repository: SpecialistRemoteRepository) {
+    init(repository: SpecialistRepository) {
         self.repository = repository
     }
     
