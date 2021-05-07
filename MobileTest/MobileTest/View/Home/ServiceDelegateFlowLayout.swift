@@ -21,5 +21,17 @@ class ServiceDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: width, height: width)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ServiceCell {
+            cell.showSelected()
+        }
+    }
 
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ServiceCell {
+            cell.showDeselected()
+        }
+    }
 }

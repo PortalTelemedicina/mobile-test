@@ -23,4 +23,11 @@ class HomeCoordinator: Coordinator {
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showSpecialists(_ type: Type) {
+        let viewController = Container.shared.resolve(SpecialistViewController.self)!
+        viewController.coordinator = self
+        viewController.type = type
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

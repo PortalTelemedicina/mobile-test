@@ -13,9 +13,29 @@ class ServiceCell: UICollectionViewCell {
     @IBOutlet weak var imageView: CustomImageView!
     @IBOutlet weak var label: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private let selectedBackgroundColor = UIColor(named: "appPurple")!
+    private let selectedColor = UIColor.white
+    
+    private let deselectedBackgroundColor = UIColor.white
+    private let deselectedColor = UIColor(named: "appBlack")!
+    
+    func configureCell(_ viewModel: ServiceCellViewModel) {
+        if let image = UIImage(named: viewModel.imageName) {
+            imageView.image = image
+        }
+        label.text = viewModel.name
     }
-
+    
+    func showSelected() {
+        imageView.tintColor = selectedColor
+        label.textColor = selectedColor
+        view.backgroundColor = selectedBackgroundColor
+    }
+    
+    func showDeselected() {
+        imageView.tintColor = deselectedColor
+        label.textColor = deselectedColor
+        view.backgroundColor = deselectedBackgroundColor
+    }
+    
 }

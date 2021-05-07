@@ -33,7 +33,9 @@ class HomeViewController: UIViewController {
     
     private lazy var specialistDelegateFlowLayout: SpecialistDelegateFlowLayout = {
         SpecialistDelegateFlowLayout(width: SpecialistCell.width,
-                                     height: SpecialistCell.height)
+                                     height: SpecialistCell.height,
+                                     coordinator: coordinator,
+                                     viewModel: viewModel)
     }()
     
     init(viewModel: HomeViewModel) {
@@ -60,6 +62,8 @@ class HomeViewController: UIViewController {
         specialistCollectionViewFlowLayout.minimumLineSpacing = collectionViewSpacing
         specialistCollectionViewFlowLayout.minimumInteritemSpacing = collectionViewSpacing
         specialistCollectionView.registerCell(SpecialistCell.self)
+        specialistCollectionView.allowsSelection = true
+        specialistCollectionView.allowsMultipleSelection = false
         specialistCollectionView
             .rx
             .setDelegate(specialistDelegateFlowLayout)
@@ -70,13 +74,17 @@ class HomeViewController: UIViewController {
         serviceCollectionViewFlowLayout.minimumLineSpacing = 2 * collectionViewSpacing
         serviceCollectionViewFlowLayout.minimumInteritemSpacing = 0
         serviceCollectionView.registerCell(ServiceCell.self)
-        serviceCollectionView.delegate = serviceDelegateFlowLayout
-        serviceCollectionView.dataSource = self
+        serviceCollectionView.allowsSelection = true
+        serviceCollectionView.allowsMultipleSelection = false
+        serviceCollectionView
+            .rx
+            .setDelegate(serviceDelegateFlowLayout)
+            .disposed(by: disposeBag)
     }
     
     private func setupRx() {
         viewModel
-            .cellsViewModels
+            .specialistCellViewModels
             .bind(to: specialistCollectionView
                     .rx
                     .items(cellIdentifier: SpecialistCell.nameOfClass,
@@ -84,29 +92,20 @@ class HomeViewController: UIViewController {
                 cell.configureCell(viewModel)
             }
             .disposed(by: disposeBag)
+        
+        viewModel
+            .serviceCellViewModels
+            .bind(to: serviceCollectionView
+                    .rx
+                    .items(cellIdentifier: ServiceCell.nameOfClass,
+                           cellType: ServiceCell.self)) { _, viewModel, cell in
+                cell.configureCell(viewModel)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func loadData() {
         viewModel.fetchSpecialists()
-    }
-    
-}
-
-// Will be replaced with Rx
-extension HomeViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == specialistCollectionView {
-            let cell: SpecialistCell = collectionView.dequeueReusableCell(for: indexPath)
-            return cell
-        } else {
-            let cell: ServiceCell = collectionView.dequeueReusableCell(for: indexPath)
-            return cell
-        }
     }
     
 }

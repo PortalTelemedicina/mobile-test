@@ -11,5 +11,5 @@ struct Specialist: Decodable {
     var name: String
     var description: String
     var distance: Float
-    var actions: [Action]
+    var actions: Actions
 }

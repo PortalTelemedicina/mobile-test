@@ -23,6 +23,14 @@ extension Container {
             HomeViewController(viewModel: r.resolve(HomeViewModel.self)!)
         }
         
+        // Specialist
+        container.register(SpecialistViewModel.self) { _ in
+            SpecialistViewModel()
+        }
+        container.register(SpecialistViewController.self) { r in
+            SpecialistViewController(viewModel: r.resolve(SpecialistViewModel.self)!)
+        }
+        
         // Chat
         container.register(ChatViewController.self) { _ in
             ChatViewController()

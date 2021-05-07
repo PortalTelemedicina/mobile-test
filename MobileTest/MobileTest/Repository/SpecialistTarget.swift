@@ -59,4 +59,8 @@ extension SpecialistTarget: TargetType {
         return ["Content-type": "application/json"]
     }
     
+    var validationType: ValidationType {
+        return ValidationType.successCodes
+    }
+    
 }

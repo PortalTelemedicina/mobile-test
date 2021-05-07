@@ -28,7 +28,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stethoscope" translatesAutoresizingMaskIntoConstraints="NO" id="Msc-Ct-dNA" customClass="CustomImageView" customModule="MobileTest" customModuleProvider="target">
                                 <rect key="frame" x="49" y="26.5" width="52.5" height="52.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="appBlack"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="templateImageEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -36,11 +36,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagostic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-77-RO9">
                                 <rect key="frame" x="0.0" y="99" width="150" height="19"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="appBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="appPurple"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mVH-77-RO9" secondAttribute="trailing" id="DAP-Ot-Cr2"/>
                             <constraint firstItem="mVH-77-RO9" firstAttribute="leading" secondItem="PZB-sL-TWY" secondAttribute="leading" id="En5-WF-1sr"/>
@@ -76,8 +76,8 @@
     </objects>
     <resources>
         <image name="stethoscope" width="512.0009765625" height="512.0009765625"/>
-        <namedColor name="appPurple">
-            <color red="0.45098039215686275" green="0.28627450980392155" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="appBlack">
+            <color red="0.31372549019607843" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

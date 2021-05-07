@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Action: Decodable {
-    var chat: String
-    var call: String
+struct Actions: Decodable {
+    var chat: String?
+    var call: String?
 }

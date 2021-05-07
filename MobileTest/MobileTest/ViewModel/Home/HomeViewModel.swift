@@ -13,7 +13,17 @@ class HomeViewModel {
     
     private let repository: SpecialistRepository
     
-    private(set) var cellsViewModels = BehaviorRelay<[SpecialistCellViewModel]>(value: [])
+    private(set) var serviceCellViewModels = BehaviorRelay<[ServiceCellViewModel]>(value:
+        [
+            ServiceCellViewModel(imageName: "stethoscope", name: "Diagnostic"),
+            ServiceCellViewModel(imageName: "patient", name: "Consultation"),
+            ServiceCellViewModel(imageName: "nurse", name: "Nurse"),
+            ServiceCellViewModel(imageName: "ambulance", name: "Ambulance"),
+            ServiceCellViewModel(imageName: "flask", name: "Lab Work"),
+            ServiceCellViewModel(imageName: "medicine", name: "Medicine")
+        ]
+    )
+    private(set) var specialistCellViewModels = BehaviorRelay<[SpecialistCellViewModel]>(value: [])
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _error = BehaviorRelay<Error?>(value: nil)
     private let disposeBag = DisposeBag()
@@ -36,7 +46,7 @@ class HomeViewModel {
     
     func fetchSpecialists() {
         if !_isFetching.value {
-            cellsViewModels.accept([])
+            specialistCellViewModels.accept([])
             _isFetching.accept(true)
             _error.accept(nil)
             
@@ -45,7 +55,7 @@ class HomeViewModel {
                 .subscribe { [weak self] specialists in
                     self?._isFetching.accept(false)
                     let viewModels = specialists.map { SpecialistCellViewModel($0) }
-                    self?.cellsViewModels.accept(viewModels)
+                    self?.specialistCellViewModels.accept(viewModels)
                 } onError: { [weak self] error in
                     self?._isFetching.accept(false)
                     self?._error.accept(error)

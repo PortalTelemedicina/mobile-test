@@ -18,7 +18,7 @@ class SpecialistCell: UICollectionViewCell {
     static let height: CGFloat = 200
     
     func configureCell(_ viewModel: SpecialistCellViewModel) {
-        titleLabel.text = viewModel.type
+        titleLabel.text = viewModel.name
         subLabel.text = viewModel.numberOfDoctors
         view.backgroundColor = viewModel.color
         imageView.tintColor = viewModel.color

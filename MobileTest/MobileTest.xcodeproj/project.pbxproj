@@ -15,12 +15,16 @@
 		EB2DD63D2640C02200D69BFF /* SpecialistType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD63C2640C02200D69BFF /* SpecialistType.swift */; };
 		EB2DD6482640C1D200D69BFF /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */; };
 		EB2DD64D2640C25700D69BFF /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD64C2640C25700D69BFF /* Specialist.swift */; };
-		EB2DD6522640C29900D69BFF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6512640C29900D69BFF /* Action.swift */; };
+		EB2DD6522640C29900D69BFF /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6512640C29900D69BFF /* Actions.swift */; };
 		EB2DD6622640C8C300D69BFF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */; };
 		EB2DD66A2640C9EB00D69BFF /* SpecialistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */; };
 		EB2DD6772640D50300D69BFF /* Decodable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6762640D50300D69BFF /* Decodable+Util.swift */; };
 		EB2DD6822640D81600D69BFF /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */; };
 		EB2DD68D2640DAF500D69BFF /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */; };
+		EB5906AA2644A8FA007C819D /* ServiceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906A92644A8FA007C819D /* ServiceCellViewModel.swift */; };
+		EB5906B12644B8BB007C819D /* SpecialistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */; };
+		EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5906B02644B8BB007C819D /* SpecialistViewController.xib */; };
+		EB5906C02644C67E007C819D /* SpecialistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */; };
 		EB840609263D05C0007B39EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840608263D05C0007B39EE /* Coordinator.swift */; };
 		EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* HomeCoordinator.swift */; };
 		EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840616263D06BD007B39EE /* HomeViewController.swift */; };
@@ -89,12 +93,16 @@
 		EB2DD63C2640C02200D69BFF /* SpecialistType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistType.swift; sourceTree = "<group>"; };
 		EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		EB2DD64C2640C25700D69BFF /* Specialist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
-		EB2DD6512640C29900D69BFF /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		EB2DD6512640C29900D69BFF /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCellViewModel.swift; sourceTree = "<group>"; };
 		EB2DD6762640D50300D69BFF /* Decodable+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Util.swift"; sourceTree = "<group>"; };
 		EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
 		EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
+		EB5906A92644A8FA007C819D /* ServiceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModel.swift; sourceTree = "<group>"; };
+		EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewController.swift; sourceTree = "<group>"; };
+		EB5906B02644B8BB007C819D /* SpecialistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistViewController.xib; sourceTree = "<group>"; };
+		EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewModel.swift; sourceTree = "<group>"; };
 		EB840608263D05C0007B39EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EB840610263D05F8007B39EE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +215,7 @@
 			children = (
 				EB2DD63C2640C02200D69BFF /* SpecialistType.swift */,
 				EB2DD64C2640C25700D69BFF /* Specialist.swift */,
-				EB2DD6512640C29900D69BFF /* Action.swift */,
+				EB2DD6512640C29900D69BFF /* Actions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2DD6602640C8BD00D69BFF /* Home */,
+				EB5906BE2644C66C007C819D /* Specialist */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,8 +234,26 @@
 			children = (
 				EB2DD6612640C8C300D69BFF /* HomeViewModel.swift */,
 				EB2DD6692640C9EB00D69BFF /* SpecialistCellViewModel.swift */,
+				EB5906A92644A8FA007C819D /* ServiceCellViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		EB5906AE2644B89D007C819D /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */,
+				EB5906B02644B8BB007C819D /* SpecialistViewController.xib */,
+			);
+			path = Specialist;
+			sourceTree = "<group>";
+		};
+		EB5906BE2644C66C007C819D /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */,
+			);
+			path = Specialist;
 			sourceTree = "<group>";
 		};
 		EB840607263D05A0007B39EE /* Coordinator */ = {
@@ -245,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				EB865FF4263F21BD00D46D75 /* Home */,
+				EB5906AE2644B89D007C819D /* Specialist */,
 				EB865FF5263F21C300D46D75 /* Chat */,
 				EB865FF7263F21D400D46D75 /* Notifications */,
 				EB865FF6263F21CA00D46D75 /* More */,
@@ -544,6 +572,7 @@
 				EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */,
 				EBED4617263F3C6400FD0006 /* home_specialists.json in Resources */,
 				EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */,
+				EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */,
 				EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */,
 				EB866015263F366400D46D75 /* MoreViewController.xib in Resources */,
 				EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */,
@@ -707,10 +736,12 @@
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,
 				EBED4620263F3CB500FD0006 /* CustomView.swift in Sources */,
 				EB2DD6482640C1D200D69BFF /* UIColor+Util.swift in Sources */,
+				EB5906B12644B8BB007C819D /* SpecialistViewController.swift in Sources */,
 				EB866003263F2EF700D46D75 /* TabBarController.swift in Sources */,
 				EBED45F8263F3BC900FD0006 /* SpecialistCell.swift in Sources */,
-				EB2DD6522640C29900D69BFF /* Action.swift in Sources */,
+				EB2DD6522640C29900D69BFF /* Actions.swift in Sources */,
 				EB84061F263D07E3007B39EE /* Container.swift in Sources */,
+				EB5906C02644C67E007C819D /* SpecialistViewModel.swift in Sources */,
 				EB866021263F36B100D46D75 /* NotificationsCoordinator.swift in Sources */,
 				EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */,
 				EB865FFD263F2A1600D46D75 /* ChatViewController.swift in Sources */,
@@ -720,6 +751,7 @@
 				EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */,
 				EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */,
 				EB2DD63D2640C02200D69BFF /* SpecialistType.swift in Sources */,
+				EB5906AA2644A8FA007C819D /* ServiceCellViewModel.swift in Sources */,
 				EB86601B263F367200D46D75 /* NotificationsViewController.swift in Sources */,
 				EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */,
 				EB2DD6622640C8C300D69BFF /* HomeViewModel.swift in Sources */,

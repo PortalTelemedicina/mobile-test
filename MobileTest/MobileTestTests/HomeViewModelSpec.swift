@@ -46,7 +46,7 @@ class HomeViewModelSpec: QuickSpec {
         it("Fetch specialist") {
             let viewModelsObserver = scheduler.createObserver([SpecialistCellViewModel].self)
 
-            sut.cellsViewModels
+            sut.specialistCellsViewModels
                 .subscribe(viewModelsObserver)
                 .disposed(by: disposeBag)
         
