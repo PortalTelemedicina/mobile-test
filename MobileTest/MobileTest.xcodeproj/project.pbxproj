@@ -25,6 +25,9 @@
 		EB5906B12644B8BB007C819D /* SpecialistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */; };
 		EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5906B02644B8BB007C819D /* SpecialistViewController.xib */; };
 		EB5906C02644C67E007C819D /* SpecialistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */; };
+		EB5906C72644CB20007C819D /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906C52644CB20007C819D /* DoctorCell.swift */; };
+		EB5906C82644CB20007C819D /* DoctorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5906C62644CB20007C819D /* DoctorCell.xib */; };
+		EB5906CD2644D0E0007C819D /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906CC2644D0E0007C819D /* UITableView+Util.swift */; };
 		EB840609263D05C0007B39EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840608263D05C0007B39EE /* Coordinator.swift */; };
 		EB840611263D05F8007B39EE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840610263D05F8007B39EE /* HomeCoordinator.swift */; };
 		EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB840616263D06BD007B39EE /* HomeViewController.swift */; };
@@ -103,6 +106,9 @@
 		EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewController.swift; sourceTree = "<group>"; };
 		EB5906B02644B8BB007C819D /* SpecialistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistViewController.xib; sourceTree = "<group>"; };
 		EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewModel.swift; sourceTree = "<group>"; };
+		EB5906C52644CB20007C819D /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
+		EB5906C62644CB20007C819D /* DoctorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCell.xib; sourceTree = "<group>"; };
+		EB5906CC2644D0E0007C819D /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Util.swift"; sourceTree = "<group>"; };
 		EB840608263D05C0007B39EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EB840610263D05F8007B39EE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EB840616263D06BD007B39EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		EB5906AE2644B89D007C819D /* Specialist */ = {
 			isa = PBXGroup;
 			children = (
+				EB5906C42644CAF9007C819D /* Cell */,
 				EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */,
 				EB5906B02644B8BB007C819D /* SpecialistViewController.xib */,
 			);
@@ -254,6 +261,15 @@
 				EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */,
 			);
 			path = Specialist;
+			sourceTree = "<group>";
+		};
+		EB5906C42644CAF9007C819D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB5906C52644CB20007C819D /* DoctorCell.swift */,
+				EB5906C62644CB20007C819D /* DoctorCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EB840607263D05A0007B39EE /* Coordinator */ = {
@@ -429,6 +445,7 @@
 				EBED4634263F897400FD0006 /* NSObject+Util.swift */,
 				EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */,
 				EB2DD6762640D50300D69BFF /* Decodable+Util.swift */,
+				EB5906CC2644D0E0007C819D /* UITableView+Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -572,6 +589,7 @@
 				EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */,
 				EBED4617263F3C6400FD0006 /* home_specialists.json in Resources */,
 				EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */,
+				EB5906C82644CB20007C819D /* DoctorCell.xib in Resources */,
 				EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */,
 				EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */,
 				EB866015263F366400D46D75 /* MoreViewController.xib in Resources */,
@@ -731,6 +749,8 @@
 				EB2DD6372640B56500D69BFF /* SpecialistRepository.swift in Sources */,
 				EBED4630263F895B00FD0006 /* UICollectionView+Util.swift in Sources */,
 				EB2DD64D2640C25700D69BFF /* Specialist.swift in Sources */,
+				EB5906CD2644D0E0007C819D /* UITableView+Util.swift in Sources */,
+				EB5906C72644CB20007C819D /* DoctorCell.swift in Sources */,
 				EB2DD66A2640C9EB00D69BFF /* SpecialistCellViewModel.swift in Sources */,
 				EBED4635263F897400FD0006 /* NSObject+Util.swift in Sources */,
 				EB840618263D06BD007B39EE /* HomeViewController.swift in Sources */,

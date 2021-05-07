@@ -13,6 +13,10 @@ class SpecialistViewController: UIViewController {
     var type: Type?
     
     private let viewModel: SpecialistViewModel
+    
+    @IBOutlet weak var specialistLabel: UILabel!
+    @IBOutlet weak var doctorsLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
 
     init(viewModel: SpecialistViewModel) {
         self.viewModel = viewModel
@@ -25,8 +29,16 @@ class SpecialistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.registerCell(DoctorCell.self)
+        tableView.allowsSelection = false
+        tableView.allowsMultipleSelection = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 249
     }
 
 }
