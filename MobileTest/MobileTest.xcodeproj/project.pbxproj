@@ -44,6 +44,9 @@
 		EB86601C263F367200D46D75 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB86601A263F367200D46D75 /* NotificationsViewController.xib */; };
 		EB866021263F36B100D46D75 /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866020263F36B100D46D75 /* NotificationsCoordinator.swift */; };
 		EB866026263F36BE00D46D75 /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB866025263F36BE00D46D75 /* MoreCoordinator.swift */; };
+		EBC43D502647725F00714505 /* segoe-ui-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDC263F190800D46D75 /* segoe-ui-bold.otf */; };
+		EBC43D542647726200714505 /* segoe-ui-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDD263F190800D46D75 /* segoe-ui-semibold.ttf */; };
+		EBC43D582647726400714505 /* segoe-ui.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDE263F190800D46D75 /* segoe-ui.otf */; };
 		EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBD263CD784000FD50A /* AppDelegate.swift */; };
 		EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBF263CD784000FD50A /* SceneDelegate.swift */; };
 		EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC3263CD784000FD50A /* Assets.xcassets */; };
@@ -593,9 +596,11 @@
 				EBED4617263F3C6400FD0006 /* home_specialists.json in Resources */,
 				EBED461A263F3C6400FD0006 /* list_specialist_dermatology.json in Resources */,
 				EB5906C82644CB20007C819D /* DoctorCell.xib in Resources */,
+				EBC43D502647725F00714505 /* segoe-ui-bold.otf in Resources */,
 				EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */,
 				EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */,
 				EB866015263F366400D46D75 /* MoreViewController.xib in Resources */,
+				EBC43D542647726200714505 /* segoe-ui-semibold.ttf in Resources */,
 				EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */,
 				EBED45F9263F3BC900FD0006 /* SpecialistCell.xib in Resources */,
 				EBED4600263F3BDA00FD0006 /* ServiceCell.xib in Resources */,
@@ -604,6 +609,7 @@
 				EBED4619263F3C6400FD0006 /* list_specialist_heart.json in Resources */,
 				EB865FFE263F2A1600D46D75 /* ChatViewController.xib in Resources */,
 				EB840619263D06BD007B39EE /* HomeViewController.xib in Resources */,
+				EBC43D582647726400714505 /* segoe-ui.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

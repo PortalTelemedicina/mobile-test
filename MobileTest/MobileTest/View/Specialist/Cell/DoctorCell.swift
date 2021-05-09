@@ -14,8 +14,16 @@ class DoctorCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var chatButton: UIButton!
-    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton! {
+        didSet {
+            setupButton(chatButton)
+        }
+    }
+    @IBOutlet weak var callButton: UIButton! {
+        didSet {
+            setupButton(callButton)
+        }
+    }
     
     func configureCell(_ viewModel: DoctorCellViewModel) {
         initialsLabel.text = viewModel.initials
@@ -24,6 +32,13 @@ class DoctorCell: UITableViewCell {
         descriptionLabel.text = viewModel.description
         chatButton.isEnabled = viewModel.isChatEnabled
         callButton.isEnabled = viewModel.isCallEnabled
+    }
+    
+    private func setupButton(_ button: UIButton) {
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 16
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor(named: "appGray")!.cgColor
     }
 
 }
