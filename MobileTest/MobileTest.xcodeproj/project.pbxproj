@@ -21,6 +21,7 @@
 		EB2DD6772640D50300D69BFF /* Decodable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6762640D50300D69BFF /* Decodable+Util.swift */; };
 		EB2DD6822640D81600D69BFF /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */; };
 		EB2DD68D2640DAF500D69BFF /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */; };
+		EB5679272647661A007F3114 /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5679262647661A007F3114 /* DoctorCellViewModel.swift */; };
 		EB5906AA2644A8FA007C819D /* ServiceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906A92644A8FA007C819D /* ServiceCellViewModel.swift */; };
 		EB5906B12644B8BB007C819D /* SpecialistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */; };
 		EB5906B22644B8BB007C819D /* SpecialistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5906B02644B8BB007C819D /* SpecialistViewController.xib */; };
@@ -102,6 +103,7 @@
 		EB2DD6762640D50300D69BFF /* Decodable+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Util.swift"; sourceTree = "<group>"; };
 		EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
 		EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
+		EB5679262647661A007F3114 /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
 		EB5906A92644A8FA007C819D /* ServiceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModel.swift; sourceTree = "<group>"; };
 		EB5906AF2644B8BB007C819D /* SpecialistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewController.swift; sourceTree = "<group>"; };
 		EB5906B02644B8BB007C819D /* SpecialistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistViewController.xib; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5906BF2644C67E007C819D /* SpecialistViewModel.swift */,
+				EB5679262647661A007F3114 /* DoctorCellViewModel.swift */,
 			);
 			path = Specialist;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				EB2DD62C2640B27900D69BFF /* SpecialistTarget.swift in Sources */,
 				EB2DD6372640B56500D69BFF /* SpecialistRepository.swift in Sources */,
 				EBED4630263F895B00FD0006 /* UICollectionView+Util.swift in Sources */,
+				EB5679272647661A007F3114 /* DoctorCellViewModel.swift in Sources */,
 				EB2DD64D2640C25700D69BFF /* Specialist.swift in Sources */,
 				EB5906CD2644D0E0007C819D /* UITableView+Util.swift in Sources */,
 				EB5906C72644CB20007C819D /* DoctorCell.swift in Sources */,

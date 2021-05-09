@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SpecialistViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
     var type: Type?
+    
+    private let disposeBag = DisposeBag()
     
     private let viewModel: SpecialistViewModel
     
@@ -31,6 +35,8 @@ class SpecialistViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
+        setupRx()
+        loadData()
     }
     
     private func setupTableView() {
@@ -39,6 +45,30 @@ class SpecialistViewController: UIViewController {
         tableView.allowsMultipleSelection = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 249
+        tableView
+            .rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupRx() {
+        viewModel
+            .doctorsCellViewModels
+            .bind(to: tableView
+                    .rx
+                    .items(cellIdentifier: DoctorCell.nameOfClass,
+                           cellType: DoctorCell.self)) { _, viewModel, cell in
+                cell.configureCell(viewModel)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func loadData() {
+        viewModel.fetchSpecialists(type: type)
     }
 
+}
+
+extension SpecialistViewController: UITableViewDelegate {
+    
 }

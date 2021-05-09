@@ -12,10 +12,12 @@ extension Container {
     static let shared: Container = {
         let container = Container()
         
-        // Home
+        // Repository
         container.register(SpecialistRemoteRepository.self) { _ -> SpecialistRemoteRepository in
             SpecialistRemoteRepository()
         }
+        
+        // Home
         container.register(HomeViewModel.self) { r in
             HomeViewModel(repository: r.resolve(SpecialistRemoteRepository.self)!)
         }
@@ -24,8 +26,8 @@ extension Container {
         }
         
         // Specialist
-        container.register(SpecialistViewModel.self) { _ in
-            SpecialistViewModel()
+        container.register(SpecialistViewModel.self) { r in
+            SpecialistViewModel(repository: r.resolve(SpecialistRemoteRepository.self)!)
         }
         container.register(SpecialistViewController.self) { r in
             SpecialistViewController(viewModel: r.resolve(SpecialistViewModel.self)!)

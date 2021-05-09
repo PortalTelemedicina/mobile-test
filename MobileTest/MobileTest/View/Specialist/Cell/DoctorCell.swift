@@ -17,15 +17,13 @@ class DoctorCell: UITableViewCell {
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(_ viewModel: DoctorCellViewModel) {
+        initialsLabel.text = viewModel.initials
+        nameLabel.text = viewModel.name
+        distanceLabel.text = viewModel.distance
+        descriptionLabel.text = viewModel.description
+        chatButton.isEnabled = viewModel.isChatEnabled
+        callButton.isEnabled = viewModel.isCallEnabled
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

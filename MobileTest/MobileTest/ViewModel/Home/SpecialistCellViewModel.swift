@@ -19,10 +19,10 @@ struct SpecialistCellViewModel {
     let color: UIColor
     let type: Type?
     
-    init(_ specialist: SpecialistType) {
-        self.name = specialist.name
-        self.numberOfDoctors = "\(specialist.total) doctor\(specialist.total > 1 ? "" : "s")"
-        self.color = specialist.color ?? UIColor.white
+    init(_ model: SpecialistType) {
+        self.name = model.name
+        self.numberOfDoctors = "\(model.total) doctor\(model.total > 1 ? "" : "s")"
+        self.color = model.color ?? UIColor.white
         self.type = Type(rawValue: self.name)
     }
 }

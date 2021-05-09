@@ -61,7 +61,6 @@ class HomeViewModel {
                     self?._error.accept(error)
                 }
                 .disposed(by: disposeBag)
-
         }
     }
     

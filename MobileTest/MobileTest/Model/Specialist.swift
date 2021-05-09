@@ -10,6 +10,6 @@ import Foundation
 struct Specialist: Decodable {
     var name: String
     var description: String
-    var distance: Float
-    var actions: Actions
+    var distance: Float?
+    var actions: Actions?
 }
