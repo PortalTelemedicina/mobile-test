@@ -54,6 +54,7 @@
 		EBD12CC7263CD784000FD50A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC6263CD784000FD50A /* Preview Assets.xcassets */; };
 		EBD12CCA263CD784000FD50A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC8263CD784000FD50A /* LaunchScreen.storyboard */; };
 		EBD12CE0263CD784000FD50A /* MobileTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */; };
+		EBD1C4FD264899FA004D1692 /* SVGProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1C4FC264899FA004D1692 /* SVGProcessor.swift */; };
 		EBED45F8263F3BC900FD0006 /* SpecialistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */; };
 		EBED45F9263F3BC900FD0006 /* SpecialistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */; };
 		EBED45FF263F3BDA00FD0006 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED45FD263F3BDA00FD0006 /* ServiceCell.swift */; };
@@ -146,6 +147,7 @@
 		EBD12CDB263CD784000FD50A /* MobileTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CDF263CD784000FD50A /* MobileTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestUITests.swift; sourceTree = "<group>"; };
 		EBD12CE1263CD784000FD50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBD1C4FC264899FA004D1692 /* SVGProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGProcessor.swift; sourceTree = "<group>"; };
 		EBED45F6263F3BC900FD0006 /* SpecialistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCell.swift; sourceTree = "<group>"; };
 		EBED45F7263F3BC900FD0006 /* SpecialistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistCell.xib; sourceTree = "<group>"; };
 		EBED45FD263F3BDA00FD0006 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				EB2DD6472640C1D200D69BFF /* UIColor+Util.swift */,
 				EB2DD6762640D50300D69BFF /* Decodable+Util.swift */,
 				EB5906CC2644D0E0007C819D /* UITableView+Util.swift */,
+				EBD1C4FC264899FA004D1692 /* SVGProcessor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				EB866014263F366400D46D75 /* MoreViewController.swift in Sources */,
 				EBED463F263F96DE00FD0006 /* SpecialistDelegateFlowLayout.swift in Sources */,
 				EB866026263F36BE00D46D75 /* MoreCoordinator.swift in Sources */,
+				EBD1C4FD264899FA004D1692 /* SVGProcessor.swift in Sources */,
 				EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */,
 				EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */,
 				EB2DD63D2640C02200D69BFF /* SpecialistType.swift in Sources */,

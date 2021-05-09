@@ -7,6 +7,8 @@ target 'MobileTest' do
   pod 'Swinject'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SVGKit'
+  pod 'Kingfisher', '~> 6.0'
   
   target 'MobileTestTests' do
     inherit! :search_paths

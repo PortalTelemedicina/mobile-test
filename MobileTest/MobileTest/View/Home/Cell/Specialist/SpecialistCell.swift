@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SpecialistCell: UICollectionViewCell {
 
@@ -21,7 +22,16 @@ class SpecialistCell: UICollectionViewCell {
         titleLabel.text = viewModel.name
         subLabel.text = viewModel.numberOfDoctors
         view.backgroundColor = viewModel.color
+        
         imageView.tintColor = viewModel.color
+        imageView.kf.indicatorType = .activity
+        (imageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = UIColor(named: "appBlack")!
+        (imageView.kf.indicator?.view as? UIActivityIndicatorView)?.style = .large
+        if let imageURL = viewModel.imageURL {
+            imageView.kf.setImage(with: imageURL,
+                                  options: [.transition(.fade(0.2)),
+                                            .processor(SVGImgProcessor())])
+        }
     }
 
 }
