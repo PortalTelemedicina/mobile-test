@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SpecialistViewController: UIViewController {
+class SpecialistViewController: UIViewController, UITableViewDelegate {
     
     weak var coordinator: HomeCoordinator?
     var type: Type?
@@ -21,7 +21,9 @@ class SpecialistViewController: UIViewController {
     @IBOutlet weak var specialistLabel: UILabel!
     @IBOutlet weak var doctorsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var refreshView: UIView!
+    @IBOutlet weak var loadingView: UIView!
+    
     init(viewModel: SpecialistViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -36,10 +38,16 @@ class SpecialistViewController: UIViewController {
         
         overrideUserInterfaceStyle = .light
         
+        setupRefreshView()
         setupLabel()
         setupTableView()
         setupRx()
         loadData()
+    }
+    
+    private func setupRefreshView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(loadData))
+        refreshView.addGestureRecognizer(tapGesture)
     }
     
     private func setupLabel() {
@@ -59,6 +67,17 @@ class SpecialistViewController: UIViewController {
     }
     
     private func setupRx() {
+        viewModel.error.drive { [unowned self] error in
+            self.refreshView.isHidden = !self.viewModel.hasError
+            self.tableView.isHidden = self.viewModel.hasError
+        }
+        .disposed(by: disposeBag)
+        
+        viewModel.isFetching.drive { [unowned self] isFetching in
+            self.loadingView.isHidden = !isFetching
+        }
+        .disposed(by: disposeBag)
+        
         viewModel
             .doctorsCellViewModels
             .bind(to: tableView
@@ -77,12 +96,9 @@ class SpecialistViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    @objc
     private func loadData() {
         viewModel.fetchSpecialists(type: type)
     }
 
-}
-
-extension SpecialistViewController: UITableViewDelegate {
-    
 }
