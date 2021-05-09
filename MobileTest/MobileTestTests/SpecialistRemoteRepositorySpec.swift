@@ -11,7 +11,6 @@ import Nimble
 import Swinject
 import RxSwift
 import RxCocoa
-import RxTest
 
 @testable import MobileTest
 

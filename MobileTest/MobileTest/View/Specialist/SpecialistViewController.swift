@@ -34,9 +34,14 @@ class SpecialistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLabel()
         setupTableView()
         setupRx()
         loadData()
+    }
+    
+    private func setupLabel() {
+        specialistLabel.text = type?.rawValue
     }
     
     private func setupTableView() {
@@ -59,6 +64,13 @@ class SpecialistViewController: UIViewController {
                     .items(cellIdentifier: DoctorCell.nameOfClass,
                            cellType: DoctorCell.self)) { _, viewModel, cell in
                 cell.configureCell(viewModel)
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .numberOfDoctors
+            .drive { [weak self] text in
+                self?.doctorsLabel.text = text
             }
             .disposed(by: disposeBag)
     }

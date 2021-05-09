@@ -30,14 +30,16 @@ class HomeViewModelSpec: QuickSpec {
         
         describe("HomeViewModel's fetch method is called") {
             
+            afterEach {
+                sut = nil
+            }
+            
             context("Fetching succeeds") {
                 
-                beforeEach {
-                    container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
-                        return SucceedServiceMock()
-                    }
-                    sut = container.resolve(HomeViewModel.self)
+                container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
+                    return SucceedServiceMock()
                 }
+                sut = container.resolve(HomeViewModel.self)
                 
                 let viewModelsObserver = testScheduler.createObserver([SpecialistCellViewModel].self)
                 
@@ -58,12 +60,10 @@ class HomeViewModelSpec: QuickSpec {
             
             context("Fetching fails") {
                 
-                beforeEach {
-                    container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
-                        return FailedServiceMock()
-                    }
-                    sut = container.resolve(HomeViewModel.self)
+                container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
+                    return FailedServiceMock()
                 }
+                sut = container.resolve(HomeViewModel.self)
                 
                 let errorObserver = testScheduler.createObserver(Error?.self)
                 

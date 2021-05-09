@@ -58,7 +58,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zyM-Uf-VdX">
-                    <rect key="frame" x="0.0" y="135" width="414" height="727"/>
+                    <rect key="frame" x="0.0" y="131" width="414" height="731"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
@@ -72,7 +72,7 @@
                 <constraint firstItem="zyM-Uf-VdX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HT4-I1-QxG"/>
                 <constraint firstAttribute="trailing" secondItem="qdZ-0o-R4z" secondAttribute="trailing" id="JIE-KJ-LnA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zyM-Uf-VdX" secondAttribute="bottom" id="Smu-ez-NL1"/>
-                <constraint firstItem="zyM-Uf-VdX" firstAttribute="top" secondItem="qdZ-0o-R4z" secondAttribute="bottom" constant="8" id="dmd-fN-rdL"/>
+                <constraint firstItem="zyM-Uf-VdX" firstAttribute="top" secondItem="qdZ-0o-R4z" secondAttribute="bottom" constant="4" id="dmd-fN-rdL"/>
             </constraints>
             <point key="canvasLocation" x="222" y="103"/>
         </view>

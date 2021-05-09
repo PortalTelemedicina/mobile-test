@@ -16,6 +16,7 @@ class SpecialistViewModel {
     private(set) var doctorsCellViewModels = BehaviorRelay<[DoctorCellViewModel]>(value: [])
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _error = BehaviorRelay<Error?>(value: nil)
+    private let _numberOfDoctors = BehaviorRelay<String>(value: "Searching...")
     private let disposeBag = DisposeBag()
     
     init(repository: SpecialistRepository) {
@@ -34,11 +35,16 @@ class SpecialistViewModel {
         _error.value != nil
     }
     
+    var numberOfDoctors: Driver<String> {
+        _numberOfDoctors.asDriver()
+    }
+    
     func fetchSpecialists(type: Type?) {
         if !_isFetching.value {
             doctorsCellViewModels.accept([])
             _isFetching.accept(true)
             _error.accept(nil)
+            _numberOfDoctors.accept("Searching...")
             
             var service: Single<[Specialist]>?
             switch type {
@@ -57,12 +63,14 @@ class SpecialistViewModel {
                     .retry(3)
                     .subscribe { [weak self] specialists in
                         self?._isFetching.accept(false)
+                        self?._numberOfDoctors.accept("\(specialists.count) doctors were found")
                         let viewModels = specialists.map { DoctorCellViewModel($0) }
                         self?.doctorsCellViewModels.accept(viewModels)
                     } onError: { [weak self] error in
                         print(error)
                         self?._isFetching.accept(false)
                         self?._error.accept(error)
+                        self?._numberOfDoctors.accept("No doctors were found")
                     }
                     .disposed(by: disposeBag)
             }
