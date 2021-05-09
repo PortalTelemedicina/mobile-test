@@ -39,6 +39,10 @@ extension UICollectionView {
         register(nib, forCellWithReuseIdentifier: type.nameOfClass)
     }
     
+    func addContentSizeObserver<T: UIViewController>(_ viewController: T) {
+        addObserver(viewController, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+    
     func scrollToFirstRow(animated: Bool = true) {
         if numberOfSections > 0 && numberOfItems(inSection: 0) > 0 {
             scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: animated)

@@ -19,7 +19,9 @@ class MoreCoordinator: Coordinator {
     
     func start() {
         let viewController = Container.shared.resolve(MoreViewController.self)!
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 3)
+        viewController.tabBarItem = UITabBarItem(title: "More",
+                                                 image: UIImage(named: "menu"),
+                                                 tag: 3)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

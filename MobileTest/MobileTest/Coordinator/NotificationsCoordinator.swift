@@ -19,7 +19,9 @@ class NotificationsCoordinator: Coordinator {
     
     func start() {
         let viewController = Container.shared.resolve(NotificationsViewController.self)!
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        viewController.tabBarItem = UITabBarItem(title: "Notifications",
+                                                 image: UIImage(named: "lightning"),
+                                                 tag: 2)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

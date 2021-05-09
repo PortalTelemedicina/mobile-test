@@ -19,7 +19,9 @@ class ChatCoordinator: Coordinator {
     
     func start() {
         let viewController = Container.shared.resolve(ChatViewController.self)!
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        viewController.tabBarItem = UITabBarItem(title: "Chat",
+                                                 image: UIImage(named: "chat"),
+                                                 tag: 1)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

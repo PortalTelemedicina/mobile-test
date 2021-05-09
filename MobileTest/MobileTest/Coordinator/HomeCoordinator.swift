@@ -19,7 +19,9 @@ class HomeCoordinator: Coordinator {
     
     func start() {
         let viewController = Container.shared.resolve(HomeViewController.self)!
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        viewController.tabBarItem = UITabBarItem(title: "Home",
+                                                 image: UIImage(named: "home"),
+                                                 tag: 0)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

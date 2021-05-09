@@ -17,6 +17,10 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        overrideUserInterfaceStyle = .light
+        
+        tabBar.tintColor = UIColor(named: "appPurple")!
+        
         homeCoordinator.start()
         chatCoordinator.start()
         notificationsCoordinator.start()

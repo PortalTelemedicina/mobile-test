@@ -18,8 +18,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var specialistCollectionView: UICollectionView!
     @IBOutlet weak var specialistCollectionViewFlowLayout: UICollectionViewFlowLayout!
     
+    @IBOutlet weak var refreshView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var serviceCollectionView: UICollectionView!
     @IBOutlet weak var serviceCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var serviceCollectionViewHeight: NSLayoutConstraint!
     
     private let collectionViewSpacing: CGFloat = 8
     
@@ -50,13 +54,30 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
+        setupRefreshView()
         setupCollectionViews()
         setupRx()
         loadData()
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let collectionView = object as? UICollectionView,
+           collectionView == serviceCollectionView {
+            let height = max(collectionView.contentSize.height, 0)
+            serviceCollectionViewHeight.constant = height
+        }
+    }
+    
+    private func setupRefreshView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(loadData))
+        refreshView.addGestureRecognizer(tapGesture)
+    }
 
     private func setupCollectionViews() {
         // Specialist
+        specialistCollectionView.isHidden = true
         specialistCollectionViewFlowLayout.scrollDirection = .horizontal
         specialistCollectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
         specialistCollectionViewFlowLayout.minimumLineSpacing = collectionViewSpacing
@@ -74,8 +95,10 @@ class HomeViewController: UIViewController {
         serviceCollectionViewFlowLayout.minimumLineSpacing = 2 * collectionViewSpacing
         serviceCollectionViewFlowLayout.minimumInteritemSpacing = 0
         serviceCollectionView.registerCell(ServiceCell.self)
+        serviceCollectionView.isScrollEnabled = false
         serviceCollectionView.allowsSelection = true
         serviceCollectionView.allowsMultipleSelection = false
+        serviceCollectionView.addContentSizeObserver(self)
         serviceCollectionView
             .rx
             .setDelegate(serviceDelegateFlowLayout)
@@ -83,6 +106,17 @@ class HomeViewController: UIViewController {
     }
     
     private func setupRx() {
+        viewModel.error.drive { [unowned self] error in
+            self.refreshView.isHidden = !self.viewModel.hasError
+            self.specialistCollectionView.isHidden = self.viewModel.hasError
+        }
+        .disposed(by: disposeBag)
+        
+        viewModel.isFetching.drive { [unowned self] isFetching in
+            self.activityIndicator.isHidden = !isFetching
+        }
+        .disposed(by: disposeBag)
+        
         viewModel
             .specialistCellViewModels
             .bind(to: specialistCollectionView
@@ -104,6 +138,7 @@ class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    @objc
     private func loadData() {
         viewModel.fetchSpecialists()
     }

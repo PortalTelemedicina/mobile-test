@@ -34,6 +34,8 @@ class SpecialistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         setupLabel()
         setupTableView()
         setupRx()
