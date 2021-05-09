@@ -56,7 +56,7 @@ func dentalCareSpecialistMock() -> [Specialist] {
                                     call: nil)),
         Specialist(name: "Name 3",
                    description: "Dental Care Specialist 3",
-                   distance: 1.0,
+                   distance: nil,
                    actions: Actions(chat: "https://chat.test.br",
                                     call: "(00) 99999-9999"))
     ]

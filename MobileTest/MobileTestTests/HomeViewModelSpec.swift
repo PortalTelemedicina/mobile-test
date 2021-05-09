@@ -19,45 +19,73 @@ class HomeViewModelSpec: QuickSpec {
     
     override func spec() {
         var sut: HomeViewModel!
-        var container: Container!
-        var scheduler: TestScheduler!
-        var disposeBag: DisposeBag!
         
-        beforeEach {
-            container = Container()
-            container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
-                return SucceedServiceMock()
+        let container = Container()
+        container.register(HomeViewModel.self) { r in
+            HomeViewModel(repository: r.resolve(SpecialistRepository.self)!)
+        }
+        
+        let testScheduler = TestScheduler(initialClock: 0)
+        let disposeBag = DisposeBag()
+        
+        describe("HomeViewModel's fetch method is called") {
+            
+            context("Fetching succeeds") {
+                
+                beforeEach {
+                    container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
+                        return SucceedServiceMock()
+                    }
+                    sut = container.resolve(HomeViewModel.self)
+                }
+                
+                let viewModelsObserver = testScheduler.createObserver([SpecialistCellViewModel].self)
+                
+                sut.specialistCellViewModels
+                    .subscribe(viewModelsObserver)
+                    .disposed(by: disposeBag)
+                
+                sut.fetchSpecialists()
+                
+                testScheduler.start()
+                
+                let viewModels = viewModelsObserver.events.last.map { $0.value.element! }
+                
+                it("It should emit 3 objects") {
+                    expect(viewModels?.count).to(equal(3))
+                }
             }
-            container.register(HomeViewModel.self) { r in
-                return HomeViewModel(repository: r.resolve(SpecialistRepository.self)!)
+            
+            context("Fetching fails") {
+                
+                beforeEach {
+                    container.register(SpecialistRepository.self) { _ -> SpecialistRepository in
+                        return FailedServiceMock()
+                    }
+                    sut = container.resolve(HomeViewModel.self)
+                }
+                
+                let errorObserver = testScheduler.createObserver(Error?.self)
+                
+                sut.error
+                    .asObservable()
+                    .subscribe(errorObserver)
+                    .disposed(by: disposeBag)
+                
+                sut.fetchSpecialists()
+                
+                testScheduler.start()
+                
+                let error = errorObserver.events.last.map { $0.value.element! }!
+                
+                it("It should emit an error") {
+                    expect(error).toNot(beNil())
+                    expect(sut.hasError).to(equal(true))
+                }
             }
-            sut = container.resolve(HomeViewModel.self)
             
-            scheduler = TestScheduler(initialClock: 0)
-            disposeBag = DisposeBag()
         }
         
-        afterEach {
-            container = nil
-            scheduler = nil
-            disposeBag = nil
-        }
-        
-        it("Fetch specialist") {
-            let viewModelsObserver = scheduler.createObserver([SpecialistCellViewModel].self)
-
-            sut.specialistCellsViewModels
-                .subscribe(viewModelsObserver)
-                .disposed(by: disposeBag)
-        
-            sut.fetchSpecialists()
-            
-            scheduler.start()
-            
-            let viewModels = viewModelsObserver.events.last.map { $0.value.element! }
-            
-            expect(viewModels?.count).to(equal(2))
-        }
     }
     
 }

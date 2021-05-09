@@ -47,6 +47,7 @@
 		EBC43D502647725F00714505 /* segoe-ui-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDC263F190800D46D75 /* segoe-ui-bold.otf */; };
 		EBC43D542647726200714505 /* segoe-ui-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDD263F190800D46D75 /* segoe-ui-semibold.ttf */; };
 		EBC43D582647726400714505 /* segoe-ui.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB865FDE263F190800D46D75 /* segoe-ui.otf */; };
+		EBC43D5D26478AD000714505 /* SpecialistRemoteRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC43D5C26478AD000714505 /* SpecialistRemoteRepositorySpec.swift */; };
 		EBD12CBE263CD784000FD50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBD263CD784000FD50A /* AppDelegate.swift */; };
 		EBD12CC0263CD784000FD50A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD12CBF263CD784000FD50A /* SceneDelegate.swift */; };
 		EBD12CC4263CD784000FD50A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD12CC3263CD784000FD50A /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 		EB86601A263F367200D46D75 /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
 		EB866020263F36B100D46D75 /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
 		EB866025263F36BE00D46D75 /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
+		EBC43D5C26478AD000714505 /* SpecialistRemoteRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistRemoteRepositorySpec.swift; sourceTree = "<group>"; };
 		EBD12CBA263CD784000FD50A /* MobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD12CBD263CD784000FD50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD12CBF263CD784000FD50A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				EBD12CD6263CD784000FD50A /* Info.plist */,
 				EB2DD6812640D81600D69BFF /* HomeViewModelSpec.swift */,
 				EB2DD68C2640DAF500D69BFF /* RepositoryMock.swift */,
+				EBC43D5C26478AD000714505 /* SpecialistRemoteRepositorySpec.swift */,
 			);
 			path = MobileTestTests;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 			files = (
 				EB2DD6822640D81600D69BFF /* HomeViewModelSpec.swift in Sources */,
 				EB2DD68D2640DAF500D69BFF /* RepositoryMock.swift in Sources */,
+				EBC43D5D26478AD000714505 /* SpecialistRemoteRepositorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
