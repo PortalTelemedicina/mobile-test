@@ -64,7 +64,6 @@ Exemplo de resposta
 
 #### <i class="icon-pencil"></i> Pré-requisitos
 
-- Versão mínima do SDK: 21
 - Tela deve ajustar em devices menores.
 
 #### <i class="icon-folder-open"></i> O que esperamos
