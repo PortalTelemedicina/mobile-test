@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/default_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_picture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="M"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:background="@drawable/rounded_textview"
+        app:layout_constraintEnd_toStartOf="@+id/option_v01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Margaret"
+        android:textAlignment="gravity"
+        android:textColor="@color/default_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/option_v01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="Nearby 0.03 miles"
+        android:layout_marginTop="10dp"
+        android:textAlignment="gravity"
+        android:textColor="@color/default_text"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/option_v01"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="loren ipsum dolor..."
+        android:textAlignment="gravity"
+        android:textColor="@color/default_text"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/option_v01"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distance" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_chat"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/chat_button"
+        android:text="@string/medic_btn_chat"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintStart_toStartOf="@+id/option_v01" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_call"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/call_button"
+        android:text="@string/medic_btn_call"
+        android:textColor="@color/default_text"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintStart_toEndOf="@+id/btn_chat" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/option_v01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

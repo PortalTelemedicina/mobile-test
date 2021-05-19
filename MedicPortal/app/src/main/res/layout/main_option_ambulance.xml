@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/cv_ambulance"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_ambulance"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/img_ambulance"
+            app:layout_constraintBottom_toTopOf="@+id/option_h01"
+            app:layout_constraintEnd_toEndOf="@+id/option_v02"
+            app:layout_constraintStart_toStartOf="@+id/option_v01"
+            app:layout_constraintTop_toTopOf="@+id/option_h02" />
+
+        <TextView
+            android:id="@+id/tv_ambulance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/main_option_ambulance"
+            android:textAlignment="center"
+            android:textColor="@android:color/secondary_text_light"
+            app:autoSizeMaxTextSize="70sp"
+            app:autoSizeMinTextSize="14sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/option_h03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option_h01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option_h02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option_h03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option_v01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option_v02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

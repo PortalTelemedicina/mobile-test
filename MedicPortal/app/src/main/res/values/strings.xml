@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Medic Portal</string>
+    <string name="main_hello">Hello,</string>
+    <string name="main_name">Lorelle Luna</string>
+    <string name="main_specialists">Specialists</string>
+    <string name="main_options">What do you need?</string>
+    <string name="main_option_diagnostic">Diagnostic</string>
+    <string name="main_option_consultation">Consultation</string>
+    <string name="main_option_nurse">Nurse</string>
+    <string name="main_option_ambulance">Ambulance</string>
+    <string name="main_option_lab">Lab Work</string>
+    <string name="main_option_medicine">Medicine</string>
+    <string name="main_doctors">%s Doctors</string>
+
+    <string name="medics_category">Specialists</string>
+    <string name="medics_searching">Searching…</string>
+    <string name="medics_searching_not_found">Doctors were not found</string>
+    <string name="medics_searching_found">1 doctor was found</string>
+    <string name="medics_searching_found_mult">%s doctors were found</string>
+    <string name="medic_btn_call">Call</string>
+    <string name="medic_btn_chat">Chat</string>
+
+    <string name="medic_nearby">Nearby %s miles</string>
+    <string name="medic_call_message">We are calling %1s at the number %2s.</string>
+    <string name="medic_chat_message">We are opening the chat with %s on the website %s.</string>
+
+    <string name="error_main">It was not possible to load the list of Specialties.</string>
+    <string name="error_medics">The list of Doctors could not be loaded..</string>
+</resources>

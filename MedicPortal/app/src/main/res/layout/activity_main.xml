@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graylight"
+    tools:context=".views.main.MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/graylight"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            tools:context=".views.main.MainActivity">
+
+            <TextView
+                android:id="@+id/tv_main_hello"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/main_hello"
+                android:textColor="@color/default_text"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_main_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/main_name"
+                android:textColor="@color/default_text"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_hello" />
+
+            <TextView
+                android:id="@+id/tv_main_specialist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/main_specialists"
+                android:textColor="@color/default_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_name" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_options"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_specialist" />
+
+            <TextView
+                android:id="@+id/tv_main_options"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/main_options"
+                android:textColor="@color/default_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_options" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_options">
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_diagnostic"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/option_h1"
+                    app:layout_constraintEnd_toStartOf="@+id/option_v1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_consultation"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_consultation"
+                    app:layout_constraintBottom_toTopOf="@+id/option_h1"
+                    app:layout_constraintEnd_toStartOf="@+id/option_v2"
+                    app:layout_constraintStart_toStartOf="@+id/option_v1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_nurse"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/option_h1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/option_v2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_ambulance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/option_v1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/option_h1">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_lab"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/option_v2"
+                    app:layout_constraintStart_toStartOf="@+id/option_v1"
+                    app:layout_constraintTop_toBottomOf="@+id/option_h1">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <com.svmdev.medicportal.views.main.data.MainOptionCard
+                    android:id="@+id/main_option_medicine"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/option_v2"
+                    app:layout_constraintTop_toBottomOf="@+id/option_h1">
+
+                </com.svmdev.medicportal.views.main.data.MainOptionCard>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/option_v1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/option_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.66" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/option_h1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include layout="@layout/load_background" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
