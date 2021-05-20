@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.home.dashboard.HomeDashboardFragment">
+
+        <TextView
+            android:id="@+id/tvSalutation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Hello,"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/fonte_size_H3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleNameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="Lorelle Luna"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/fonte_size_H1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSalutation" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvListSpecialty"
+            style="@style/ThemeTextViewSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Specialtys"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleNameUser" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSpecialty"
+            android:layout_width="0dp"
+            android:layout_height="310dp"
+            android:layout_marginTop="4dp"
+            android:clipToPadding="true"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvListSpecialty"
+            tools:listitem="@layout/item_list_specialty" />
+
+        <TextView
+            android:id="@+id/tvservice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="What do you need?"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/fonte_size_H3"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvSpecialty" />
+
+
+        <include
+            android:id="@+id/include_service_home"
+            layout="@layout/include_service_home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvservice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

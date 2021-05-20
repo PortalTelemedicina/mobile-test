@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fonte_size_H1">44sp</dimen>
+    <dimen name="fonte_size_H2">31sp</dimen>
+    <dimen name="fonte_size_H3">24sp</dimen>
+</resources>
