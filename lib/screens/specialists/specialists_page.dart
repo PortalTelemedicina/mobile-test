@@ -18,8 +18,10 @@ class SpecialistsPage extends StatefulWidget {
 }
 
 class _SpecialistsPageState extends State<SpecialistsPage> {
+  ///Starts with the empty list of specialist that will be fetched form the API on the initState
   late List<Specialist> specialists;
 
+  //Saves the load state for this page
   bool specialistLoaded = false;
 
   @override
@@ -28,11 +30,13 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
     super.initState();
   }
 
+  ///Gets the speiclists from the given API
   void getSpecialists() async {
     specialists = await SpecialistApi.getSpecialists();
-    setState(() {
-      specialistLoaded = true;
-    });
+    if (specialists != null && specialists.isNotEmpty)
+      setState(() {
+        specialistLoaded = true;
+      });
   }
 
   @override
@@ -77,7 +81,7 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
                 specialist: e,
               ),
             ),
-          if (!specialistLoaded)
+          if (!specialistLoaded) //Builds 6 shime animations
             for (var i = 0; i < 6; i++) _buildLoaingAnimation(),
         ],
       ),
@@ -130,6 +134,7 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Hero(
+                        //Hero animation for a good transition
                         tag: widget.title,
                         child: MyText(
                           widget.title,

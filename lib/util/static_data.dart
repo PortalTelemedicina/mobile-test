@@ -1,6 +1,7 @@
-import 'package:mobile_test_daniel_vofchuk/models/servisse_model.dart';
-import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
+import '../models/servisse_model.dart';
+import 'servisses.dart';
 
+///Static data to be used on the app - can be added more here and the app knows how to handle
 class StaticData {
   static List<Servisse> servisses = [
     Servisse(LocalIcons.stethoscope, 'Diagnostic'),

@@ -1,6 +1,7 @@
-import 'package:mobile_test_daniel_vofchuk/util/icon.dart';
-import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
+import '../util/icon.dart';
+import '../util/servisses.dart';
 
+//The model of the servisse for better object handeling
 class Servisse {
   final String title;
   final MyIcon image;

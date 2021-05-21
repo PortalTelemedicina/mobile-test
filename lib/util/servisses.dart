@@ -1,5 +1,4 @@
-import 'package:mobile_test_daniel_vofchuk/models/servisse_model.dart';
-
+///Icons provided by the challange - better way to handle the names
 enum LocalIcons {
   ambulance,
   flask,

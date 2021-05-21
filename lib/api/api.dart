@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 
+///Calls the api with a specific path, usig the "GET" method
 class Api {
   static Future<http.Response> call(String path) async {
     String endpoint =

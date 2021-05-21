@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_test_daniel_vofchuk/models/servisse_model.dart';
 
+import '../../models/servisse_model.dart';
 import '../../util/my_text.dart';
 import '../../util/static_data.dart';
 import '../bottom_navigation_bar.dart';
@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //Stores the selecte serveisse (current in use just for UI proposes)
   Servisse selectedServisse = StaticData.servisses.first;
 
   @override
@@ -51,11 +52,13 @@ class _HomePageState extends State<HomePage> {
           height: 300,
           padding: const EdgeInsets.all(12),
           child: GridView.count(
+            //Displays the UI in a consistant way - depending on the deveice aspect ratio and size
             crossAxisCount: 3,
             mainAxisSpacing: 22,
             crossAxisSpacing: 12,
             children: [
               ...StaticData.servisses.map(
+                //Maps the static data sotored on the Util folder - this helps to add more features on the future
                 (e) => ServisseCard(
                   servisse: e,
                   onTap: () {

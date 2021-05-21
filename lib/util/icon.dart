@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
+import 'servisses.dart';
 
+///Custom class that holds the svg file and create the icon to be used all over the app
 class MyIcon extends StatelessWidget {
   final LocalIcons icon;
   final double? size;

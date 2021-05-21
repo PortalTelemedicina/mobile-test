@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///CUstom text callass for a beter usage of the text widget with built in features
 class MyText extends StatelessWidget {
   final String text;
   final Color? color;

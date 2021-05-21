@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 ///Custom bottom bar created to be able to select diferent pages althought on this demo there is just one page
+///The items for this app bar werem't provided, so I used the iconst that comes with flutter
 class BottomBar extends StatefulWidget {
   final VoidCallback? onHomePressed;
   const BottomBar({
@@ -13,6 +14,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+  //saves the internal state of the bottom bar so the animation can whork (even that there is no page for now)
   int index = 0;
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mobile_test_daniel_vofchuk/screens/specialists/specialists_page.dart';
-import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 
+import '../../../util/my_text.dart';
+import '../../specialists/specialists_page.dart';
+
+///UI obj for displaing the top cards, it receives the information and create the needed UI
 class SpecialistCard extends StatelessWidget {
+  //All items are null-safe
   final String title;
   final String image;
   final Color color;
   final int docNum;
+
   const SpecialistCard({
     Key? key,
     required this.title,
@@ -22,32 +26,32 @@ class SpecialistCard extends StatelessWidget {
       width: 150,
       height: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(18),
-        boxShadow: [
-          BoxShadow(
-            spreadRadius: 1,
-            blurRadius: 8,
-            color: Colors.grey.withOpacity(.6),
-            offset: Offset(2, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+      decoration: _buildBoxDecoration(),
+      child: _buildContent(context),
+    );
+  }
+
+  Material _buildContent(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      //creates the material effect when pressing the button
+      child: InkWell(
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
             builder: (context) => SpecialistsPage(
               title: title,
             ),
-          )),
-          borderRadius: BorderRadius.circular(18),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildIconBox(),
-              MyText(
+          ),
+        ),
+        borderRadius: BorderRadius.circular(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildIconBox(),
+            Hero(
+              //Hero animation for a smouth transition between pages
+              tag: title,
+              child: MyText(
                 title.replaceAll(' ', '\n'),
                 margin: const EdgeInsets.symmetric(horizontal: 12),
                 maxLines: 2,
@@ -55,16 +59,31 @@ class SpecialistCard extends StatelessWidget {
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
-              MyText(
-                '$docNum Doctors',
-                size: 18,
-                color: Colors.white,
-                margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              )
-            ],
-          ),
+            ),
+            MyText(
+              '$docNum Doctors',
+              size: 18,
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            )
+          ],
         ),
       ),
+    );
+  }
+
+  BoxDecoration _buildBoxDecoration() {
+    return BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(18),
+      boxShadow: [
+        BoxShadow(
+          spreadRadius: 1,
+          blurRadius: 8,
+          color: Colors.grey.withOpacity(.6),
+          offset: Offset(2, 2),
+        ),
+      ],
     );
   }
 
