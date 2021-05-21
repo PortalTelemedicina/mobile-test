@@ -7,8 +7,6 @@ class Api {
             path +
             '.json';
     Future<http.Response> request;
-
-    print(endpoint);
     Map<String, String> headers = {
       'Content-Type': 'application/json',
     };

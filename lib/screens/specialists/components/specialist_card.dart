@@ -88,9 +88,14 @@ class SpecialistCard extends StatelessWidget {
                     ),
                     if (!isLoading)
                       Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           if (specialist.actions!.chat != null)
                             Chip(
+                              elevation: 2,
+                              backgroundColor: Color(0xff7349e5),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8, horizontal: 22),
                               label: InkWell(
                                 onTap: () async {
                                   String url = specialist.actions!.chat!;
@@ -100,13 +105,23 @@ class SpecialistCard extends StatelessWidget {
                                     // can't launch url, there is some error
                                     throw "Could not launch $url";
                                 },
-                                child: MyText("Chat"),
+                                child: MyText(
+                                  "Chat",
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  size: 20,
+                                ),
                               ),
                             ),
+                          SizedBox(
+                            width: 22,
+                          ),
                           if (specialist.actions!.call != null)
                             InkWell(
                               onTap: () async {
-                                String url = specialist.actions!.call!;
+                                String url =
+                                    'tel://' + specialist.actions!.call!;
+
                                 if (await canLaunch(url))
                                   await launch(url);
                                 else
@@ -114,7 +129,15 @@ class SpecialistCard extends StatelessWidget {
                                   throw "Could not launch $url";
                               },
                               child: Chip(
-                                label: MyText(specialist.actions!.call!),
+                                backgroundColor: Colors.white,
+                                elevation: 2,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 22),
+                                label: MyText(
+                                  'Call',
+                                  fontWeight: FontWeight.bold,
+                                  size: 20,
+                                ),
                               ),
                             )
                         ],

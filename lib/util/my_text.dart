@@ -54,8 +54,5 @@ class MyText extends StatelessWidget {
     if (factor > MAXFACTOR) factor = MAXFACTOR;
     if (factor < MINFACTOR) factor = MINFACTOR;
     globalTextScaleFactor = factor;
-    // print(
-    //     '---> width: ${MediaQuery.of(context).size.width}');
-    // print('--> globalTextScaleFactor setted as $globalTextScaleFactor');
   }
 }

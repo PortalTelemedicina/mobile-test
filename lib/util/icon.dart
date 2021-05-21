@@ -6,12 +6,14 @@ import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
 
 class MyIcon extends StatelessWidget {
   final LocalIcons icon;
-  double? size;
+  final double? size;
+  final Color? color;
 
   MyIcon({
     Key? key,
     required this.icon,
     this.size,
+    this.color,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class MyIcon extends StatelessWidget {
     return SvgPicture.asset(
       path,
       height: size,
+      color: color,
     );
   }
 }

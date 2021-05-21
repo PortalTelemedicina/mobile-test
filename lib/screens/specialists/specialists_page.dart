@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_test_daniel_vofchuk/api/specialists_api.dart';
-import 'package:mobile_test_daniel_vofchuk/models/spesialist.dart';
-import 'package:mobile_test_daniel_vofchuk/util/icon.dart';
-import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
-import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
 import 'package:shimmer/shimmer.dart';
 
-import 'components/specialist_cart.dart';
+import '../../api/specialists_api.dart';
+import '../../models/spesialist.dart';
+import '../../util/icon.dart';
+import '../../util/my_text.dart';
+import '../../util/servisses.dart';
+import '../bottom_navigation_bar.dart';
+import 'components/specialist_card.dart';
 
 class SpecialistsPage extends StatefulWidget {
   final String title;
@@ -38,80 +39,122 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        // appBar: AppBar(
-        //   backgroundColor: Colors.white,
-        //   elevation: 0,
-        // ),
+        bottomNavigationBar: BottomBar(
+          onHomePressed: () => Navigator.of(context)
+              .pop(), //When pressing home on this page the app should go back to home page
+        ),
         backgroundColor: Colors.grey[100],
-        body: SafeArea(
-          child: Container(
-            child: CustomScrollView(
-              slivers: [
-                SliverAppBar(
-                  expandedHeight: 150,
-                  collapsedHeight: 75,
-                  floating: true,
-                  pinned: true,
-                  actions: [
-                    TextButton(
-                      onPressed: () {},
-                      child: MyIcon(
-                        icon: LocalIcons.filter_results_button,
-                        size: 33,
-                      ),
-                    )
-                  ],
-                  backgroundColor: Colors.white,
-                  flexibleSpace: FlexibleSpaceBar(
-                    // centerTitle: true,
-                    titlePadding: EdgeInsets.only(bottom: 25),
-                    title: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MyText(
-                            widget.title,
-                            size: 26,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                          MyText(
-                            '40 doctors found',
-                            color: Colors.black,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  // foregroundColor: Colors.black,
+        body: _buildBody(),
+      ),
+    );
+  }
+
+  SafeArea _buildBody() {
+    return SafeArea(
+      child: Container(
+        child: CustomScrollView(
+          slivers: [
+            _buildAppBar(),
+            _buildList(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  ///Builds the content for this page
+  ///It can build the specialist list or the loading animations
+  SliverList _buildList() {
+    return SliverList(
+      delegate: SliverChildListDelegate(
+        [
+          SizedBox(
+            height: 8,
+          ),
+          if (specialistLoaded)
+            ...specialists.map(
+              (e) => SpecialistCard(
+                specialist: e,
+              ),
+            ),
+          if (!specialistLoaded)
+            for (var i = 0; i < 6; i++) _buildLoaingAnimation(),
+        ],
+      ),
+    );
+  }
+
+  ///Builds the shimmer animation when fetching from API
+  Shimmer _buildLoaingAnimation() {
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[400]!,
+      highlightColor: Colors.white,
+      child: SpecialistCard(
+        isLoading: true,
+        specialist: Specialist(description: '', name: ''),
+      ),
+    );
+  }
+
+  ///Builds a sliver app bar with aniamation
+  SliverAppBar _buildAppBar() {
+    return SliverAppBar(
+      expandedHeight: 150,
+      collapsedHeight: 75,
+      floating: true,
+      pinned: true,
+      iconTheme: IconThemeData(color: Colors.black),
+      actions: [
+        TextButton(
+          onPressed: () {},
+          child: MyIcon(
+            icon: LocalIcons.filter_results_button,
+            size: 33,
+          ),
+        )
+      ],
+      backgroundColor: Colors.white,
+      flexibleSpace: FlexibleSpaceBar(
+        // centerTitle: true,
+        titlePadding: EdgeInsets.only(bottom: 25),
+        title: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return Row(
+              children: [
+                SizedBox(
+                  width: 2500 / constraints.maxHeight,
                 ),
-                SliverList(
-                  delegate: SliverChildListDelegate(
-                    [
-                      if (specialistLoaded)
-                        ...specialists.map((e) => SpecialistCard(
-                              specialist: e,
-                            )),
-                      if (!specialistLoaded)
-                        for (var i = 0; i < 6; i++)
-                          Shimmer.fromColors(
-                            baseColor: Colors.grey[400]!,
-                            highlightColor: Colors.white,
-                            child: SpecialistCard(
-                              isLoading: true,
-                              specialist: Specialist(description: '', name: ''),
-                            ),
-                          ),
+                Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Hero(
+                        tag: widget.title,
+                        child: MyText(
+                          widget.title,
+                          size: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          margin: const EdgeInsets.only(bottom: 2),
+                        ),
+                      ),
+                      MyText(
+                        specialistLoaded
+                            ? '${specialists.length} doctors found'
+                            : 'Searching',
+                        color: Colors.black,
+                        size: 12,
+                      )
                     ],
                   ),
                 ),
               ],
-            ),
-          ),
+            );
+          },
         ),
       ),
+      // foregroundColor: Colors.black,
     );
   }
 }

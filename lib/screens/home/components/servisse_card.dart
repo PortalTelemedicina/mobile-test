@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_test_daniel_vofchuk/util/icon.dart';
 
 import '../../../models/servisse_model.dart';
 import '../../../util/my_text.dart';
@@ -6,10 +7,12 @@ import '../../../util/my_text.dart';
 class ServisseCard extends StatelessWidget {
   final Servisse servisse;
   final bool isSelected;
+  final VoidCallback? onTap;
   const ServisseCard({
     Key? key,
     this.isSelected = false,
     required this.servisse,
+    this.onTap,
   }) : super(key: key);
 
   // ServisseCard setHeight(double height) {
@@ -34,8 +37,15 @@ class ServisseCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
-        child: _buildContent(),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: Center(
+            child: _buildContent(),
+          ),
+        ),
       ),
     );
   }
@@ -45,17 +55,23 @@ class ServisseCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          child: servisse.image,
+          child: MyIcon(
+            icon: servisse.image.icon,
+            color: isSelected ? Colors.white : Colors.black,
+          ),
           height: 40,
         ),
         SizedBox(
           height: 12,
         ),
-        MyText(
-          servisse.title,
-          color: isSelected ? Colors.white : Colors.black,
-          fontWeight: FontWeight.bold,
-          size: 20,
+        Hero(
+          tag: servisse.title,
+          child: MyText(
+            servisse.title,
+            color: isSelected ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+            size: 20,
+          ),
         )
       ],
     );

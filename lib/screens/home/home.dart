@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
-import 'package:mobile_test_daniel_vofchuk/util/static_data.dart';
+import 'package:mobile_test_daniel_vofchuk/models/servisse_model.dart';
+
+import '../../util/my_text.dart';
+import '../../util/static_data.dart';
+import '../bottom_navigation_bar.dart';
 import 'components/servisse_card.dart';
 import 'components/specialist_card.dart';
-import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  Servisse selectedServisse = StaticData.servisses.first;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: SingleChildScrollView(
@@ -19,7 +29,7 @@ class HomePage extends StatelessWidget {
             children: [
               ..._buildTopPortion(),
               _buildSpecialistsArea(),
-              _buildWhatDOYouNeedArea()
+              _buildWhatDoYouNeedArea()
             ],
           ),
         ),
@@ -27,7 +37,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Column _buildWhatDOYouNeedArea() {
+  Column _buildWhatDoYouNeedArea() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,7 +55,17 @@ class HomePage extends StatelessWidget {
             mainAxisSpacing: 22,
             crossAxisSpacing: 12,
             children: [
-              ...StaticData.servisses.map((e) => ServisseCard(servisse: e)),
+              ...StaticData.servisses.map(
+                (e) => ServisseCard(
+                  servisse: e,
+                  onTap: () {
+                    setState(() {
+                      selectedServisse = e;
+                    });
+                  },
+                  isSelected: selectedServisse.title == e.title,
+                ),
+              ),
             ],
           ),
         )
