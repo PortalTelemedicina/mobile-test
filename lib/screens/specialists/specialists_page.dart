@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_test_daniel_vofchuk/api/specialists_api.dart';
+import 'package:mobile_test_daniel_vofchuk/models/spesialist.dart';
 import 'package:mobile_test_daniel_vofchuk/util/icon.dart';
 import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
@@ -15,6 +17,23 @@ class SpecialistsPage extends StatefulWidget {
 }
 
 class _SpecialistsPageState extends State<SpecialistsPage> {
+  late List<Specialist> specialists;
+
+  bool specialistLoaded = false;
+
+  @override
+  void initState() {
+    getSpecialists();
+    super.initState();
+  }
+
+  void getSpecialists() async {
+    specialists = await SpecialistApi.getSpecialists();
+    setState(() {
+      specialistLoaded = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,12 +90,20 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
-                      for (var i = 0; i < 25; i++)
-                        Shimmer.fromColors(
-                          baseColor: Colors.grey[400]!,
-                          highlightColor: Colors.white,
-                          child: SpecialistCard(),
-                        ),
+                      if (specialistLoaded)
+                        ...specialists.map((e) => SpecialistCard(
+                              specialist: e,
+                            )),
+                      if (!specialistLoaded)
+                        for (var i = 0; i < 6; i++)
+                          Shimmer.fromColors(
+                            baseColor: Colors.grey[400]!,
+                            highlightColor: Colors.white,
+                            child: SpecialistCard(
+                              isLoading: true,
+                              specialist: Specialist(description: '', name: ''),
+                            ),
+                          ),
                     ],
                   ),
                 ),
