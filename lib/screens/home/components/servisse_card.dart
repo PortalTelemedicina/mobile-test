@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 
-class NeedCard extends StatelessWidget {
+import '../../../models/servisse_model.dart';
+import '../../../util/my_text.dart';
+
+class ServisseCard extends StatelessWidget {
+  final Servisse servisse;
   final bool isSelected;
-  final String image, title;
-  const NeedCard({
+  const ServisseCard({
     Key? key,
     this.isSelected = false,
-    this.image = 'icons/stethoscope.svg', //TODO: change to required
-    this.title = 'Diagnostic', //TODO: change  to required
+    required this.servisse,
   }) : super(key: key);
+
+  // ServisseCard setHeight(double height) {
+  //   this.
+  //   return this;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +44,18 @@ class NeedCard extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SvgPicture.asset(
-          image,
+        SizedBox(
+          child: servisse.image,
           height: 40,
         ),
         SizedBox(
           height: 12,
         ),
         MyText(
-          title,
+          servisse.title,
           color: isSelected ? Colors.white : Colors.black,
+          fontWeight: FontWeight.bold,
+          size: 20,
         )
       ],
     );

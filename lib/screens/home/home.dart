@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'components/seen_card.dart';
+import 'package:mobile_test_daniel_vofchuk/util/servisses.dart';
+import 'package:mobile_test_daniel_vofchuk/util/static_data.dart';
+import 'components/servisse_card.dart';
 import 'components/specialist_card.dart';
 import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 
@@ -43,12 +45,7 @@ class HomePage extends StatelessWidget {
             mainAxisSpacing: 22,
             crossAxisSpacing: 12,
             children: [
-              NeedCard(),
-              NeedCard(),
-              NeedCard(),
-              NeedCard(),
-              NeedCard(),
-              NeedCard(),
+              ...StaticData.servisses.map((e) => ServisseCard(servisse: e)),
             ],
           ),
         )
@@ -75,6 +72,7 @@ class HomePage extends StatelessWidget {
                 SpecialistCard(
                   color: Color(0xffe5495e),
                   title: 'Heart Specialist',
+                  docNum: 40,
                   image:
                       'icons/heart-shape-outline-with-lifeline.svg', //TODO: add as const
                 ),
@@ -82,11 +80,13 @@ class HomePage extends StatelessWidget {
                   color: Color(0xfff6af3d),
                   title: 'Dental Care',
                   image: 'icons/tooth.svg',
+                  docNum: 35,
                 ),
                 SpecialistCard(
                   color: Color(0xff7349e5),
                   title: 'Dermatology Specialist',
                   image: 'icons/pimples.svg',
+                  docNum: 12,
                 ),
               ],
             ),

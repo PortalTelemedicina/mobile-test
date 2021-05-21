@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobile_test_daniel_vofchuk/screens/specialists/specialists_page.dart';
 import 'package:mobile_test_daniel_vofchuk/util/my_text.dart';
 
 class SpecialistCard extends StatelessWidget {
@@ -36,17 +37,21 @@ class SpecialistCard extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {}, //TODO: change
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => SpecialistsPage(
+              title: title,
+            ),
+          )),
           borderRadius: BorderRadius.circular(18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildIconBox(),
               MyText(
-                title,
+                title.replaceAll(' ', '\n'),
                 margin: const EdgeInsets.symmetric(horizontal: 12),
                 maxLines: 2,
-                size: 26,
+                size: 23,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),

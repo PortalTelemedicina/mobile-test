@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_test_daniel_vofchuk/api/specialists_api.dart';
-import 'package:mobile_test_daniel_vofchuk/screens/home/home.dart';
+
+import 'screens/home/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,9 +14,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Segoe UI',
-      ),
+          primarySwatch: Colors.blue,
+          fontFamily: 'Segoe UI',
+          appBarTheme: AppBarTheme(
+            foregroundColor: Colors.black,
+            color: Colors.black,
+          )),
       home: HomePage(),
     );
   }
