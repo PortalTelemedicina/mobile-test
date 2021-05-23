@@ -1,0 +1,4 @@
+#Fri May 21 16:30:22 BRT 2021
+base.0=C\:\\Users\\Dani\\Documents\\Flutter\\challenge\\mobile-test\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

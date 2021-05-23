@@ -1,0 +1,992 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/mobile_test_daniel_vofchuk/util/static_data.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/mobile_test_daniel_vofchuk/screens/bottom_navigation_bar.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/safe_area.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/mobile_test_daniel_vofchuk/util/my_text.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/mobile_test_daniel_vofchuk/screens/home/components/servisse_card.dart', 'packages/mobile_test_daniel_vofchuk/models/servisse_model.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/mobile_test_daniel_vofchuk/screens/home/components/specialist_card.dart'], (function load__packages__mobile_test_daniel_vofchuk__screens__home__home_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__mobile_test_daniel_vofchuk__util__static_data$46dart, packages__flutter__src__material__icon_button$46dart, packages__mobile_test_daniel_vofchuk__screens__bottom_navigation_bar$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__safe_area$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__rendering__flex$46dart, packages__mobile_test_daniel_vofchuk__util__my_text$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__mobile_test_daniel_vofchuk__screens__home__components__servisse_card$46dart, packages__mobile_test_daniel_vofchuk__models__servisse_model$46dart, packages__flutter__src__painting__basic_types$46dart, packages__mobile_test_daniel_vofchuk__screens__home__components__specialist_card$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const static_data = packages__mobile_test_daniel_vofchuk__util__static_data$46dart.util__static_data;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const bottom_navigation_bar = packages__mobile_test_daniel_vofchuk__screens__bottom_navigation_bar$46dart.screens__bottom_navigation_bar;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const my_text = packages__mobile_test_daniel_vofchuk__util__my_text$46dart.util__my_text;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const servisse_card = packages__mobile_test_daniel_vofchuk__screens__home__components__servisse_card$46dart.screens__home__components__servisse_card;
+  const servisse_model = packages__mobile_test_daniel_vofchuk__models__servisse_model$46dart.models__servisse_model;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const specialist_card = packages__mobile_test_daniel_vofchuk__screens__home__components__specialist_card$46dart.screens__home__components__specialist_card;
+  var home = Object.create(dart.library);
+  var $first = dartx.first;
+  var $add = dartx.add;
+  var $map = dartx.map;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    ListOfWidget: () => (T.ListOfWidget = dart.constFn(core.List$(framework.Widget)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    ServisseToServisseCard: () => (T.ServisseToServisseCard = dart.constFn(dart.fnType(servisse_card.ServisseCard, [servisse_model.Servisse])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.constList([], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 16
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 11,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 11,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fontWeight",
+        [_Location_column]: 11,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 11,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 12,
+        [EdgeInsets_right]: 12,
+        [EdgeInsets_top]: 12,
+        [EdgeInsets_left]: 12
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "servisse",
+        [_Location_column]: 19,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 19,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "isSelected",
+        [_Location_column]: 19,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28, C[29] || CT.C29], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 62,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisCount",
+        [_Location_column]: 13,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSpacing",
+        [_Location_column]: 13,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisSpacing",
+        [_Location_column]: 13,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.constList([C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[31] || CT.C31,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 11,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39, C[40] || CT.C40], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 42,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 16
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 11,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 11,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fontWeight",
+        [_Location_column]: 11,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 11,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 83,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "docNum",
+        [_Location_column]: 19,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "image",
+        [_Location_column]: 19,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], widget_inspector._Location);
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 95,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "image",
+        [_Location_column]: 19,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "docNum",
+        [_Location_column]: 19,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60, C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63], widget_inspector._Location);
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 102,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 109,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 110,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "image",
+        [_Location_column]: 19,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "docNum",
+        [_Location_column]: 19,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69], widget_inspector._Location);
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 108,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.constList([C[72] || CT.C72], widget_inspector._Location);
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[71] || CT.C71,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 93,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scrollDirection",
+        [_Location_column]: 13,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75, C[76] || CT.C76], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 91,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79, C[80] || CT.C80], widget_inspector._Location);
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.constList([C[83] || CT.C83, C[84] || CT.C84], widget_inspector._Location);
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[82] || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 80,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 125,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.constList([C[87] || CT.C87], widget_inspector._Location);
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[86] || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 124,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 9,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 9,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 9,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.constList([C[90] || CT.C90, C[91] || CT.C91, C[92] || CT.C92], widget_inspector._Location);
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[89] || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 127,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 9,
+        [_Location_line]: 133,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 9,
+        [_Location_line]: 134,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 9,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fontWeight",
+        [_Location_column]: 9,
+        [_Location_line]: 136,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96, C[97] || CT.C97, C[98] || CT.C98], widget_inspector._Location);
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 132,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.constList([C[101] || CT.C101], widget_inspector._Location);
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[100] || CT.C100,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 138,
+        [_Location_file]: "file:///C:/Users/Dani/Documents/Flutter/challenge/mobile-test/lib/screens/home/home.dart"
+      });
+    }
+  }, false);
+  var C = Array(102).fill(void 0);
+  var I = ["package:mobile_test_daniel_vofchuk/screens/home/home.dart"];
+  home.HomePage = class HomePage extends framework.StatefulWidget {
+    createState() {
+      return new home._HomePageState.new();
+    }
+  };
+  (home.HomePage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    home.HomePage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = home.HomePage.prototype;
+  dart.addTypeTests(home.HomePage);
+  dart.addTypeCaches(home.HomePage);
+  dart.setMethodSignature(home.HomePage, () => ({
+    __proto__: dart.getMethods(home.HomePage.__proto__),
+    createState: dart.fnType(home._HomePageState, [])
+  }));
+  dart.setLibraryUri(home.HomePage, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _buildTopPortion = dart.privateName(home, "_buildTopPortion");
+  var _buildSpecialistsArea = dart.privateName(home, "_buildSpecialistsArea");
+  var _buildWhatDoYouNeedArea = dart.privateName(home, "_buildWhatDoYouNeedArea");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  home._HomePageState = class _HomePageState extends framework.State$(home.HomePage) {
+    build(context) {
+      return new scaffold.Scaffold.new({bottomNavigationBar: new bottom_navigation_bar.BottomBar.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), backgroundColor: colors.Colors.grey._get(100), body: new safe_area.SafeArea.new({child: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: (() => {
+                let t0 = T.ListOfWidget().of(this[_buildTopPortion]());
+                t0[$add](this[_buildSpecialistsArea]());
+                t0[$add](this[_buildWhatDoYouNeedArea]());
+                return t0;
+              })(), $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+    }
+    [_buildWhatDoYouNeedArea]() {
+      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new my_text.MyText.new("What do you need?", {margin: C[17] || CT.C17, fontWeight: ui.FontWeight.bold, size: 26.0, $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new container.Container.new({height: 300.0, padding: C[24] || CT.C24, child: new scroll_view.GridView.count({crossAxisCount: 3, mainAxisSpacing: 22.0, crossAxisSpacing: 12.0, children: (() => {
+                let t1 = T.ListOfWidget().of(static_data.StaticData.servisses[$map](framework.Widget, dart.fn(e => new servisse_card.ServisseCard.new({servisse: e, onTap: dart.fn(() => {
+                    this.setState(dart.fn(() => {
+                      this.selectedServisse = e;
+                    }, T.VoidTovoid()));
+                  }, T.VoidTovoid()), isSelected: this.selectedServisse.title === e.title, $creationLocationd_0dea112b090073317d4: C[25] || CT.C25}), T.ServisseToServisseCard())));
+                return t1;
+              })(), $creationLocationd_0dea112b090073317d4: C[30] || CT.C30}), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36})]), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41});
+    }
+    [_buildSpecialistsArea]() {
+      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new my_text.MyText.new("Specialists", {margin: C[45] || CT.C45, fontWeight: ui.FontWeight.bold, size: 26.0, $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), new container.Container.new({height: 230.0, child: new single_child_scroll_view.SingleChildScrollView.new({scrollDirection: basic_types.Axis.horizontal, child: new basic.Row.new({children: T.JSArrayOfWidget().of([new specialist_card.SpecialistCard.new({color: new ui.Color.new(4293216606), title: "Heart Specialist", docNum: 40, image: "icons/heart-shape-outline-with-lifeline.svg", $creationLocationd_0dea112b090073317d4: C[52] || CT.C52}), new specialist_card.SpecialistCard.new({color: new ui.Color.new(4294356797), title: "Dental Care", image: "icons/tooth.svg", docNum: 35, $creationLocationd_0dea112b090073317d4: C[58] || CT.C58}), new specialist_card.SpecialistCard.new({color: new ui.Color.new(4285745637), title: "Dermatology Specialist", image: "icons/pimples.svg", docNum: 12, $creationLocationd_0dea112b090073317d4: C[64] || CT.C64})]), $creationLocationd_0dea112b090073317d4: C[70] || CT.C70}), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77})]), $creationLocationd_0dea112b090073317d4: C[81] || CT.C81});
+    }
+    [_buildTopPortion]() {
+      return T.JSArrayOfWidget().of([new basic.SizedBox.new({height: 26.0, $creationLocationd_0dea112b090073317d4: C[85] || CT.C85}), new my_text.MyText.new("Hello,", {margin: C[45] || CT.C45, size: 20.0, $creationLocationd_0dea112b090073317d4: C[88] || CT.C88}), new my_text.MyText.new("Lorelle Luna", {margin: C[45] || CT.C45, size: 38.0, fontWeight: ui.FontWeight.bold, $creationLocationd_0dea112b090073317d4: C[93] || CT.C93}), new basic.SizedBox.new({height: 32.0, $creationLocationd_0dea112b090073317d4: C[99] || CT.C99})]);
+    }
+  };
+  (home._HomePageState.new = function() {
+    this.selectedServisse = static_data.StaticData.servisses[$first];
+    home._HomePageState.__proto__.new.call(this);
+    ;
+  }).prototype = home._HomePageState.prototype;
+  dart.addTypeTests(home._HomePageState);
+  dart.addTypeCaches(home._HomePageState);
+  dart.setMethodSignature(home._HomePageState, () => ({
+    __proto__: dart.getMethods(home._HomePageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_buildWhatDoYouNeedArea]: dart.fnType(basic.Column, []),
+    [_buildSpecialistsArea]: dart.fnType(framework.Widget, []),
+    [_buildTopPortion]: dart.fnType(core.List$(framework.Widget), [])
+  }));
+  dart.setLibraryUri(home._HomePageState, I[0]);
+  dart.setFieldSignature(home._HomePageState, () => ({
+    __proto__: dart.getFields(home._HomePageState.__proto__),
+    selectedServisse: dart.fieldType(servisse_model.Servisse)
+  }));
+  dart.trackLibraries("packages/mobile_test_daniel_vofchuk/screens/home/home.dart", {
+    "package:mobile_test_daniel_vofchuk/screens/home/home.dart": home
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["home.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAakC;IAAgB;;;QAH3B;;AAAQ,iDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;UAWlB;AACxB,YAAO,iDACgB,mHACG,AAAI,wBAAC,YACvB,mCACG,+DACE,0CACkC,yCAC7B;6CACL;AACH;AACA;;;IAMZ;;AAGE,YAAO,2CACkC,yCAC7B,wBACR,uBACE,2DAEuB,0BACjB,iEAER,qCACU,wCAEQ,gDAEE,oBACC,wBACC,gBACR;6CACM,AAAU,yDAEtB,QAAC,KAAM,8CACK,CAAC,SACJ;AAGH,oBAFF,cAAS;AACa,sBAApB,wBAAmB,CAAC;;kDAGZ,AAAiB,AAAM,gCAAG,AAAE,CAAD;;;IAQvD;;AAGE,YAAO,2CACkC,yCAC7B,wBACR,uBACE,qDAEuB,0BACjB,iEAER,qCACU,cACD,yEACiB,oCACf,6BACK,wBACR,+CACS,iBAAM,oBACN,4BACC,WAEJ,0GAEN,+CACS,iBAAM,oBACN,sBACA,2BACC,+DAEV,+CACS,iBAAM,oBACN,iCACA,6BACC;IAQxB;;AAGE,YAAO,yBACL,gCACU,iEAEV,uBACE,0CAEM,iEAER,uBACE,gDAEM,kBACiB,+EAEzB,gCACU;IAGd;;;IA3HS,wBAA8B,AAAU;;;EA4HnD","file":"../../../../../../../../../packages/mobile_test_daniel_vofchuk/screens/home/home.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__home__home: home
+  };
+}));
+
+//# sourceMappingURL=home.dart.lib.js.map
