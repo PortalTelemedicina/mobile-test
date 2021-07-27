@@ -9,25 +9,6 @@ const styles = EStyleSheet.create({
     flexDirection: 'row',
     backgroundColor: theme.colors.white,
   },
-  info: {
-    width: '100%',
-  },
-  profile: {
-    opacity: 0.1,
-    backgroundColor: theme.colors.lightslategray,
-    width: '3rem',
-    height: '3rem',
-    borderRadius: 50,
-    marginHorizontal: '0.7rem',
-  },
-  name: {
-    borderRadius: 50,
-    width: '100%',
-    height: '2rem',
-    opacity: 0.1,
-    backgroundColor: theme.colors.lightslategray,
-    marginHorizontal: '0.7rem',
-  },
   description: {
     marginVertical: '0.8rem',
     opacity: 0.1,
@@ -37,12 +18,31 @@ const styles = EStyleSheet.create({
     borderRadius: 50,
     marginHorizontal: '0.7rem',
   },
+  info: {
+    width: '100%',
+  },
   line: {
     borderBottomColor: theme.colors.darkslategray,
     borderBottomWidth: 0.5,
     marginVertical: '0.8rem',
     marginLeft: '-4rem',
     width: '200%',
+  },
+  name: {
+    borderRadius: 50,
+    width: '100%',
+    height: '2rem',
+    opacity: 0.1,
+    backgroundColor: theme.colors.lightslategray,
+    marginHorizontal: '0.7rem',
+  },
+  profile: {
+    opacity: 0.1,
+    backgroundColor: theme.colors.lightslategray,
+    width: '3rem',
+    height: '3rem',
+    borderRadius: 50,
+    marginHorizontal: '0.7rem',
   },
 });
 

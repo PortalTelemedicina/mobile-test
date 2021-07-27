@@ -4,12 +4,10 @@ import { View, Text, SafeAreaView } from 'react-native';
 import styles from './styles';
 
 import api from '../../services/api';
-import MenuSpecialists from '../../components/menus/specialists';
-import MenuHome from "../../components/menus/home";
-import StyledButton from "../../components/buttons/styledButton";
-import theme from "../../theme";
+import SpecialistsMenu from '../../components/menus/specialists';
+import MenuHome from '../../components/menus/home';
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
   const [specialists, setSpecialists] = useState(null);;
 
   useEffect(() => {
@@ -36,7 +34,7 @@ export default function Home({navigation}) {
         return navigation.navigate('specialists',{typeSpecialistsApi:'list_specialist_dermatology.json', type});
       }
       default:
-        return console.log('specialist not fount ');
+        return console.log('type specialist not fount ');
     }
   }
 
@@ -49,7 +47,7 @@ export default function Home({navigation}) {
 
       <View style={styles.menu}>
         <Text style={styles.title}>Specialists</Text>
-        <MenuSpecialists items={specialists} menuFn={(type) => selectTypeSpecialist(type)} />
+        <SpecialistsMenu items={specialists} menuFn={(type) => selectTypeSpecialist(type)} />
       </View>
 
       <View style={styles.menu}>

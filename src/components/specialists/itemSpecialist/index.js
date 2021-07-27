@@ -5,8 +5,11 @@ import styles from './styles';
 import StyledButton from '../../buttons/styledButton';
 import theme from '../../../theme';
 
+import getNameInitials from '../../../utils/getNameInitials';
+
 export default function ItemSpecialist({ data }) {
   const specialist = data.item;
+  const specialistInitials = getNameInitials(specialist.name);
   const {
     white,
     purple,
@@ -40,7 +43,7 @@ export default function ItemSpecialist({ data }) {
   return (
     <View style={styles.container}>
       <View style={[styles.profile, {backgroundColor: profileColor.background }]}>
-        <Text style={[styles.textProfile, {color: profileColor.text}]}>{specialist.name.charAt(0)}</Text>
+        <Text style={[styles.textProfile, {color: profileColor.text}]}>{specialistInitials}</Text>
       </View>
       <View>
         <Text style={styles.name}>{specialist.name}</Text>

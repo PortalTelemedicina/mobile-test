@@ -4,7 +4,7 @@ import { View, FlatList, TouchableWithoutFeedback, Text } from 'react-native';
 import {SvgUri} from 'react-native-svg';
 import styles from './styles';
 
-export default function MenuSpecialists({items, menuFn}) {
+export default function SpecialistsMenu({items, menuFn}) {
   function Item({ data }) {
     const especialist = data.item;
     return (

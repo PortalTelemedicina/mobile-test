@@ -3,22 +3,22 @@ import theme from '../../../theme';
 
 const styles = EStyleSheet.create({
   container: {
-    width: '100%',
-    paddingVertical: '0.8rem',
-    flexDirection: 'row',
     backgroundColor: theme.colors.white,
+    flexDirection: 'row',
+    paddingVertical: '0.8rem',
+    width: '100%',
   },
   profile: {
-    justifyContent: 'center',
-    width: '3rem',
-    height: '3rem',
     borderRadius: 50,
+    height: '3rem',
+    justifyContent: 'center',
     marginHorizontal: '0.7rem',
+    width: '3rem',
   },
   textProfile: {
-    textAlign: 'center',
     fontFamily: theme.fonts.primaryBold,
     fontSize: '1.2rem',
+    textAlign: 'center',
   },
   name: {
     fontFamily: theme.fonts.primaryBold,
@@ -39,9 +39,10 @@ const styles = EStyleSheet.create({
     marginTop: '0.8rem',
   },
   button: {
-    width: '30%',
+    borderRadius: 20,
     height: '2.2rem',
     marginHorizontal: '0.5rem',
+    width: '30%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -50,7 +51,6 @@ const styles = EStyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    borderRadius: 20,
   },
   line: {
     borderBottomColor: theme.colors.darkslategray,

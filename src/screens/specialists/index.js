@@ -9,7 +9,7 @@ import api from '../../services/api';
 import ItemSpecialist from '../../components/specialists/itemSpecialist';
 import IconButton from '../../components/buttons/iconButton';
 import arrowBackIcon from '../../assets/icons/arrow-back.png';
-import LoadSpecialist from "../../components/specialists/loadSpecialist";
+import LoadSpecialist from '../../components/specialists/loadSpecialist';
 
 export default function Specialists({ route, navigation }) {
   const [specialists, setSpecialists] = useState([]);

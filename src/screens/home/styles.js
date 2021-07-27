@@ -6,16 +6,6 @@ const styles = EStyleSheet.create({
     marginVertical: '3rem',
     marginHorizontal: '0.7rem',
   },
-  wellComeText: {
-    fontFamily: theme.fonts.primaryRegular,
-    fontSize: '1.5rem',
-    color: theme.colors.darkslategray,
-  },
-  userName: {
-    fontFamily: theme.fonts.primaryBold,
-    fontSize: '2.2rem',
-    color: theme.colors.darkslategray,
-  },
   menu: {
     marginVertical: '3rem',
     marginHorizontal: '0.7rem',
@@ -25,6 +15,16 @@ const styles = EStyleSheet.create({
     marginTop: '1rem',
     fontFamily: theme.fonts.primaryBold,
     fontSize: '1.2rem',
+    color: theme.colors.darkslategray,
+  },
+  userName: {
+    fontFamily: theme.fonts.primaryBold,
+    fontSize: '2.2rem',
+    color: theme.colors.darkslategray,
+  },
+  wellComeText: {
+    fontFamily: theme.fonts.primaryRegular,
+    fontSize: '1.5rem',
     color: theme.colors.darkslategray,
   },
 });
