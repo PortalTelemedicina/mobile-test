@@ -77,9 +77,14 @@ Listar dentistas
 Listar dermatologistas
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_dermatology.json
 > - **Método**: GET
+> 
+
+## <i class="icon-folder-open"></i> Fonts & Imagens
+
+As fontes e os ícones se encontra nesse repositório
 
 
-#### <i class="icon-pencil"></i> Pré-requisitos
+## <i class="icon-pencil"></i> Pré-requisitos
 *Fique atento a esses itens, o teste no mínimo deve conter esses requisitos abaixo*
 
 - Tela deve ajustar em devices menores.
