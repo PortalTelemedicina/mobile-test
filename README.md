@@ -53,11 +53,11 @@ O teste pode ser feito em ReactNative ou Flutter
 
 **Como usuário quero poder ter opções de especialistas médicos para fazer uma consulta**
 
-> Para isso faça uma busca na API, configure a tela com as cores e trate o erro de conexão com a internet caso o cliente fique sem
+> Para isso faça uma busca na API, configure a tela com as cores e trate o erro de conexão caso o cliente fique sem internet
 
 **Como usuário quero poder escolher qual especialista quero conversar ou ligar**
 
-> Para isso faça uma busca na API de acordo com a categoria selecionada na home, configure a tela com as cores e trate o erro de conexão com a internet caso o cliente fique sem
+> Para isso faça uma busca na API de acordo com a categoria selecionada na home, configure a tela com as cores e trate o erro de conexão caso o cliente fique sem internet
 
 ## <i class="icon-folder-open"></i> Consumindo Serviço
 
@@ -82,7 +82,7 @@ Listar dermatologistas
 > - **Método**: GET
 > 
 
-## <i class="icon-folder-open"></i> Fonts & Imagens
+## <i class="icon-folder-open"></i> Fontes & Imagens
 
 As fontes e os ícones encontram-se nesse repositório
 
@@ -96,6 +96,7 @@ As fontes e os ícones encontram-se nesse repositório
 - Arquitetura Flux/Redux/Hooks/Bloc
 - Tratamentos de erros
 - Não suba dependencias locais. Fique atento ao .gitignore
+- Consumo de API
 
 
 #### <i class="icon-hdd"></i> Você pode entregar com Bonus
