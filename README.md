@@ -95,6 +95,7 @@ As fontes e os ícones encontram-se nesse repositório
 - Boa separação de camadas
 - Arquitetura Flux/Redux/Hooks/Bloc
 - Tratamentos de erros
+- Não suba dependencias locais fique atento ao .gitignore
 
 
 #### <i class="icon-hdd"></i> Você pode entregar com Bonus
