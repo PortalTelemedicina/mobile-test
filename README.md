@@ -3,14 +3,17 @@ Teste de Mobile
 
 Este teste é apresentado aos candidatos as vagas de Mobile Developer para avaliar os quesitos técnicos.
 
+O principal objetivo do teste é avaliar em como é construido um aplicativo que tem uma boa arquitetura, um bom layout e que contém tratamento de possíveis erros que podem acontecer na vida real do paciente
+
 ----------
 
 
 O Desafio
 -------------
 
-Seu objetivo é criar um aplicativo que contém funcionalidades básicas de um app médico
-Você pode fazer em ReactNative ou Flutter
+Seu objetivo é criar um aplicativo que contém funcionalidades básicas de um app médico para consulta
+
+O teste pode ser feito em ReactNative ou Flutter
 
 
 <table>
@@ -52,13 +55,13 @@ Você pode fazer em ReactNative ou Flutter
 
 > Para isso faça uma busca na API, configure a tela com as cores e trate o erro de conexão com a internet caso o cliente fique sem
 
-**Como usuário quero poder escolher qual especialista quero conversar ou ligar para fazer uma consulta**
+**Como usuário quero poder escolher qual especialista quero conversar ou ligar**
 
 > Para isso faça uma busca na API de acordo com a categoria selecionada na home, configure a tela com as cores e trate o erro de conexão com a internet caso o cliente fique sem
 
 ## <i class="icon-folder-open"></i> Consumindo Serviço
 
-Para consumir o serviço da API Rest use o método GET para obter os dados do arquivo json do github
+Para consumir o serviço da API REST use o método GET para obter os dados do arquivo json do github
 
 **Como usar:**
 
@@ -81,22 +84,22 @@ Listar dermatologistas
 
 ## <i class="icon-folder-open"></i> Fonts & Imagens
 
-As fontes e os ícones se encontra nesse repositório
+As fontes e os ícones encontram-se nesse repositório
 
 
 ## <i class="icon-pencil"></i> Pré-requisitos
-*Fique atento a esses itens, o teste no mínimo deve conter esses requisitos abaixo*
+*Fique atento a esses itens, o teste no mínimo deve conter os requisitos abaixo*
 
-- Tela deve ajustar em devices menores.
-- Deve rodar em Android & iOS
+- Tela deve ajustar em aparelhos grandes e pequenos
+- Deve funcionar em Android e iOS
 - Boa separação de camadas
-- Tratamento de erros
 - Arquitetura Flux/Redux/Hooks/Bloc
 - Tratamentos de erros
 
 
 #### <i class="icon-hdd"></i> Você pode entregar com Bonus
 *Pode ser algum dos itens abaixo*
+
 - Construir layouts com animação
 - Trabalhar offline (cache dos dados)
 - Testes instrumentados
