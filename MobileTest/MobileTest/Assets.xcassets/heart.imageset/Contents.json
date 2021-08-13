@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "heart-shape-outline-with-lifeline.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
