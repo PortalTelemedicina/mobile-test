@@ -84,7 +84,7 @@ const SpecialistList = () => {
   return (
     <Background>
       { 
-        loading ? renderLoad() : !hasConnection ? renderContent() : renderNoConnection()
+        loading ? renderLoad() : hasConnection ? renderContent() : renderNoConnection()
       }
     </Background>
   );
