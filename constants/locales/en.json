@@ -1,0 +1,32 @@
+{
+  "label": {
+      "name": "Name",
+      "hello": "Hello,",
+      "nearByKm": "Near By %{distance}km",
+      "totalDoctors" : "%{total} Doctors"
+  },
+  "btn": {
+      "chat": "Chat",
+      "call": "Call",
+      "tryAgain": "Try Again"    
+  },
+  "msg": {
+      "networkError": "There is no internet connection.",
+      "genericError": "Something went wrong.\nPlease try again.",
+      "totalDoctors": "%{total} doctors were found",
+      "searching" : "Searching...",
+      "ops": "Ops!"
+  },
+  "title": {
+      "specialists": "Specialists",
+      "whatDoYouNeed" : "What do you need?"
+  },
+  "menu": {
+      "diagnostic": "Diagnostic",
+      "consultation": "Consultation",
+      "nurse": "Nurse",
+      "ambulance":"Ambulance",
+      "labWork":"Lab Work",
+      "medicine":"Medicine"
+  }
+}
