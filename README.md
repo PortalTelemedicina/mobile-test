@@ -1,7 +1,7 @@
 ## MedicineApp
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-A sanple App with React Native and Typescript.
+A sample App with React Native and Typescript.
 
 ## APP
 
