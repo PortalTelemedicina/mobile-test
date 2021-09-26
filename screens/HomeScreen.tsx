@@ -38,7 +38,6 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'HomeStack
   }, []);
 
   const isConnected = () => {
-    console.log('IsConnect', netInfo.isConnected);
     return netInfo.isConnected;
   };
 

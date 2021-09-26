@@ -17,6 +17,14 @@ A app created by using:
 - Jest
 - Testing Library
 
+## Telas/Screens
+
+![screen_home_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_android.jpg "Home Screen")
+![screen_home_loading_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_loading_android.jpg "Home Screen - Loading")
+![screen_home_internet_error_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_internet_error_android.jpg "Home Screen - Error")
+![screen_home_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_android.jpg "List Screen")
+![screen_home_loading_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_loading_android.jpg "List Screen - Loading")
+![screen_home_internet_error_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_internet_error_android.jpg "List Screen - Error")
 
 ## Installing
 
