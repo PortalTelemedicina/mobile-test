@@ -6,7 +6,6 @@ import React from 'react';
 import axios from 'axios';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
-/// import { useNetInfo } from '@react-native-community/netinfo';
 import HomeScreen from '../HomeScreen';
 import specislistCategories from '../../docs/api/home_specialists.json';
 import store from '../../helpers/TestUtils';
@@ -15,13 +14,6 @@ function renderWithProviders(ui: JSX.Element) {
   return renderer.create(<Provider store={store}>{ui}</Provider>);
 }
 
-/*
-let useNetInfo = null;
-jest.mock('@react-native-community/netinfo', () => ({
-  ...jest.requireActual('@react-native-community/netinfo'),
-  useNetInfo: jest.fn(),
-}));
-*/
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 

@@ -6,7 +6,6 @@ import React from 'react';
 import axios from 'axios';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
-/// import { useNetInfo } from '@react-native-community/netinfo';
 import SpecialistListScreen from '../SpecialistListScreen';
 import specialists from '../../docs/api/list_specialist_dermatology.json';
 import store from '../../helpers/TestUtils';
