@@ -1,115 +1,71 @@
-Teste de Mobile
-===================
+## MedicineApp
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Este teste é apresentado aos candidatos as vagas de Mobile Developer para avaliar os quesitos técnicos.
+A sample App with React Native and Typescript.
 
-O principal objetivo do teste é avaliar em como é construido um aplicativo que tem uma boa arquitetura, um bom layout e que contém tratamento de possíveis erros que podem acontecer na vida real do paciente
+## APP
 
-----------
+A app created by using: 
+- React Native
+- TypeScript
+- Expo SDK 42
+- React Navigation v6
+- I18n
+- Redux
+- Redux-Saga
+- Axios
+- Jest
+- Testing Library
 
+## Telas/Screens
 
-O Desafio
--------------
+![screen_home_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_android.jpg "Home Screen")
+![screen_home_loading_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_loading_android.jpg "Home Screen - Loading")
+![screen_home_internet_error_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_home_internet_error_android.jpg "Home Screen - Error")
+![screen_home_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_android.jpg "List Screen")
+![screen_home_loading_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_loading_android.jpg "List Screen - Loading")
+![screen_home_internet_error_android](https://raw.githubusercontent.com/RafaelWeiss/mobile-test/main/docs/screens/screen_list_internet_error_android.jpg "List Screen - Error")
 
-Seu objetivo é criar um aplicativo que contém funcionalidades básicas de um app médico para consulta
+## Installing
 
-O teste pode ser feito em ReactNative ou Flutter
+Clone the repo
 
+```
+git clone https://github.com/RafaelWeiss/mobile-test.git
+```
 
-<table>
-<tbody>
-<tr><th>Home</th>
-</tr>
-<tr>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/screen_home.PNG?raw=true" style="height:500px">
-</td>
-</tr>
-</tbody>
-</table>
+Change into the up-movies-app project directory
 
-<table>
-<tbody>
-<tr><th>List</th>
-</tr>
-<tr>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/screen_list.PNG?raw=true" style="height:500px">
-</td>
-</tr>
-</tbody>
-</table>
+```
+cd mobile-test
+```
 
-<table>
-<tbody>
-<tr><th>Fonte & Cores</th>
-</tr>
-<tr>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/colors_fonts.PNG?raw=true" style="height:250px">
-</td>
-</tr>
-</tbody>
-</table>
+Install project dependencies
 
-## <i class="icon-folder-open"></i> Funcionalidades
+```
+yarn install
+```
 
-**Como usuário quero poder ter opções de especialistas médicos para fazer uma consulta**
+And start the application using Expo
 
-> Para isso faça uma busca na API, configure a tela com as cores e trate o erro de conexão caso o cliente fique sem internet
+```
+yarn start
+```
 
-**Como usuário quero poder escolher qual especialista quero conversar ou ligar**
+Run tests with coverage status
 
-> Para isso faça uma busca na API de acordo com a categoria selecionada na home, configure a tela com as cores e trate o erro de conexão caso o cliente fique sem internet
+```
+yarn test --coverage
+```
 
-## <i class="icon-folder-open"></i> Consumindo Serviço
+## Versions
 
-Para consumir o serviço da API REST use o método GET para obter os dados do arquivo json do github
+v1.0
 
-**Como usar:**
+-   Default project implementation
 
-Obter dados da home
-> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/home_specialists.json
-> - **Método**: GET
+## Authors
 
-Listar cardiologistas
-> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
-> - **Método**: GET
+Rafael Weiss
 
-Listar dentistas
-> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_dental_care.json
-> - **Método**: GET
-
-Listar dermatologistas
-> - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_dermatology.json
-> - **Método**: GET
-> 
-
-## <i class="icon-folder-open"></i> Fontes & Imagens
-
-As fontes e os ícones encontram-se nesse repositório
-
-
-## <i class="icon-pencil"></i> Pré-requisitos
-*Fique atento a esses itens, o teste no mínimo deve conter os requisitos abaixo*
-
-- Tela deve ajustar em aparelhos grandes e pequenos
-- Deve funcionar em Android e iOS
-- Boa separação de camadas
-- Arquitetura Flux/Redux/Hooks/Bloc
-- Tratamentos de erros
-- Não suba dependencias locais. Fique atento ao .gitignore
-- Consumo de API
-
-
-#### <i class="icon-hdd"></i> Você pode entregar com Bonus
-*Pode ser algum dos itens abaixo*
-
-- Construir layouts com animação
-- Trabalhar offline (cache dos dados)
-- Testes instrumentados
-- Testes unitários
-- Cache de imagens
-
-
-Publicação
--------------
-
-Crie um **Fork** do repositório para realizar o teste, e depois de finalizado envie um **Pull Request** para nossa equipe interna avaliar
+-   [https://github.com/rafaelweiss](https://github.com/rafaelweiss)

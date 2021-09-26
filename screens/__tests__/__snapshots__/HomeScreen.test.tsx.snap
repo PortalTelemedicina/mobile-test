@@ -1,0 +1,742 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen Load specilistCatgegoryList 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderWidth": 0,
+      "flex": 1,
+      "flexDirection": "column",
+      "padding": 15,
+      "paddingTop": 50,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#504c4c",
+          "fontFamily": "ubuntu",
+        },
+        Object {
+          "fontSize": 18,
+          "marginTop": 5,
+        },
+      ]
+    }
+  >
+    Hello,
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#504c4c",
+          "fontFamily": "ubuntu-bold",
+        },
+        Object {
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "marginBottom": 20,
+        },
+      ]
+    }
+  >
+    Lorelle Lunna
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#504c4c",
+          "fontFamily": "ubuntu-bold",
+        },
+        Object {
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "marginTop": 25,
+        },
+      ]
+    }
+  >
+    Specialists
+  </Text>
+  <View
+    style={
+      Object {
+        "borderWidth": 0,
+        "height": 333.5,
+        "paddingTop": 20,
+      }
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "color": "#E5495E",
+            "image_url": "https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/icons/heart-shape-outline-with-lifeline.svg",
+            "name": "Heart Specialist",
+            "total": 10,
+          },
+          Object {
+            "color": "#F6AF3D",
+            "image_url": "https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/icons/tooth.svg",
+            "name": "Dental Care",
+            "total": 2,
+          },
+          Object {
+            "color": "#7349E5",
+            "image_url": "https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/icons/pimples.svg",
+            "name": "Dermatology Specialist",
+            "total": 4,
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={true}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      showsHorizontalScrollIndicator={false}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="specialist-category-0"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "height": 296.44444444444446,
+                    "marginRight": 10,
+                    "padding": 10,
+                    "width": 250,
+                  },
+                  Object {
+                    "backgroundColor": "#E5495E",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "borderRadius": 10,
+                    "width": "50%",
+                  }
+                }
+              >
+                <View
+                  color="#E5495E"
+                  name="heart-outline"
+                  size={50}
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu-bold",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 16,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                Heart Specialist
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 14,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                10 Doctors
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="specialist-category-1"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "height": 296.44444444444446,
+                    "marginRight": 10,
+                    "padding": 10,
+                    "width": 250,
+                  },
+                  Object {
+                    "backgroundColor": "#F6AF3D",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "borderRadius": 10,
+                    "width": "50%",
+                  }
+                }
+              >
+                <View
+                  color="#F6AF3D"
+                  name="tooth-outline"
+                  size={50}
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu-bold",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 16,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                Dental Care
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 14,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                2 Doctors
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="specialist-category-2"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "height": 296.44444444444446,
+                    "marginRight": 10,
+                    "padding": 10,
+                    "width": 250,
+                  },
+                  Object {
+                    "backgroundColor": "#7349E5",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "borderRadius": 10,
+                    "width": "50%",
+                  }
+                }
+              >
+                <View
+                  color="#7349E5"
+                  name="head-outline"
+                  size={50}
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu-bold",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 16,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                Dermatology Specialist
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#504c4c",
+                      "fontFamily": "ubuntu",
+                    },
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 14,
+                      "paddingTop": 5,
+                    },
+                  ]
+                }
+              >
+                4 Doctors
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#504c4c",
+          "fontFamily": "ubuntu-bold",
+        },
+        Object {
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "marginTop": 25,
+        },
+      ]
+    }
+  >
+    What do you need?
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+        "paddingTop": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          Object {
+            "backgroundColor": "#504c4c",
+          },
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#f2f2f2"
+          name="pulse"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#f2f2f2",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Diagnostic
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          null,
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#504c4c"
+          name="account-arrow-left-outline"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#504c4c",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Consultation
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          null,
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#504c4c"
+          name="doctor"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#504c4c",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Nurse
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          null,
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#504c4c"
+          name="ambulance"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#504c4c",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Ambulance
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          null,
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#504c4c"
+          name="flask-outline"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#504c4c",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Lab Work
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#f2f2f2",
+            "borderRadius": 10,
+            "height": 214.28571428571428,
+            "justifyContent": "center",
+            "margin": "1%",
+            "padding": 10,
+            "textAlign": "center",
+            "width": 214.28571428571428,
+          },
+          null,
+        ]
+      }
+    >
+      <View>
+        <View
+          color="#504c4c"
+          name="bottle-tonic-plus-outline"
+          size={50}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#504c4c",
+              "fontFamily": "ubuntu",
+            },
+            Object {
+              "color": "#504c4c",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Medicine
+      </Text>
+    </View>
+  </View>
+</View>
+`;
