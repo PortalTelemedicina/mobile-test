@@ -4,15 +4,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:test_telemedicina/repository/datasource/specialists.dart';
 import 'package:test_telemedicina/repository/entities/specialist.dart';
+import 'package:test_telemedicina/routes/specialist_ui.dart';
+import 'package:test_telemedicina/widgets/rounded_button.dart';
 
-class Home extends StatefulWidget {
+class HomeUI extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeUIState createState() => _HomeUIState();
 }
 
-class _HomeState extends State<Home> with TickerProviderStateMixin {
-  final RxList<Specialist> _specialists =
-      Get.find<SpecialistsDatasource>().specialists;
+class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
+  late final SpecialistsDatasource _dataSource =
+      Get.find<SpecialistsDatasource>();
+
+  covariant RxList<Specialist> _specialists = <Specialist>[].obs;
 
   final Rx<PageController> _controller = PageController().obs;
 
@@ -20,18 +24,19 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    _specialists.value = _dataSource.specialists;
+
     _controller.value.addListener(() {
       _currentIndex.value = _controller.value.page ?? 0;
     });
 
+    _updateData();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    Get.find<SpecialistsDatasource>().updateData();
-
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         fontFamily: 'Ubuntu',
       ),
@@ -110,6 +115,10 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         ),
       ),
     );
+  }
+
+  Future _updateData({bool delay = false}) async {
+    await _dataSource.updateData(delay: delay);
   }
 
   Widget _navButtonIndicator({int index = 0}) => Obx(
@@ -266,7 +275,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.snackbar('Sorry', 'to be implemented ...');
+          },
           splashColor: Colors.grey,
           child: Container(
             height: 110,
@@ -298,72 +309,181 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     );
   }
 
-  SizedBox _specialistsList() => SizedBox(
-        height: 180,
-        child: Obx(
-          () => ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: _specialists.length,
-            itemBuilder: (c, i) {
-              final bool _last = _specialists.length - 1 == i;
-              String _colorValue =
-                  _specialists[i].color.replaceAll('#', '0xff');
-              return Padding(
-                padding:
-                    EdgeInsets.only(right: _last ? 5 : 2, left: i == 0 ? 5 : 2),
-                child: Container(
-                  margin: const EdgeInsets.all(6),
-                  width: 130,
-                  decoration: BoxDecoration(
-                    color: Color(int.parse(_colorValue)),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      const BoxShadow(
-                        offset: const Offset(3, 3),
-                        blurRadius: 4,
-                        color: Colors.black54,
-                      )
-                    ],
+  Widget _specialistsList() => Obx(
+        () {
+          if (_specialists.isNotEmpty &&
+              _specialists.every((element) => element is SpecialistError)) {
+            return Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/images/connection_error.svg',
+                    width: 100,
+                    height: 80,
                   ),
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          width: 50,
-                          height: 58,
-                          padding: const EdgeInsets.all(8),
-                          child: SvgPicture.network(
-                            _specialists[i].imageUrl,
-                            color: Colors.red,
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Ops!'),
+                        Text(
+                            'Parece que houve uma falha\nde conexão com a internet.'),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16, top: 8),
+                          child: RoundedButton(
+                            'Tentar novamente',
+                            () async => await _updateData(delay: true),
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: Text(
-                          _specialists[i].name,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                      Text(
-                        '${_specialists[i].total} Doctors',
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                ],
+              ),
+            );
+          } else if (_specialists.length > 0 &&
+              _specialists.every((element) => element is SpecialistModel)) {
+            return SizedBox(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _specialists.length,
+                itemBuilder: (c, i) {
+                  final bool _last = _specialists.length - 1 == i;
+                  final specialist = _specialists[i] as SpecialistModel;
+
+                  String _colorValue = specialist.color.replaceAll('#', '0xff');
+
+                  return _specialistCard(_last, i, _colorValue);
+                },
+              ),
+            );
+          } else
+            return SizedBox(
+              height: 180,
+              child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (c, i) => _loadingCard(i),
+              ),
+            );
+        },
+      );
+
+  Widget _loadingCard(int i) {
+    final RxDouble _opacity = 1.0.obs;
+
+    Future.delayed(
+      Duration(milliseconds: 1),
+    ).then((value) => _opacity.value = 0.5);
+
+    return Obx(
+      () => AnimatedOpacity(
+        onEnd: () => _opacity.value = _opacity.value == 1.0 ? 0.5 : 1.0,
+        duration: Duration(seconds: 1),
+        opacity: _opacity.value,
+        child: Padding(
+          padding: EdgeInsets.only(
+            right: i == 3 ? 5 : 2,
+            left: i == 0 ? 5 : 2,
+          ),
+          child: Container(
+            margin: const EdgeInsets.all(6),
+            width: 130,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                const BoxShadow(
+                  offset: const Offset(3, 3),
+                  blurRadius: 4,
+                  color: Colors.black54,
+                )
+              ],
+            ),
+            padding: const EdgeInsets.all(12),
           ),
         ),
-      );
+      ),
+    );
+  }
+
+  Widget _specialistCard(bool _last, int i, String _colorValue) {
+    final specialist = _specialists[i] as SpecialistModel;
+
+    return Padding(
+      padding: EdgeInsets.only(right: _last ? 5 : 2, left: i == 0 ? 5 : 2),
+      child: InkWell(
+        onTap: () {
+          String? _url;
+          switch (specialist.name) {
+            case 'Heart Specialist':
+              _url = 'list_specialist_heart';
+              break;
+            case 'Dental Care':
+              _url = 'list_specialist_dental_care';
+              break;
+            case 'Dermatology Specialist':
+              _url = 'list_specialist_dermatology';
+              break;
+          }
+
+          Get.to(() => SpecialistUI(specialist.name, _url));
+        },
+        child: Container(
+          margin: const EdgeInsets.all(6),
+          width: 130,
+          decoration: BoxDecoration(
+            color: Color(int.parse(_colorValue)),
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              const BoxShadow(
+                offset: const Offset(3, 3),
+                blurRadius: 4,
+                color: Colors.black54,
+              )
+            ],
+          ),
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  width: 50,
+                  height: 58,
+                  padding: const EdgeInsets.all(8),
+                  child: SvgPicture.network(
+                    specialist.imageUrl,
+                    color: Color(int.parse(_colorValue)),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Text(
+                  specialist.name,
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ),
+              Text(
+                '${specialist.total} Doctors',
+                style: const TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   Padding _label(String _label) => Padding(
         padding: const EdgeInsets.only(top: 48, left: 12, bottom: 8),
