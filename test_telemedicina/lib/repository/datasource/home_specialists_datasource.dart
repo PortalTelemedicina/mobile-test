@@ -3,12 +3,12 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_telemedicina/repository/datasource/constants.dart';
-import 'package:test_telemedicina/repository/entities/specialist.dart';
+import 'package:test_telemedicina/repository/use_cases/home_specialist.dart';
 
-class SpecialistsDatasource {
-  RxList<Specialist> _specialistsData = <Specialist>[].obs;
+class HomeSpecialistsDatasource {
+  RxList<HomeSpecialist> _specialistsData = <HomeSpecialist>[].obs;
 
-  RxList<Specialist> get specialists => _specialistsData;
+  RxList<HomeSpecialist> get specialists => _specialistsData;
 
   Future updateData({bool delay = false}) async {
     try {
@@ -21,22 +21,21 @@ class SpecialistsDatasource {
       final http.Response response = await http.get(url);
 
       if (response.statusCode > 204) {
-        _specialistsData.add(
-          SpecialistError(
-            response.statusCode,
-            response.body,
-          ),
-        );
-        return;
+        return setErrorStatus(response.body, status: response.statusCode);
       }
 
       final List _json = jsonDecode(response.body);
-      final List<SpecialistModel> _specialists =
-          SpecialistModel.fromList(_json);
+      final List<HomeSpecialistModel> _specialists =
+          HomeSpecialistModel.fromList(_json);
 
       _specialistsData.value = _specialists;
     } catch (e) {
-      _specialistsData.add(SpecialistError(500, e.toString()));
+      setErrorStatus(e.toString());
     }
+  }
+
+  void setErrorStatus(String error, {int status = 500}) {
+    _specialistsData.clear();
+    _specialistsData.add(HomeSpecialistError(error, statusCode: status));
   }
 }

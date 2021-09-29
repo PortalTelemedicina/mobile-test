@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:test_telemedicina/repository/datasource/specialists.dart';
-import 'package:test_telemedicina/repository/entities/specialist.dart';
+import 'package:test_telemedicina/repository/datasource/home_specialists_datasource.dart';
+import 'package:test_telemedicina/repository/use_cases/home_specialist.dart';
 import 'package:test_telemedicina/routes/specialist_ui.dart';
 import 'package:test_telemedicina/widgets/rounded_button.dart';
 
@@ -13,10 +13,10 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
-  late final SpecialistsDatasource _dataSource =
-      Get.find<SpecialistsDatasource>();
+  late final HomeSpecialistsDatasource _dataSource =
+      Get.find<HomeSpecialistsDatasource>();
 
-  covariant RxList<Specialist> _specialists = <Specialist>[].obs;
+  covariant RxList<HomeSpecialist> _specialists = <HomeSpecialist>[].obs;
 
   final Rx<PageController> _controller = PageController().obs;
 
@@ -312,7 +312,7 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
   Widget _specialistsList() => Obx(
         () {
           if (_specialists.isNotEmpty &&
-              _specialists.every((element) => element is SpecialistError)) {
+              _specialists.every((element) => element is HomeSpecialistError)) {
             return Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
@@ -346,7 +346,7 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
               ),
             );
           } else if (_specialists.length > 0 &&
-              _specialists.every((element) => element is SpecialistModel)) {
+              _specialists.every((element) => element is HomeSpecialistModel)) {
             return SizedBox(
               height: 180,
               child: ListView.builder(
@@ -354,7 +354,7 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
                 itemCount: _specialists.length,
                 itemBuilder: (c, i) {
                   final bool _last = _specialists.length - 1 == i;
-                  final specialist = _specialists[i] as SpecialistModel;
+                  final specialist = _specialists[i] as HomeSpecialistModel;
 
                   String _colorValue = specialist.color.replaceAll('#', '0xff');
 
@@ -374,11 +374,11 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
         },
       );
 
-  Widget _loadingCard(int i) {
+  Widget _loadingCard(int index) {
     final RxDouble _opacity = 1.0.obs;
 
     Future.delayed(
-      Duration(milliseconds: 1),
+      Duration(milliseconds: 400 * index),
     ).then((value) => _opacity.value = 0.5);
 
     return Obx(
@@ -388,8 +388,8 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
         opacity: _opacity.value,
         child: Padding(
           padding: EdgeInsets.only(
-            right: i == 3 ? 5 : 2,
-            left: i == 0 ? 5 : 2,
+            right: index == 3 ? 5 : 2,
+            left: index == 0 ? 5 : 2,
           ),
           child: Container(
             margin: const EdgeInsets.all(6),
@@ -413,26 +413,15 @@ class _HomeUIState extends State<HomeUI> with TickerProviderStateMixin {
   }
 
   Widget _specialistCard(bool _last, int i, String _colorValue) {
-    final specialist = _specialists[i] as SpecialistModel;
+    final specialist = _specialists[i] as HomeSpecialistModel;
 
     return Padding(
       padding: EdgeInsets.only(right: _last ? 5 : 2, left: i == 0 ? 5 : 2),
       child: InkWell(
         onTap: () {
-          String? _url;
-          switch (specialist.name) {
-            case 'Heart Specialist':
-              _url = 'list_specialist_heart';
-              break;
-            case 'Dental Care':
-              _url = 'list_specialist_dental_care';
-              break;
-            case 'Dermatology Specialist':
-              _url = 'list_specialist_dermatology';
-              break;
-          }
+          if (specialist.name.isEmpty) return;
 
-          Get.to(() => SpecialistUI(specialist.name, _url));
+          Get.to(() => SpecialistUI(specialist.name));
         },
         child: Container(
           margin: const EdgeInsets.all(6),

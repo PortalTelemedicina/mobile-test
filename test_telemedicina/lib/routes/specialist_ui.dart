@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:test_telemedicina/repository/datasource/specialists/dental_care_datasource.dart';
+import 'package:test_telemedicina/repository/datasource/specialists/dermatology_datasource.dart';
+import 'package:test_telemedicina/repository/datasource/specialists/heart_datasource.dart';
+import 'package:test_telemedicina/repository/datasource/specialists/specialists_common_datasource.dart';
 import 'package:test_telemedicina/widgets/rounded_button.dart';
 
 class SpecialistUI extends StatelessWidget {
-  final String? _url, _label;
+  final String _label;
 
-  const SpecialistUI(this._label, this._url, {Key? key}) : super(key: key);
+  late final SpecialistsCommonDatasource _datasource;
+
+  SpecialistUI(
+    this._label, {
+    Key? key,
+  }) : super(key: key) {
+    switch(_label) {
+      case 'Heart Specialist':
+        _datasource = HeartDatasource();
+        break;
+      case 'Dental Care':
+        _datasource = DentalCareDatasource();
+        break;
+      case 'Dermatology Specialist':
+        _datasource = Dermatology();
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    _datasource.updateData();
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -25,7 +48,7 @@ class SpecialistUI extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 12, left: 12),
                 child: Text(
-                  _url ?? '',
+                  _label,
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
@@ -36,7 +59,7 @@ class SpecialistUI extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 14, top: 6),
                 child: Text(
-                  _label ?? '',
+                  'x doctors were found',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
