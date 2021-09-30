@@ -1,7 +1,7 @@
 import 'package:test_telemedicina/repository/entities/export.dart';
 
-class DentalCare extends SpecialistEntity {
-  DentalCare(
+class Dermatologist extends SpecialistEntity {
+  Dermatologist(
     String? name,
     String? description,
     double? distance,
@@ -9,27 +9,28 @@ class DentalCare extends SpecialistEntity {
   ) : super(name, description, distance, actions);
 }
 
-class DentalCareModel extends DentalCare {
-  DentalCareModel(
+class DermatologistModel extends Dermatologist {
+  DermatologistModel(
     String? name,
     String? description,
     double? distance,
     SpecialistActions? actions,
   ) : super(name, description, distance, actions);
 
-  factory DentalCareModel.fromMap(Map<String, dynamic> json) => DentalCareModel(
+  factory DermatologistModel.fromMap(Map<String, dynamic> json) =>
+      DermatologistModel(
         json['name'] as String?,
         json['description'] as String?,
         json['distance'] as double?,
         SpecialistActions.fromMap(json['actions']),
       );
 
-  static List<DentalCareModel> fromList(List<dynamic> list) =>
-      list.map((e) => DentalCareModel.fromMap(e)).toList();
+  static List<DermatologistModel> fromList(List<dynamic> list) =>
+      list.map((e) => DermatologistModel.fromMap(e)).toList();
 }
 
-class DentalCareError extends DentalCare implements ErrorState {
-  DentalCareError(
+class DermatologistError extends Dermatologist implements ErrorState {
+  DermatologistError(
     this.message, {
     this.statusCode = 500,
   }) : super(null, null, null, null);

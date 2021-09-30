@@ -14,7 +14,8 @@ class HomeSpecialistsDatasource {
     try {
       _specialistsData.clear();
 
-      if (delay) await Future.delayed(Duration(seconds: 3));
+      ///Delay to show loadng status
+      await Future.delayed(Duration(seconds: 3));
 
       final String endpoint = '/home_specialists.json';
       final Uri url = Uri.parse(baseUrl + endpoint);
