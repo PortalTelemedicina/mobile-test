@@ -9,7 +9,8 @@
     "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
     "test:ci": "npm test -- --coverage",
-    "lint": "eslint 'src/**' --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint 'src/**' --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -25,7 +26,9 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.14.0",
+    "husky": ">=6",
     "jest": "^26.6.3",
+    "lint-staged": ">=10",
     "metro-react-native-babel-preset": "^0.66.2",
     "react-test-renderer": "17.0.2",
     "typescript": "^3.8.3"
@@ -43,5 +46,8 @@
       "json",
       "node"
     ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix"
   }
 }
