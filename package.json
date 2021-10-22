@@ -41,6 +41,6 @@
     "@types/react": "^17"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix"
+    "*.{ts,tsx}": "eslint 'src/**' --fix"
   }
 }
