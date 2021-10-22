@@ -8,8 +8,9 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
+  Button,
   SafeAreaView,
   StatusBar,
   StyleProp,
@@ -19,8 +20,10 @@ import {
   ViewStyle,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import HomeScreen from '@/home-screen';
 
 const App = () => {
+  const [count, setCount] = useState(0);
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle: StyleProp<ViewStyle> = {
@@ -32,8 +35,15 @@ const App = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Home</Text>
+        <Text testID="title">Home</Text>
+        <Text testID="count">{count}</Text>
+        <Button
+          testID="btn-count"
+          title="press me"
+          onPress={() => setCount(prevCount => prevCount + 1)}
+        />
       </View>
+      <HomeScreen />
     </SafeAreaView>
   );
 };
