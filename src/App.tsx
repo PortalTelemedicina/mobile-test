@@ -20,7 +20,6 @@ import {
   ViewStyle,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from '@/home-screen';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -43,7 +42,6 @@ const App = () => {
           onPress={() => setCount(prevCount => prevCount + 1)}
         />
       </View>
-      <HomeScreen />
     </SafeAreaView>
   );
 };

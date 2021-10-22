@@ -1,12 +1,12 @@
 {
   "testRunner": "jest",
-  "runnerConfig": "e2e/config.json",
+  "runnerConfig": "tests/e2e/config.json",
   "skipLegacyWorkersInjection": true,
   "apps": {
     "ios": {
       "type": "ios.app",
-      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/RemoteDoctor.app",
-      "build": "xcodebuild -workspace ios/RemoteDoctor.xcworkspace -scheme RemoteDoctor -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+      "binaryPath": "../ios/build/Build/Products/Debug-iphonesimulator/RemoteDoctor.app",
+      "build": "xcodebuild -workspace ios/RemoteDoctor.xcworkspace -scheme RemoteDoctor -configuration Debug -sdk iphonesimulator -derivedDataPath ../ios/build"
     },
     "android": {
       "type": "android.apk",
