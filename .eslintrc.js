@@ -10,6 +10,7 @@ module.exports = {
   env: {
     'jest/globals': true,
   },
+  ignorePatterns: ['src/assets/*'],
   overrides: [
     {
       files: ['*.e2e.js'],

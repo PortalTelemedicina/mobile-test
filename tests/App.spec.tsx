@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-native';
-import App from '@/App';
 import {render} from '@testing-library/react-native';
+import App from '@/app/main';
 
 it('renders correctly', () => {
   const {getByText} = render(<App />);
