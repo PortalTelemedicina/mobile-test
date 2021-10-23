@@ -174,7 +174,7 @@
 
 ### Layers
 
-![architecture](https://user-images.githubusercontent.com/20798819/138557744-ea4c2c19-8202-4f00-a352-8568b22c424d.jpg)
+![https://user-images.githubusercontent.com/20798819/138557744-ea4c2c19-8202-4f00-a352-8568b22c424d.jpg](https://user-images.githubusercontent.com/20798819/138557744-ea4c2c19-8202-4f00-a352-8568b22c424d.jpg)
 
 ### Folder Structure
 
@@ -230,12 +230,23 @@ src/assets
   └──	icons
  
 src/config
-
 ```
 
 ---
 
-## 6. Development methodology
+## 6. Development methodology and principles
+
+- Domain Driven Design(DDD)
+- Test driven development(TDD)
+- Clean Architecture
+- Conventional Commits
+- SOLID Principles
+- Small commits
+- Design patters
+    - Factory
+    - Adapter
+    - Composition root
+    - Dependency injection
 
 ---
 
