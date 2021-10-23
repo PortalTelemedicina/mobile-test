@@ -174,28 +174,7 @@
 
 ### Layers
 
-- Domain
-    - Use Cases(Business Logic) [Interfaces]
-    - Entities(Models) [Interfaces]
-    - Protocols(Application Logic) [Interfaces]
-- Application
-    - Use Cases(Concrete implementation) [Classes]
-        - Tests [Unit Tests]
-- Infrastructure
-    - Adapters [Classes]
-        - Tests [Unit Tests]
-- UI
-    - Components
-    - State management
-    - Routing
-    - Pages
-    - Tests [Unit Tests]
-    - Types [Interfaces]
-- Main
-    - Index [Entry Point]
-    - Factories [Dependency Injection]
-        - UI
-        - Application
+![architecture](https://user-images.githubusercontent.com/20798819/138557744-ea4c2c19-8202-4f00-a352-8568b22c424d.jpg)
 
 ### Folder Structure
 
