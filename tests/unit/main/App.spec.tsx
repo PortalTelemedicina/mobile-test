@@ -15,6 +15,6 @@ const getInitialState = (): InitialState => {
 describe('App', () => {
   test('should render correctly', () => {
     const {sut} = getInitialState();
-    expect(sut.getByText('Home')).toBeDefined();
+    expect(sut.getByText('Login Page')).toBeDefined();
   });
 });
