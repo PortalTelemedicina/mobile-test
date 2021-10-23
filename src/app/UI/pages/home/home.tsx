@@ -3,10 +3,10 @@ import {
   Divider,
   Icon,
   Layout,
-  Text,
   TopNavigation,
   TopNavigationAction,
   useTheme,
+  Text,
 } from '@ui-kitten/components';
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
@@ -36,7 +36,7 @@ const Home = ({navigation}) => {
       >
         <TopNavigation
           style={styles.headerContainer}
-          title={() => <Text category="h6">Hi there!</Text>}
+          title={() => <Text>Hi there!</Text>}
           accessoryRight={() => (
             <TopNavigationAction
               onPress={back}
@@ -46,6 +46,7 @@ const Home = ({navigation}) => {
         />
         <Divider />
         <Layout level="2" style={styles.container}>
+          <Text category="h1">TTTest</Text>
           <Button onPress={back}>Sign Out</Button>
         </Layout>
       </SafeAreaView>
