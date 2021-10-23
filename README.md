@@ -200,56 +200,57 @@
 ### Folder Structure
 
 ```
-app
-	├──domain
-	|		├──usecases
-	|		|	  └───someusecase
-	|		|				└──someusecase.ts
-	|		├──entities
-	|		└──protocols
+src/app
+  ├──domain
+  |	  ├──usecases
+  |	  |   └───someusecase
+  |	  |        └──someusecase.ts
+  |	  ├──entities
+  |	  └──protocols
   |
-	├──application
-	|		└───usecases
-	|				└───someusecase
-	|		 				├──someusecase.ts
-	|		 				└───someusecase.spec.ts
+  ├──application
+  |   └───usecases
+  |        └───someusecase
+  |             ├──someusecase.ts
+  |             └───someusecase.spec.ts
   |
-	├──	adapters
-	|		└───someadapter
-	|			  ├──someadapter.ts
-	|			  └───someadapter.spec.ts
+  ├──adapters
+  |   └───someadapter
+  |        ├──someadapter.ts
+  |        └───someadapter.spec.ts
   |
-	├──	UI
-	|		├──shared
-	|		|	  ├──components
-	|		|		|    └───somecomponent
-	|		|		|	        ├──somecomponent.tsx
-	|		|		|	        └───somecomponent.spec.tsx
-	|		|	  ├──styles
-	|		|	  ├──routes
-	|		|  	├──state
-	|		|  	└───types
-	|		└───pages
-	|			  └───somepage
-	|				    ├──index.tsx
-	|				    ├──components
-	|				    |	  └───somecomponent
-	|					  |  	    ├──somecomponent.tsx
-	|					  |  	    └───somecomponent.spec.tsx
-	|				    ├──styles
-	|				    ├──state
-	|				    ├──tests
-	|				    └───routes
+  ├──UI
+  |  ├──shared
+  |  |	  ├──components
+  |  |    |   └───somecomponent
+  |  |    |        ├──somecomponent.tsx
+  |  |    |        └───somecomponent.spec.tsx
+  |  |	  ├──styles
+  |  |	  ├──routes
+  |  |    ├──state
+  |  |    └───types
+  |  |
+  |  └───pages
+  |       └───somepage
+  |            ├──index.tsx
+  |            ├──components
+  |            |   └───somecomponent
+  |            |        ├──somecomponent.tsx
+  |            |        └───somecomponent.spec.tsx
+  |            ├──styles
+  |            ├──state
+  |            ├──tests
+  |            └───routes
   |
-	└───main
-	 		├──index.tsx
-	 		└───factories
+  └───main
+       ├──index.tsx
+       └───factories
 
-assets
- 	├──	fonts
- 	└──	icons
+src/assets
+  ├──	fonts
+  └──	icons
  
-config
+src/config
 
 ```
 
