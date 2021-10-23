@@ -1,29 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
+import {UIKittenProvider} from '@/app/UI/shared/components/ui-kitten-provider/ui-kitten-provider';
+import {Button, Icon, Layout, Text} from '@ui-kitten/components';
 import React, {useState} from 'react';
-import {
-  Button,
-  SafeAreaView,
-  StatusBar,
-  StyleProp,
-  Text,
-  useColorScheme,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {SafeAreaView, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   const [count, setCount] = useState(0);
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = false;
 
   const backgroundStyle: StyleProp<ViewStyle> = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -31,19 +14,40 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text testID="title">Home</Text>
-        <Text testID="count">{count}</Text>
-        <Button
-          testID="btn-count"
-          title="press me"
-          onPress={() => setCount(prevCount => prevCount + 1)}
-        />
-      </View>
-    </SafeAreaView>
+    <>
+      <UIKittenProvider darkMode={isDarkMode}>
+        <SafeAreaView style={backgroundStyle}>
+          <Layout style={styles.container}>
+            <Text category="h1" testID="title">
+              Home
+            </Text>
+            <Text style={styles.couter} category="s1" testID="count">
+              {count}
+            </Text>
+            <Button
+              style={styles.button}
+              onPress={() => setCount(prevCount => prevCount + 1)}
+              accessoryLeft={props => (
+                <Icon name="plus-square-outline" {...props} />
+              )}
+            >
+              Add
+            </Button>
+          </Layout>
+        </SafeAreaView>
+      </UIKittenProvider>
+    </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  couter: {marginTop: 20},
+  button: {marginTop: 20},
+});
 
 export default App;
