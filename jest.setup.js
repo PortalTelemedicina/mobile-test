@@ -1,6 +1,9 @@
-import {initialize} from './src/config/locale';
+import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import '@testing-library/jest-native/extend-expect';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
+import {initialize} from './src/config/locale';
+
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
 
