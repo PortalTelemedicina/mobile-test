@@ -5,12 +5,12 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 
 type UIKittenProviderProps = {
-  darkMode: boolean;
+  darkMode?: boolean;
 };
 
 export const UIKittenProvider: React.FC<UIKittenProviderProps> = ({
   children,
-  darkMode,
+  darkMode = false,
 }) => {
   return (
     <>

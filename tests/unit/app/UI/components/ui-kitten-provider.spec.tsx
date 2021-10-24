@@ -1,4 +1,4 @@
-import {UIKittenProvider} from '@/app/UI/shared/components/ui-kitten-provider';
+import {UIKittenProvider} from '@/app/UI/shared/components';
 import {cleanup, render, RenderAPI} from '@testing-library/react-native';
 import React from 'react';
 import 'react-native';
