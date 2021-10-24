@@ -1,5 +1,6 @@
 import {MedicalSpecialties} from '@/app/domain/entities';
-import {HttpGetClient} from '@/app/domain/protocols/http';
+import {ConnectionError} from '@/app/domain/errors';
+import {HttpGetClient, HttpStatusCode} from '@/app/domain/protocols/http';
 import {ListMedicalSpecialties} from '@/app/domain/usecases';
 
 export class RemoteListMedicalSpecialties implements ListMedicalSpecialties {
@@ -8,7 +9,13 @@ export class RemoteListMedicalSpecialties implements ListMedicalSpecialties {
     private readonly httpGetClient: HttpGetClient<MedicalSpecialties[]>,
   ) {}
   async run(): Promise<MedicalSpecialties[]> {
-    const response = await this.httpGetClient.get({url: this.url});
-    return [];
+    const httpResponse = await this.httpGetClient.get({url: this.url});
+
+    switch (httpResponse.statusCode) {
+      case HttpStatusCode.connectionError:
+        throw new ConnectionError();
+      default:
+        throw new ConnectionError();
+    }
   }
 }
