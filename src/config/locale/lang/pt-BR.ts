@@ -5,4 +5,7 @@ export default {
   tests: {
     helloWorld: 'Olá Mundo $ $',
   },
+  errors: {
+    connectionError: 'Parece que houve uma falha de conexão com a internet.',
+  },
 };
