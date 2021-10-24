@@ -9,6 +9,7 @@ export enum TestsI18n {
 
 export enum ErrorsI18n {
   connectionError = 'errors.connectionError',
+  serverError = 'errors.serverError',
 }
 
 export type I18nKeys = LoginI18n | ErrorsI18n | TestsI18n;
