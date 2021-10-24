@@ -46,8 +46,8 @@ const Home = ({navigation}) => {
         />
         <Divider />
         <Layout level="2" style={styles.container}>
-          <Text category="h1">TTTest</Text>
-          <Button onPress={back}>Sign Out</Button>
+          <Text category="h1">Home Page</Text>
+          <Button onPress={back}>Go Back</Button>
         </Layout>
       </SafeAreaView>
     </>

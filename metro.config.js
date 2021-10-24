@@ -1,16 +1,17 @@
-const {getDefaultConfig} = require('metro-config');
+const MetroConfig = require('@ui-kitten/metro-config');
+const defaultConfig = require('metro-config/src/defaults').getDefaultValues();
 
-module.exports = (async () => {
-  const {
-    resolver: {sourceExts, assetExts},
-  } = await getDefaultConfig();
-  return {
-    transformer: {
-      babelTransformerPath: require.resolve('react-native-svg-transformer'),
-    },
-    resolver: {
-      assetExts: assetExts.filter(ext => ext !== 'svg'),
-      sourceExts: [...sourceExts, 'svg'],
-    },
-  };
-})();
+const evaConfig = {
+  evaPackage: '@eva-design/eva',
+  customMappingPath: './src/app/UI/shared/styles/font-mapping.json',
+};
+
+module.exports = MetroConfig.create(evaConfig, {
+  transformer: {
+    babelTransformerPath: require.resolve('react-native-svg-transformer'),
+  },
+  resolver: {
+    assetExts: defaultConfig.resolver.assetExts.filter(ext => ext !== 'svg'),
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'svg'],
+  },
+});

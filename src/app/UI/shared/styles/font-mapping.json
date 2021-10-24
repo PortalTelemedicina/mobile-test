@@ -1,0 +1,168 @@
+{
+    "strict": {
+        "text-font-family": "Ubuntu-Regular",
+        "text-heading-1-font-size": 36,
+        "text-heading-1-font-weight": "500",
+        "text-heading-1-font-family": "Ubuntu-Bold",
+        "text-subtitle-1-font-size": 15,
+        "text-subtitle-1-font-weight": "500",
+        "text-subtitle-1-font-family": "Ubuntu-Medium",
+        "text-paragraph-1-font-size": 15,
+        "text-paragraph-1-font-weight": "400",
+        "text-paragraph-1-font-family": "Ubuntu-Regular",
+        "text-caption-1-font-size": 12,
+        "text-caption-1-font-weight": "400",
+        "text-caption-1-font-family": "Ubuntu-Regular",
+        "text-label-font-size": 12,
+        "text-label-font-weight": "500",
+        "text-label-font-family": "Ubuntu-Bold"
+    },
+    "components": {
+        "Button": {
+            "meta": {},
+            "appearances": {
+                "filled": {
+                    "mapping": {
+                        "textFontFamily": "text-heading-1-font-family"
+                    },
+                    "variantGroups": {
+                        "status": {
+                            "primary": {
+                                "textFontWeight": "500"
+                            },
+                            "success": {
+                                "textFontWeight": "500"
+                            },
+                            "basic": {
+                                "textFontWeight": "500"
+                            },
+                            "info": {
+                                "textFontWeight": "500"
+                            },
+                            "warning": {
+                                "textFontWeight": "500"
+                            },
+                            "danger": {
+                                "textFontWeight": "500"
+                            },
+                            "control": {
+                                "textFontWeight": "500"
+                            }
+                        },
+                        "size": {
+                            "tiny": {
+                                "textFontWeight": "500"
+                            },
+                            "small": {
+                                "textFontWeight": "500"
+                            },
+                            "medium": {
+                                "textFontWeight": "500"
+                            },
+                            "large": {
+                                "textFontWeight": "500"
+                            },
+                            "giant": {
+                                "textFontWeight": "500"
+                            }
+                        }
+                    }
+                },
+                "outline": {
+                    "mapping": {
+                        "textFontFamily": "text-font-family"
+                    },
+                    "variantGroups": {
+                        "status": {
+                            "primary": {
+                                "textFontWeight": "500"
+                            },
+                            "success": {
+                                "textFontWeight": "500"
+                            },
+                            "basic": {
+                                "textFontWeight": "500"
+                            },
+                            "info": {
+                                "textFontWeight": "500"
+                            },
+                            "warning": {
+                                "textFontWeight": "500"
+                            },
+                            "danger": {
+                                "textFontWeight": "500"
+                            },
+                            "control": {
+                                "textFontWeight": "500"
+                            }
+                        },
+                        "size": {
+                            "tiny": {
+                                "textFontWeight": "500"
+                            },
+                            "small": {
+                                "textFontWeight": "500"
+                            },
+                            "medium": {
+                                "textFontWeight": "500"
+                            },
+                            "large": {
+                                "textFontWeight": "500"
+                            },
+                            "giant": {
+                                "textFontWeight": "500"
+                            }
+                        }
+                    }
+                },
+                "ghost": {
+                    "mapping": {
+                        "textFontFamily": "text-font-family"
+                    },
+                    "variantGroups": {
+                        "status": {
+                            "primary": {
+                                "textFontWeight": "500"
+                            },
+                            "success": {
+                                "textFontWeight": "500"
+                            },
+                            "basic": {
+                                "textFontWeight": "500"
+                            },
+                            "info": {
+                                "textFontWeight": "500"
+                            },
+                            "warning": {
+                                "textFontWeight": "500"
+                            },
+                            "danger": {
+                                "textFontWeight": "500"
+                            },
+                            "control": {
+                                "textFontWeight": "500"
+                            }
+                        },
+                        "size": {
+                            "tiny": {
+                                "textFontWeight": "500"
+                            },
+                            "small": {
+                                "textFontWeight": "500"
+                            },
+                            "medium": {
+                                "textFontWeight": "500"
+                            },
+                            "large": {
+                                "textFontWeight": "500"
+                            },
+                            "giant": {
+                                "textFontWeight": "500"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
