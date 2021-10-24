@@ -1,13 +1,12 @@
 import {Login} from '@/app/UI/pages';
+import {HomeRoutes, RouteList} from '@/app/UI/shared/routes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
-import Home from '../../pages/home/home';
 
-const Stack = createNativeStackNavigator();
-
-function Router() {
+const Stack = createNativeStackNavigator<RouteList>();
+const Router: React.FC = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="HOME">
       <Stack.Screen
         name="LOGIN"
         component={Login}
@@ -15,11 +14,11 @@ function Router() {
       />
       <Stack.Screen
         name="HOME"
-        component={Home}
+        component={HomeRoutes}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
-}
+};
 
 export default Router;
