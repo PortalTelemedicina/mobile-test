@@ -12,6 +12,9 @@ export class RemoteListMedicalSpecialties implements ListMedicalSpecialties {
     const httpResponse = await this.httpGetClient.get({url: this.url});
 
     switch (httpResponse.statusCode) {
+      case HttpStatusCode.ok:
+        const medicalSpecialtiesArray = httpResponse.data;
+        return medicalSpecialtiesArray;
       case HttpStatusCode.connectionError:
         throw new ConnectionError();
       case HttpStatusCode.serverError:
