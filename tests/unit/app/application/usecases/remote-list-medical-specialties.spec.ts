@@ -1,6 +1,8 @@
 import {HttpGetClientSpy} from '@/../tests/mocks/spies/http-get-client-spy';
 import {RemoteListMedicalSpecialties} from '@/app/application/usecases';
 import {MedicalSpecialties} from '@/app/domain/entities';
+import {ConnectionError} from '@/app/domain/errors';
+import {HttpStatusCode} from '@/app/domain/protocols/http';
 import faker from 'faker';
 
 type InitialState = {
@@ -15,10 +17,20 @@ const getInitialState = (url: string = faker.internet.url()): InitialState => {
 };
 
 describe('RemoteListMedicalSpecialties', () => {
-  test('Should call HttpGetClient with correct url', () => {
+  test('should call HttpGetClient with correct url', () => {
     const url = faker.internet.url();
     const {sut, httpGetClientSpy} = getInitialState(url);
     sut.run();
     expect(httpGetClientSpy.url).toBe(url);
+  });
+
+  test('should throw ConnectionError if status code returns 0', async () => {
+    const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
+    httpGetClientSpy.response = {
+      statusCode: HttpStatusCode.connectionError,
+    };
+    sut.run();
+    const promise = sut.run();
+    await expect(promise).rejects.toThrow(new ConnectionError());
   });
 });
