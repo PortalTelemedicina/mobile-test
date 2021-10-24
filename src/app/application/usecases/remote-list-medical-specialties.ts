@@ -1,5 +1,5 @@
 import {MedicalSpecialties} from '@/app/domain/entities';
-import {ConnectionError} from '@/app/domain/errors';
+import {ConnectionError, ServerError} from '@/app/domain/errors';
 import {HttpGetClient, HttpStatusCode} from '@/app/domain/protocols/http';
 import {ListMedicalSpecialties} from '@/app/domain/usecases';
 
@@ -14,6 +14,8 @@ export class RemoteListMedicalSpecialties implements ListMedicalSpecialties {
     switch (httpResponse.statusCode) {
       case HttpStatusCode.connectionError:
         throw new ConnectionError();
+      case HttpStatusCode.serverError:
+        throw new ServerError();
       default:
         throw new ConnectionError();
     }
