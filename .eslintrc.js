@@ -7,6 +7,7 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/no-unused-vars': 0,
   },
   env: {
     'jest/globals': true,
