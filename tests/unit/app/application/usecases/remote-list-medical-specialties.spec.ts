@@ -16,6 +16,20 @@ const getInitialState = (url: string = faker.internet.url()): InitialState => {
   return {sut, httpGetClientSpy};
 };
 
+const mockMedicalSpecialties = (): MedicalSpecialties[] => {
+  const response = [];
+  const randomAmount = faker.datatype.number({min: 0, max: 20});
+  for (let index = 0; index < randomAmount; index++) {
+    response.push({
+      name: faker.random.words(2),
+      image: faker.internet.url(),
+      amountAvailable: faker.datatype.number(),
+      color: faker.random.word(),
+    });
+  }
+  return response;
+};
+
 describe('RemoteListMedicalSpecialties', () => {
   test('should call HttpGetClient with correct url', () => {
     const url = faker.internet.url();
@@ -40,5 +54,16 @@ describe('RemoteListMedicalSpecialties', () => {
     };
     const promise = sut.run();
     await expect(promise).rejects.toThrow(new ServerError());
+  });
+
+  test('should return MedicalSpecialties[] if status code is 200', async () => {
+    const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
+    const mockedResponse = mockMedicalSpecialties();
+    httpGetClientSpy.response = {
+      statusCode: 200,
+      data: mockedResponse,
+    };
+    const promise = sut.run();
+    await expect(promise).resolves.toEqual(mockedResponse);
   });
 });
