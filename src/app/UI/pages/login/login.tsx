@@ -10,7 +10,7 @@ const Login = ({navigation}) => {
         {translate(LoginI18n.title)}
       </Text>
       <Button
-        testID="btn_login"
+        testID="btn-login"
         size="large"
         style={styles.button}
         onPress={() => navigation.navigate('HOME')}
