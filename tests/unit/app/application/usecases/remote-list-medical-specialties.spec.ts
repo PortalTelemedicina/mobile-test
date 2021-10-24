@@ -24,22 +24,20 @@ describe('RemoteListMedicalSpecialties', () => {
     expect(httpGetClientSpy.url).toBe(url);
   });
 
-  test('should throw ConnectionError if status code returns 0', async () => {
+  test('should throw ConnectionError if status code is 0', async () => {
     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
     httpGetClientSpy.response = {
       statusCode: HttpStatusCode.connectionError,
     };
-    sut.run();
     const promise = sut.run();
     await expect(promise).rejects.toThrow(new ConnectionError());
   });
 
-  test('should throw ServerError if status code returns 500', async () => {
+  test('should throw ServerError if status code is 500', async () => {
     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
     httpGetClientSpy.response = {
       statusCode: HttpStatusCode.serverError,
     };
-    sut.run();
     const promise = sut.run();
     await expect(promise).rejects.toThrow(new ServerError());
   });
