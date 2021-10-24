@@ -1,4 +1,19 @@
+import {initialize} from './src/config/locale';
 import '@testing-library/jest-native/extend-expect';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
 
 jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
+
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+jest.mock('react-native', () => {
+  const RN = jest.requireActual('react-native');
+  RN.NativeModules.SettingsManager = {settings: {AppleLocale: 'en_US'}};
+  RN.NativeModules.I18nManager = {
+    localeIdentifier: 'en_US',
+    getConstants: () => ({interfaceIdiom: 'en'}),
+  };
+  return RN;
+});
+
+initialize();

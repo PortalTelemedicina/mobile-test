@@ -1,3 +1,4 @@
+import {LoginI18n, translate} from '@/config/locale';
 import {Button, Layout, Text} from '@ui-kitten/components';
 import React from 'react';
 import {StyleSheet} from 'react-native';
@@ -6,7 +7,7 @@ const Login = ({navigation}) => {
   return (
     <Layout style={styles.container}>
       <Text category="h1" testID="title">
-        Login Page
+        {translate(LoginI18n.title)}
       </Text>
       <Button
         testID="btn_login"

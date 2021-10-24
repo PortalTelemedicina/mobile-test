@@ -4,6 +4,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'detox'],
   rules: {
+    'no-shadow': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
   },
