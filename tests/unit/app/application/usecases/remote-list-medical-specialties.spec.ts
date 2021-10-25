@@ -1,4 +1,4 @@
-import {HttpGetClientSpy} from '@/../tests/mocks/spies/http-get-client-spy';
+import {HttpGetClientSpy} from '@/../tests/mocks/spies/http/http-get-client-spy';
 import {RemoteListMedicalSpecialties} from '@/app/application/usecases';
 import {MedicalSpecialties} from '@/app/domain/entities';
 import {ConnectionError, ServerError} from '@/app/domain/errors';

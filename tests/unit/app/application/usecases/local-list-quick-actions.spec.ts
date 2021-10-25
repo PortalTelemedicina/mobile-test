@@ -1,4 +1,4 @@
-import {LocalQuickActionRepositorySpy} from '@/../tests/mocks/spies/quick-action-repository-spy';
+import {LocalQuickActionRepositorySpy} from '@/../tests/mocks/spies/repositories/quick-action-repository-spy';
 import {LocalListQuickActions} from '@/app/application/usecases/local-list-quick-actions';
 import {QuickAction} from '@/app/domain/entities';
 import faker from 'faker';
