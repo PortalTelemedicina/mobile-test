@@ -12,6 +12,7 @@ export type ListSpecialistsProps = {
 
 const ListSpecialists: React.FC<ListSpecialistsProps> = ({
   listQuickActions,
+  listMedicalSpecialties,
 }) => {
   useEffect(() => {
     const getQuickActions = () => {
@@ -20,9 +21,15 @@ const ListSpecialists: React.FC<ListSpecialistsProps> = ({
         setActions(actions);
       }
     };
+
+    const getMedicalSpecialties = async () => {
+      await listMedicalSpecialties.run();
+    };
+
     getQuickActions();
+    getMedicalSpecialties();
     return () => {};
-  }, [listQuickActions]);
+  }, [listQuickActions, listMedicalSpecialties]);
 
   const [actions, setActions] = useState<QuickAction[]>(null);
 
