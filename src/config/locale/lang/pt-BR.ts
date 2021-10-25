@@ -11,6 +11,14 @@ export default {
   },
   shared: {
     specialists: 'Especialidades',
+    quickActions: {
+      diagnostic: 'Diagnóstico',
+      consultation: 'Consulta',
+      nurse: 'Enfermeira',
+      ambulance: 'Ambulância',
+      laboratory: 'Laboratório',
+      medicine: 'Medicamentos',
+    },
   },
   listSpecialists: {
     whatDoYouNeed: 'O que você precisa?',

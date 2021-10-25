@@ -11,6 +11,14 @@ export default {
   },
   shared: {
     specialists: 'Specialists',
+    quickActions: {
+      diagnostic: 'Diagnosis',
+      consultation: 'Consultation',
+      nurse: 'Nurse',
+      ambulance: 'Ambulance',
+      laboratory: 'Laboratory',
+      medicine: 'Medicines',
+    },
   },
   listSpecialists: {
     whatDoYouNeed: 'What do you need?',

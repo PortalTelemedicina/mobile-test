@@ -14,6 +14,12 @@ export enum ErrorsI18n {
 
 export enum SharedI18n {
   specialists = 'shared.specialists',
+  diagnostic = 'shared.quickActions.diagnostic',
+  consultation = 'shared.quickActions.consultation',
+  nurse = 'shared.quickActions.nurse',
+  ambulance = 'shared.quickActions.ambulance',
+  laboratory = 'shared.quickActions.laboratory',
+  medicine = 'shared.quickActions.medicine',
 }
 
 export enum ListSpecialistsI18n {
