@@ -1,3 +1,4 @@
+import {BadHexColorError} from '@/app/domain/errors';
 import {convertHexToRgb, convertHexToRgbParams} from '@/utils';
 
 type InitialState = {
@@ -20,5 +21,13 @@ describe('convertHexToRgb', () => {
     const {sut} = getInitialState();
     const result = sut({hex: '#BABACA', alpha: 0.5});
     expect(result).toBe('rgba(186, 186, 202, 0.5)');
+  });
+
+  test('should throw error for bad hex format', () => {
+    const {sut} = getInitialState();
+
+    expect(() => sut({hex: '#BAD', alpha: 0.5})).toThrow(
+      new BadHexColorError(),
+    );
   });
 });
