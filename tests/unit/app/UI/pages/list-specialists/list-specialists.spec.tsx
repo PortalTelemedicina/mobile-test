@@ -37,27 +37,36 @@ const getInitialState = (): InitialState => {
 describe('ListSpecialists', () => {
   afterEach(cleanup);
 
-  test('should render with initial state', () => {
+  test('should render with initial state', async () => {
     const {sut} = getInitialState();
-    expect(sut.getByText('Specialists')).toBeDefined();
-    expect(sut.getByText('What do you need?')).toBeDefined();
+
+    await waitFor(() => {
+      expect(sut.getByText('Specialists')).toBeDefined();
+      expect(sut.getByText('What do you need?')).toBeDefined();
+    });
   });
 
-  test('should list quick actions correctly', () => {
+  test('should list quick actions correctly', async () => {
     const {sut, listQuickActionsSpy} = getInitialState();
-    expect(listQuickActionsSpy.calls).toBe(1);
-    listQuickActionsSpy.quickActions.forEach(action => {
-      expect(sut.getByText(action.title)).toBeDefined();
-      const actionTouchable = sut.getByTestId(`action-${action.title}`);
-      expect(actionTouchable.props.accessibilityState.disabled).toBe(
-        !action.active,
-      );
+
+    await waitFor(() => {
+      expect(listQuickActionsSpy.calls).toBe(1);
+      listQuickActionsSpy.quickActions.forEach(action => {
+        expect(sut.getByText(action.title)).toBeDefined();
+        const actionTouchable = sut.getByTestId(`action-${action.title}`);
+        expect(actionTouchable.props.accessibilityState.disabled).toBe(
+          !action.active,
+        );
+      });
     });
   });
 
   test('should call ListSpecialties only once', async () => {
-    const {sut, listMedicalSpecialtiesSpy} = getInitialState();
-    expect(listMedicalSpecialtiesSpy.calls).toBe(1);
+    const {listMedicalSpecialtiesSpy} = getInitialState();
+
+    await waitFor(() => {
+      expect(listMedicalSpecialtiesSpy.calls).toBe(1);
+    });
   });
 
   test('should list medical specialties correctly', async () => {
