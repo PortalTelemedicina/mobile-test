@@ -1,24 +1,29 @@
 import {mockQuickActions} from '@/../tests/mocks/helpers/mock-quick-actions';
+import {ListMedicalSpecialtiesSpy} from '@/../tests/mocks/spies/usecases/list-medical-specialties-spy';
 import {ListQuickActionsSpy} from '@/../tests/mocks/spies/usecases/list-quick-actions-spy';
 import {ListSpecialists} from '@/app/UI/pages';
 import {UIKittenProvider} from '@/app/UI/shared/components';
 import {cleanup, render, RenderAPI} from '@testing-library/react-native';
 import React from 'react';
-import 'react-native';
 
 type InitialState = {
   sut: RenderAPI;
   listQuickActionsSpy: ListQuickActionsSpy;
+  listMedicalSpecialtiesSpy: ListMedicalSpecialtiesSpy;
 };
 
 const getInitialState = (): InitialState => {
   const listQuickActionsSpy = new ListQuickActionsSpy(mockQuickActions());
+  const listMedicalSpecialtiesSpy = new ListMedicalSpecialtiesSpy();
   const sut = render(
     <UIKittenProvider>
-      <ListSpecialists listQuickActions={listQuickActionsSpy} />
+      <ListSpecialists
+        listQuickActions={listQuickActionsSpy}
+        listMedicalSpecialties={listMedicalSpecialtiesSpy}
+      />
     </UIKittenProvider>,
   );
-  return {sut, listQuickActionsSpy};
+  return {sut, listQuickActionsSpy, listMedicalSpecialtiesSpy};
 };
 
 describe('ListSpecialists', () => {
@@ -40,5 +45,10 @@ describe('ListSpecialists', () => {
         !action.active,
       );
     });
+  });
+
+  test('should call ListSpecialties only once', async () => {
+    const {sut, listMedicalSpecialtiesSpy} = getInitialState();
+    expect(listMedicalSpecialtiesSpy.calls).toBe(1);
   });
 });
