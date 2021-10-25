@@ -20,6 +20,7 @@ export enum SharedI18n {
   ambulance = 'shared.quickActions.ambulance',
   laboratory = 'shared.quickActions.laboratory',
   medicine = 'shared.quickActions.medicine',
+  doctors = 'shared.doctors',
 }
 
 export enum ListSpecialistsI18n {

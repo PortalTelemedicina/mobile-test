@@ -19,6 +19,7 @@ export default {
       laboratory: 'Laboratory',
       medicine: 'Medicines',
     },
+    doctors: 'Doctors',
   },
   listSpecialists: {
     whatDoYouNeed: 'What do you need?',
