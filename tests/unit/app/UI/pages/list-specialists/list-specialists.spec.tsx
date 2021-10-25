@@ -1,9 +1,15 @@
+import {mockMedicalSpecialties} from '@/../tests/mocks/helpers/mock-medical-specialties';
 import {mockQuickActions} from '@/../tests/mocks/helpers/mock-quick-actions';
 import {ListMedicalSpecialtiesSpy} from '@/../tests/mocks/spies/usecases/list-medical-specialties-spy';
 import {ListQuickActionsSpy} from '@/../tests/mocks/spies/usecases/list-quick-actions-spy';
 import {ListSpecialists} from '@/app/UI/pages';
 import {UIKittenProvider} from '@/app/UI/shared/components';
-import {cleanup, render, RenderAPI} from '@testing-library/react-native';
+import {
+  cleanup,
+  render,
+  RenderAPI,
+  waitFor,
+} from '@testing-library/react-native';
 import React from 'react';
 
 type InitialState = {
@@ -14,7 +20,9 @@ type InitialState = {
 
 const getInitialState = (): InitialState => {
   const listQuickActionsSpy = new ListQuickActionsSpy(mockQuickActions());
-  const listMedicalSpecialtiesSpy = new ListMedicalSpecialtiesSpy();
+  const listMedicalSpecialtiesSpy = new ListMedicalSpecialtiesSpy(
+    mockMedicalSpecialties(),
+  );
   const sut = render(
     <UIKittenProvider>
       <ListSpecialists
@@ -50,5 +58,14 @@ describe('ListSpecialists', () => {
   test('should call ListSpecialties only once', async () => {
     const {sut, listMedicalSpecialtiesSpy} = getInitialState();
     expect(listMedicalSpecialtiesSpy.calls).toBe(1);
+  });
+
+  test('should list medical specialties correctly', async () => {
+    const {sut, listMedicalSpecialtiesSpy} = getInitialState();
+    await waitFor(() => {
+      listMedicalSpecialtiesSpy.medicalSpecialties.forEach(medicalSpecialty => {
+        expect(sut.getByText(medicalSpecialty.name)).toBeDefined();
+      });
+    });
   });
 });
