@@ -1,9 +1,8 @@
+import {mockQuickActions} from '@/../tests/mocks/helpers/mock-quick-actions';
 import {ListQuickActionsSpy} from '@/../tests/mocks/spies/usecases/list-quick-actions-spy';
 import {ListSpecialists} from '@/app/UI/pages';
-import {ListSpecialistsProps} from '@/app/UI/pages/list-specialists/list-specialists';
 import {UIKittenProvider} from '@/app/UI/shared/components';
 import {cleanup, render, RenderAPI} from '@testing-library/react-native';
-import faker from 'faker';
 import React from 'react';
 import 'react-native';
 
@@ -13,7 +12,7 @@ type InitialState = {
 };
 
 const getInitialState = (): InitialState => {
-  const listQuickActionsSpy = new ListQuickActionsSpy();
+  const listQuickActionsSpy = new ListQuickActionsSpy(mockQuickActions());
   const sut = render(
     <UIKittenProvider>
       <ListSpecialists listQuickActions={listQuickActionsSpy} />
@@ -31,8 +30,15 @@ describe('ListSpecialists', () => {
     expect(sut.getByText('What do you need?')).toBeDefined();
   });
 
-  test('should call ListQuickActions on initial render', () => {
+  test('should list quick actions correctly', () => {
     const {sut, listQuickActionsSpy} = getInitialState();
     expect(listQuickActionsSpy.calls).toBe(1);
+    listQuickActionsSpy.quickActions.forEach(action => {
+      expect(sut.getByText(action.title)).toBeDefined();
+      const actionTouchable = sut.getByTestId(`action-${action.title}`);
+      expect(actionTouchable.props.accessibilityState.disabled).toBe(
+        !action.active,
+      );
+    });
   });
 });
