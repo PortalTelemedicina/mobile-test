@@ -1,33 +1,44 @@
 import {HttpGetClientSpy} from '@/../tests/mocks/spies/http/http-get-client-spy';
 import {RemoteListMedicalSpecialties} from '@/app/application/usecases';
-import {MedicalSpecialties} from '@/app/domain/entities';
 import {ConnectionError, ServerError} from '@/app/domain/errors';
 import {HttpStatusCode} from '@/app/domain/protocols/http';
+import {MedicalSpecialtiesResponse} from '@/app/domain/protocols/http/responses';
 import faker from 'faker';
 
 type InitialState = {
   sut: RemoteListMedicalSpecialties;
-  httpGetClientSpy: HttpGetClientSpy<MedicalSpecialties[]>;
+  httpGetClientSpy: HttpGetClientSpy<MedicalSpecialtiesResponse[]>;
 };
 
 const getInitialState = (url: string = faker.internet.url()): InitialState => {
-  const httpGetClientSpy = new HttpGetClientSpy<MedicalSpecialties[]>();
+  const httpGetClientSpy = new HttpGetClientSpy<MedicalSpecialtiesResponse[]>();
   const sut = new RemoteListMedicalSpecialties(url, httpGetClientSpy);
   return {sut, httpGetClientSpy};
 };
 
-const mockMedicalSpecialties = (): MedicalSpecialties[] => {
-  const response = [];
+const mockMedicalSpecialties = (): MedicalSpecialtiesResponse[] => {
+  const response: MedicalSpecialtiesResponse[] = [];
   const randomAmount = faker.datatype.number({min: 0, max: 20});
   for (let index = 0; index < randomAmount; index++) {
     response.push({
       name: faker.random.words(2),
-      image: faker.internet.url(),
-      amountAvailable: faker.datatype.number(),
+      image_url: faker.internet.url(),
+      total: faker.datatype.number(),
       color: faker.random.word(),
     });
   }
   return response;
+};
+
+const parseResponse = (response: MedicalSpecialtiesResponse[]) => {
+  return response.map(specialty => {
+    return {
+      name: specialty.name,
+      image: specialty.image_url,
+      color: specialty.color,
+      amountAvailable: specialty.total,
+    };
+  });
 };
 
 describe('RemoteListMedicalSpecialties', () => {
@@ -64,6 +75,6 @@ describe('RemoteListMedicalSpecialties', () => {
       data: mockedResponse,
     };
     const promise = sut.run();
-    await expect(promise).resolves.toEqual(mockedResponse);
+    await expect(promise).resolves.toEqual(parseResponse(mockedResponse));
   });
 });
