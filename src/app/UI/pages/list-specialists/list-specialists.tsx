@@ -1,15 +1,45 @@
+import {QuickAction} from '@/app/domain/entities';
+import {ListMedicalSpecialties, ListQuickActions} from '@/app/domain/usecases';
 import {ListSpecialistsI18n, SharedI18n, translate} from '@/config/locale';
 import {Layout, Text} from '@ui-kitten/components';
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 
-export type ListSpecialistsProps = {};
+export type ListSpecialistsProps = {
+  listMedicalSpecialties: ListMedicalSpecialties;
+  listQuickActions: ListQuickActions;
+};
 
-const ListSpecialists: React.FC<ListSpecialistsProps> = ({}) => {
+const ListSpecialists: React.FC<ListSpecialistsProps> = ({
+  listQuickActions,
+}) => {
+  useEffect(() => {
+    const getQuickActions = () => {
+      const actions = listQuickActions.run();
+      if (actions) {
+        setActions(actions);
+      }
+    };
+    getQuickActions();
+    return () => {};
+  }, [listQuickActions]);
+
+  const [actions, setActions] = useState<QuickAction[]>(null);
+
+  const renderItem = ({item}: {item: QuickAction}) => {
+    const {title, icon, active} = item;
+    return (
+      <TouchableOpacity onPress={() => {}}>
+        <Text>{title}</Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <Layout level="1" style={styles.container}>
       <Text category="h5">{translate(SharedI18n.specialists)}</Text>
       <Text category="h5">{translate(ListSpecialistsI18n.whatDoYouNeed)}</Text>
+      <FlatList data={actions} renderItem={renderItem} />
     </Layout>
   );
 };
