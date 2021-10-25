@@ -10,6 +10,7 @@ export enum TestsI18n {
 export enum ErrorsI18n {
   connectionError = 'errors.connectionError',
   serverError = 'errors.serverError',
+  badHexColorError = 'errors.badHexColorError',
 }
 
 export enum SharedI18n {
