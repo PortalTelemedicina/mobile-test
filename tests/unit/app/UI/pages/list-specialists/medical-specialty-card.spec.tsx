@@ -5,6 +5,7 @@ import MedicalSpecialtyCard, {
 import {UIKittenProvider} from '@/app/UI/shared/components';
 import {
   cleanup,
+  fireEvent,
   render,
   RenderAPI,
   waitFor,
@@ -64,6 +65,19 @@ describe('MedicalSpecialtyCard', () => {
       expect(card).toBeDefined();
       expect(icon).toBeDefined();
       expect(amount.children[0]).toBe(`${specialty.amountAvailable}`);
+    });
+  });
+
+  test('should call onPress on tap', async () => {
+    const mockFn = jest.fn();
+    const {sut} = getInitialState({
+      medicalSpecialty: mockMedicalSpecialty(),
+      loading: false,
+      onPress: mockFn,
+    });
+    await waitFor(() => {
+      fireEvent.press(sut.getByTestId('touchable'));
+      expect(mockFn).toHaveBeenCalled();
     });
   });
 });
