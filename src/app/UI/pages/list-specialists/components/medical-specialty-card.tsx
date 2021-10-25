@@ -1,6 +1,6 @@
 import {MedicalSpecialties} from '@/app/domain/entities';
 import {SharedI18n, translate} from '@/config/locale';
-import {hexToRGB} from '@/utils';
+import {convertHexToRgb} from '@/utils';
 import {Layout, Text, useTheme} from '@ui-kitten/components';
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
@@ -50,10 +50,10 @@ const MedicalSpecialtyCard: React.FC<MedicalSpecialtyCardProps> = ({
             style={[
               styles.iconContainer,
               {
-                backgroundColor: hexToRGB(
-                  theme['background-basic-color-1'],
-                  0.75,
-                ),
+                backgroundColor: convertHexToRgb({
+                  hex: theme['background-basic-color-1'],
+                  alpha: 0.75,
+                }),
               },
             ]}
           >
