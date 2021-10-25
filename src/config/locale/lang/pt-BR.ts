@@ -8,6 +8,8 @@ export default {
   errors: {
     connectionError: 'Parece que houve uma falha de conexão com a internet.',
     serverError: 'Falha na conexão com o servidor.',
+    badHexColorError:
+      'Valor de cor hexadecimal inválido, use o formato de 6 dígitos (ex: #FFFFFF)',
   },
   shared: {
     specialists: 'Especialidades',
