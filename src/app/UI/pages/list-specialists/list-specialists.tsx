@@ -29,7 +29,11 @@ const ListSpecialists: React.FC<ListSpecialistsProps> = ({
   const renderItem = ({item}: {item: QuickAction}) => {
     const {title, icon, active} = item;
     return (
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity
+        testID={`action-${item.title}`}
+        disabled={!active}
+        onPress={() => {}}
+      >
         <Text>{title}</Text>
       </TouchableOpacity>
     );
