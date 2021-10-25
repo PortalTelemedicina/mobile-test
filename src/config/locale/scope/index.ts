@@ -12,4 +12,17 @@ export enum ErrorsI18n {
   serverError = 'errors.serverError',
 }
 
-export type I18nKeys = LoginI18n | ErrorsI18n | TestsI18n;
+export enum SharedI18n {
+  specialists = 'shared.specialists',
+}
+
+export enum ListSpecialistsI18n {
+  whatDoYouNeed = 'listSpecialists.whatDoYouNeed',
+}
+
+export type I18nKeys =
+  | LoginI18n
+  | ErrorsI18n
+  | SharedI18n
+  | ListSpecialistsI18n
+  | TestsI18n;
