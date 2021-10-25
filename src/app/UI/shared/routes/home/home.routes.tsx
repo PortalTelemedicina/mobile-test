@@ -1,4 +1,5 @@
-import {Activity, Chat, ListSpecialists, Menu} from '@/app/UI/pages';
+import {MakeListSpecialists} from '@/app/main/factories/pages';
+import {Activity, Chat, Menu} from '@/app/UI/pages';
 import {HomeBottomBar, HomeHeader} from '@/app/UI/shared/components';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
@@ -18,7 +19,7 @@ const HomeRoutes: React.FC = () => (
       headerShown: true,
     }}
   >
-    <Screen name="APPOINTMENT" component={ListSpecialists} />
+    <Screen name="APPOINTMENT" component={MakeListSpecialists} />
     <Screen name="CHAT" component={Chat} />
     <Screen name="ACTIVITY" component={Activity} />
     <Screen name="MENU" component={Menu} />
