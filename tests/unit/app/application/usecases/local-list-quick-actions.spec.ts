@@ -1,7 +1,6 @@
+import {mockQuickActions} from '@/../tests/mocks/helpers/mock-quick-actions';
 import {LocalQuickActionRepositorySpy} from '@/../tests/mocks/spies/repositories/quick-action-repository-spy';
 import {LocalListQuickActions} from '@/app/application/usecases/local-list-quick-actions';
-import {QuickAction} from '@/app/domain/entities';
-import faker from 'faker';
 
 type InitialState = {
   sut: LocalListQuickActions;
@@ -12,19 +11,6 @@ const getInitialState = (): InitialState => {
   const quickActionsRepositorySpy = new LocalQuickActionRepositorySpy();
   const sut = new LocalListQuickActions(quickActionsRepositorySpy);
   return {sut, quickActionsRepositorySpy};
-};
-
-const mockQuickActions = (): QuickAction[] => {
-  const response: QuickAction[] = [];
-  const randomAmount = faker.datatype.number({min: 0, max: 20});
-  for (let index = 0; index < randomAmount; index++) {
-    response.push({
-      title: faker.random.words(2),
-      icon: faker.internet.url(),
-      active: faker.datatype.boolean(),
-    });
-  }
-  return response;
 };
 
 describe('LocalListQuickActions', () => {
