@@ -1,11 +1,13 @@
+export type AvailableIcons =
+  | 'diagnostic'
+  | 'consultation'
+  | 'nurse'
+  | 'ambulance'
+  | 'laboratory'
+  | 'medicine';
+
 export interface QuickAction {
   title: string;
-  icon:
-    | 'diagnostic'
-    | 'consultation'
-    | 'nurse'
-    | 'ambulance'
-    | 'laboratory'
-    | 'medicine';
+  icon: AvailableIcons;
   active: boolean;
 }
