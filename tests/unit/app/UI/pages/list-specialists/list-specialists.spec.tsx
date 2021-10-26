@@ -12,6 +12,24 @@ import {
 } from '@testing-library/react-native';
 import React from 'react';
 
+jest.mock('react-native-svg', () => {
+  const React = require('React');
+  const createComponent = function (name: string) {
+    return class extends React.Component {
+      static displayName = name;
+
+      render() {
+        const type = name;
+        return React.createElement(type, this.props, this.props.children);
+      }
+    };
+  };
+
+  return {
+    SvgUri: createComponent('SvgUri'),
+  };
+});
+
 type InitialState = {
   sut: RenderAPI;
   listQuickActionsSpy: ListQuickActionsSpy;
@@ -21,7 +39,7 @@ type InitialState = {
 const getInitialState = (): InitialState => {
   const listQuickActionsSpy = new ListQuickActionsSpy(mockQuickActions());
   const listMedicalSpecialtiesSpy = new ListMedicalSpecialtiesSpy(
-    mockMedicalSpecialties(),
+    mockMedicalSpecialties(1),
   );
   const sut = render(
     <UIKittenProvider>

@@ -16,6 +16,24 @@ type InitialState = {
   sut: RenderAPI;
 };
 
+jest.mock('react-native-svg', () => {
+  const React = require('React');
+  const createComponent = function (name: string) {
+    return class extends React.Component {
+      static displayName = name;
+
+      render() {
+        const type = name;
+        return React.createElement(type, this.props, this.props.children);
+      }
+    };
+  };
+
+  return {
+    SvgUri: createComponent('SvgUri'),
+  };
+});
+
 const getInitialState = (params: MedicalSpecialtyCardProps): InitialState => {
   const {
     onPress = jest.fn(),
