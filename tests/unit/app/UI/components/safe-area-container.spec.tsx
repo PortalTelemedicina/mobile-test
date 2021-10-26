@@ -1,7 +1,6 @@
 import {SafeAreaContainer} from '@/app/UI/shared/components';
 import {cleanup, render, RenderAPI} from '@testing-library/react-native';
 import React from 'react';
-import 'react-native';
 import {Text} from 'react-native';
 
 type InitialState = {

@@ -12,7 +12,6 @@ import {
 } from '@testing-library/react-native';
 import faker from 'faker';
 import React from 'react';
-import 'react-native';
 
 type InitialState = {
   sut: RenderAPI;
