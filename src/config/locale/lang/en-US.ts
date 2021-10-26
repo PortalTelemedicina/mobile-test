@@ -22,6 +22,7 @@ export default {
       medicine: 'Medicines',
     },
     doctors: 'Doctors',
+    tryAgain: 'Try again',
   },
   listSpecialists: {
     whatDoYouNeed: 'What do you need?',

@@ -19,9 +19,10 @@ export default {
       nurse: 'Enfermeira',
       ambulance: 'Ambulância',
       laboratory: 'Laboratório',
-      medicine: 'Medicamentos',
+      medicine: 'Medicamento',
     },
     doctors: 'Médicos',
+    tryAgain: 'Tentar novamente',
   },
   listSpecialists: {
     whatDoYouNeed: 'O que você precisa?',
