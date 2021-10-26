@@ -13,7 +13,11 @@ export class AxiosHttpGetClient implements HttpGetClient<any> {
         headers: params.headers,
       });
     } catch (error) {
-      httpResponse = error.response;
+      if (error.request) {
+        httpResponse = error.request;
+      } else {
+        httpResponse = error.response;
+      }
     }
 
     return {
