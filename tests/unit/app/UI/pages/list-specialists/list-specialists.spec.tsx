@@ -2,6 +2,7 @@ import {mockMedicalSpecialties} from '@/../tests/mocks/helpers/mock-medical-spec
 import {mockQuickActions} from '@/../tests/mocks/helpers/mock-quick-actions';
 import {ListMedicalSpecialtiesSpy} from '@/../tests/mocks/spies/usecases/list-medical-specialties-spy';
 import {ListQuickActionsSpy} from '@/../tests/mocks/spies/usecases/list-quick-actions-spy';
+import {ConnectionError} from '@/app/domain/errors';
 import {ListSpecialists} from '@/app/UI/pages';
 import {UIKittenProvider} from '@/app/UI/shared/components';
 import {
@@ -36,11 +37,18 @@ type InitialState = {
   listMedicalSpecialtiesSpy: ListMedicalSpecialtiesSpy;
 };
 
-const getInitialState = (): InitialState => {
+const getInitialState = (
+  {error}: {error: any} = {error: null},
+): InitialState => {
   const listQuickActionsSpy = new ListQuickActionsSpy(mockQuickActions());
   const listMedicalSpecialtiesSpy = new ListMedicalSpecialtiesSpy(
     mockMedicalSpecialties(1),
   );
+  if (error) {
+    jest.spyOn(listMedicalSpecialtiesSpy, 'run').mockImplementationOnce(() => {
+      throw error;
+    });
+  }
   const sut = render(
     <UIKittenProvider>
       <ListSpecialists
@@ -93,6 +101,17 @@ describe('ListSpecialists', () => {
       listMedicalSpecialtiesSpy.medicalSpecialties.forEach(medicalSpecialty => {
         expect(sut.getByText(medicalSpecialty.name)).toBeDefined();
       });
+    });
+  });
+
+  test('should show error if ListMedicalSpecialties throws error', async () => {
+    jest.dontMock('react-native-svg');
+    const error = new ConnectionError();
+    const {sut, listMedicalSpecialtiesSpy} = getInitialState({error});
+
+    await waitFor(() => {
+      expect(sut.getByTestId('view-internet-error')).toBeDefined();
+      expect(sut.getByText(error.message)).toBeDefined();
     });
   });
 });
