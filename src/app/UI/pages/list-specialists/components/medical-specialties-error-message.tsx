@@ -4,8 +4,6 @@ import {Button, Icon, Text, useTheme, Spinner} from '@ui-kitten/components';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-const RefreshIcon = props => <Icon {...props} name="refresh-outline" />;
-
 export type MedicalSpecialtiesErrorMessageProps = {
   message?: string;
   refreshFn?: () => Promise<void>;
@@ -17,7 +15,7 @@ const MedicalSpecialtiesErrorMessage: React.FC<MedicalSpecialtiesErrorMessagePro
     const theme = useTheme();
 
     return (
-      <View style={styles.container}>
+      <View testID="view-internet-error" style={styles.container}>
         <InternetConnectionIcon
           fill={theme['text-basic-color']}
           testID={'error-internet'}
@@ -30,14 +28,18 @@ const MedicalSpecialtiesErrorMessage: React.FC<MedicalSpecialtiesErrorMessagePro
           <Button
             testID="btn-tryagain"
             disabled={loading}
-            accessoryLeft={!loading ? RefreshIcon : null}
+            accessoryLeft={
+              !loading
+                ? props => <Icon {...props} name="refresh-outline" />
+                : null
+            }
             appearance="outline"
             size="small"
             style={styles.button}
             onPress={refreshFn}
           >
             {loading
-              ? props => (
+              ? () => (
                   <Spinner
                     testID="loading"
                     size="tiny"
