@@ -8,7 +8,6 @@ import {
   waitFor,
 } from '@testing-library/react-native';
 import React from 'react';
-import 'react-native';
 
 type InitialState = {
   sut: RenderAPI;
