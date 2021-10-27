@@ -155,6 +155,21 @@ src/config
 
 ---
 
+## Enhancements
+
+- [ ] Add user authentication
+- [ ] Better coverage of unit tests
+- [ ] Write E2E tests
+- [ ] Add sorting to the list of doctors
+- [ ] Add chat UI
+- [ ] Add call function
+- [ ] Add shimmer effect to loadings
+- [ ] Add random photos to doctors
+- [ ] Add icon and splashscreen
+- [ ] Persist user information
+
+---
+
 ## Author
 
 **Vitor Veras - vitorverasm@gmail.com**
