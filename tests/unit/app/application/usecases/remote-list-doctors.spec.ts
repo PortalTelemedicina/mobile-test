@@ -26,6 +26,15 @@ const makeFakeRouteMapping = (
   );
 };
 
+const makeFakeType = (): AvailableMedicalSpecialties => {
+  const type: AvailableMedicalSpecialties = faker.random.arrayElement([
+    'cardiologist',
+    'dentist',
+    'dermatologist',
+  ]) as AvailableMedicalSpecialties;
+  return type;
+};
+
 const getInitialState = (): InitialState => {
   const httpGetClientSpy = new HttpGetClientSpy<Doctor[]>();
   const routeMapping = makeFakeRouteMapping();
@@ -35,25 +44,22 @@ const getInitialState = (): InitialState => {
 
 describe('RemoteListDoctors', () => {
   test('should call HttpGetClient with correct url', () => {
-    const type: AvailableMedicalSpecialties = faker.random.arrayElement([
-      'cardiologist',
-      'dentist',
-      'dermatologist',
-    ]) as AvailableMedicalSpecialties;
+    const type = makeFakeType();
     const {sut, httpGetClientSpy, routeMapping} = getInitialState();
     sut.run({type});
     const route = routeMapping.find(route => route.type === type).url;
     expect(httpGetClientSpy.url).toBe(route);
   });
 
-  //   test('should throw ConnectionError if status code is 0', async () => {
-  //     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
-  //     httpGetClientSpy.response = {
-  //       statusCode: HttpStatusCode.connectionError,
-  //     };
-  //     const promise = sut.run();
-  //     await expect(promise).rejects.toThrow(new ConnectionError());
-  //   });
+  test('should throw ConnectionError if status code is 0', async () => {
+    const type = makeFakeType();
+    const {sut, httpGetClientSpy} = getInitialState();
+    httpGetClientSpy.response = {
+      statusCode: HttpStatusCode.connectionError,
+    };
+    const promise = sut.run({type});
+    await expect(promise).rejects.toThrow(new ConnectionError());
+  });
 
   //   test('should throw ServerError if status code is 500', async () => {
   //     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
