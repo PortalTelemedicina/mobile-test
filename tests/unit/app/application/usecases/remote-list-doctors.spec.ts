@@ -1,3 +1,4 @@
+import {makeFakeDoctors} from '@/../tests/mocks/models/mock-doctors';
 import {HttpGetClientSpy} from '@/../tests/mocks/spies/http/http-get-client-spy';
 import {
   RemoteListDoctors,
@@ -71,14 +72,15 @@ describe('RemoteListDoctors', () => {
     await expect(promise).rejects.toThrow(new ServerError());
   });
 
-  //   test('should return MedicalSpecialties[] if status code is 200', async () => {
-  //     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
-  //     const mockedResponse = mockMedicalSpecialties();
-  //     httpGetClientSpy.response = {
-  //       statusCode: 200,
-  //       data: mockedResponse,
-  //     };
-  //     const promise = sut.run();
-  //     await expect(promise).resolves.toEqual(parseResponse(mockedResponse));
-  //   });
+  test('should return Doctor[] if status code is 200', async () => {
+    const {sut, httpGetClientSpy} = getInitialState();
+    const mockedResponse = makeFakeDoctors({});
+    const type = makeFakeType();
+    httpGetClientSpy.response = {
+      statusCode: 200,
+      data: mockedResponse,
+    };
+    const promise = sut.run({type});
+    await expect(promise).resolves.toEqual(mockedResponse);
+  });
 });
