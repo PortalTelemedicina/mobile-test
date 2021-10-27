@@ -5,7 +5,9 @@ import {
   MakeRemoteListMedicalSpecialties,
 } from '../usecases';
 
-export const MakeListSpecialists: React.FC<ListSpecialistsProps> = ({}) => {
+export const MakeListSpecialists: React.FC<ListSpecialistsProps> = ({
+  navigation,
+}) => {
   const listMedicalSpecialties = MakeRemoteListMedicalSpecialties();
   const listQuickActions = MakeLocalListQuickActions();
 
@@ -13,6 +15,7 @@ export const MakeListSpecialists: React.FC<ListSpecialistsProps> = ({}) => {
     <ListSpecialists
       listMedicalSpecialties={listMedicalSpecialties}
       listQuickActions={listQuickActions}
+      navigation={navigation}
     />
   );
 };
