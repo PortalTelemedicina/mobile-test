@@ -1,16 +1,12 @@
-import {AvailableMedicalSpecialties, Doctor} from '@/app/domain/entities';
+import {Doctor} from '@/app/domain/entities';
 import {ConnectionError, ServerError} from '@/app/domain/errors';
 import {HttpGetClient, HttpStatusCode} from '@/app/domain/protocols/http';
+import {ListDoctorsRoute} from '@/app/domain/protocols/http/mappings';
 import {ListDoctors, ListDoctorsParams} from '@/app/domain/usecases';
-
-export type RemoteListDoctorsRoute = {
-  type: AvailableMedicalSpecialties;
-  url: string;
-};
 
 export class RemoteListDoctors implements ListDoctors {
   constructor(
-    private readonly routeMapping: RemoteListDoctorsRoute[],
+    private readonly routeMapping: ListDoctorsRoute[],
     private readonly httpGetClient: HttpGetClient<Doctor[]>,
   ) {}
 

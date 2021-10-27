@@ -1,23 +1,21 @@
 import {makeFakeDoctors} from '@/../tests/mocks/models/mock-doctors';
 import {HttpGetClientSpy} from '@/../tests/mocks/spies/http/http-get-client-spy';
-import {
-  RemoteListDoctors,
-  RemoteListDoctorsRoute,
-} from '@/app/application/usecases';
+import {RemoteListDoctors} from '@/app/application/usecases';
 import {AvailableMedicalSpecialties, Doctor} from '@/app/domain/entities';
 import {ConnectionError, ServerError} from '@/app/domain/errors';
 import {HttpStatusCode} from '@/app/domain/protocols/http';
+import {ListDoctorsRoute} from '@/app/domain/protocols/http/mappings';
 import faker from 'faker';
 
 type InitialState = {
   sut: RemoteListDoctors;
   httpGetClientSpy: HttpGetClientSpy<Doctor[]>;
-  routeMapping: RemoteListDoctorsRoute[];
+  routeMapping: ListDoctorsRoute[];
 };
 
 const makeFakeRouteMapping = (
-  routeMapping?: RemoteListDoctorsRoute[],
-): RemoteListDoctorsRoute[] => {
+  routeMapping?: ListDoctorsRoute[],
+): ListDoctorsRoute[] => {
   return (
     routeMapping || [
       {type: 'cardiologist', url: faker.internet.url()},
