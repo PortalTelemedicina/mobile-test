@@ -6,19 +6,20 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {View} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {ThemeContextProvider} from '../UI/shared/state/theme-context';
 
 const App = () => {
-  const isDarkMode = false;
-
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <UIKittenProvider darkMode={isDarkMode}>
-          <View style={GlobalStyles.container} testID="app-entrypoint">
-            <Router />
-          </View>
-        </UIKittenProvider>
-      </NavigationContainer>
+      <ThemeContextProvider>
+        <NavigationContainer>
+          <UIKittenProvider>
+            <View style={GlobalStyles.container} testID="app-entrypoint">
+              <Router />
+            </View>
+          </UIKittenProvider>
+        </NavigationContainer>
+      </ThemeContextProvider>
     </SafeAreaProvider>
   );
 };
