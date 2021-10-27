@@ -95,6 +95,7 @@ const ListSpecialists: React.FC<ListSpecialistsProps> = ({
           onPress={() =>
             navigation.navigate('LIST-DOCTORS', {
               type: mapTitleToRoute(item.name),
+              title: item.name || '',
             })
           }
           loading={loadingMedicalSpecialties}
