@@ -1,5 +1,6 @@
 import {AvailableMedicalSpecialties, Doctor} from '@/app/domain/entities';
-import {HttpGetClient} from '@/app/domain/protocols/http';
+import {ConnectionError} from '@/app/domain/errors';
+import {HttpGetClient, HttpStatusCode} from '@/app/domain/protocols/http';
 import {ListDoctors, ListDoctorsParams} from '@/app/domain/usecases';
 
 export type RemoteListDoctorsRoute = {
@@ -16,6 +17,16 @@ export class RemoteListDoctors implements ListDoctors {
   async run(params: ListDoctorsParams): Promise<Doctor[]> {
     const route = this.routeMapping.find(route => route.type === params.type);
     const httpResponse = await this.httpGetClient.get({url: route.url});
-    return [];
+
+    switch (httpResponse.statusCode) {
+      case HttpStatusCode.ok:
+        break;
+      case HttpStatusCode.connectionError:
+        throw new ConnectionError();
+      case HttpStatusCode.serverError:
+        break;
+      default:
+        throw new ConnectionError();
+    }
   }
 }
