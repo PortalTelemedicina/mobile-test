@@ -23,8 +23,12 @@ export default {
     },
     doctors: 'Médicos',
     tryAgain: 'Tentar novamente',
+    searching: 'Buscando',
   },
   listSpecialists: {
     whatDoYouNeed: 'O que você precisa?',
+  },
+  listDoctors: {
+    amountFound: 'médicos foram encontrados',
   },
 };

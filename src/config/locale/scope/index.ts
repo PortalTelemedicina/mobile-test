@@ -23,13 +23,19 @@ export enum SharedI18n {
   medicine = 'shared.quickActions.medicine',
   doctors = 'shared.doctors',
   tryAgain = 'shared.tryAgain',
+  searching = 'shared.searching',
 }
 
 export enum ListSpecialistsI18n {
   whatDoYouNeed = 'listSpecialists.whatDoYouNeed',
 }
 
+export enum ListDoctorsI18n {
+  amountFound = 'listDoctors.amountFound',
+}
+
 export type I18nKeys =
+  | ListDoctorsI18n
   | LoginI18n
   | ErrorsI18n
   | SharedI18n
