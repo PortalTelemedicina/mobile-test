@@ -16,7 +16,7 @@ export type RouteList = {
   LOGIN: undefined;
   HOME: undefined;
   APPOINTMENT: undefined;
-  'LIST-DOCTORS': {type: AvailableMedicalSpecialties};
+  'LIST-DOCTORS': {type: AvailableMedicalSpecialties; title: string};
   CHAT: undefined;
   ACTIVITY: undefined;
   MENU: undefined;

@@ -23,7 +23,10 @@ const Router: React.FC = () => {
 
       <Stack.Group>
         <Stack.Screen
-          options={{headerShown: true}}
+          options={({route}) => ({
+            title: route.params.title,
+            headerShown: true,
+          })}
           name="LIST-DOCTORS"
           component={ListDoctors}
         />
