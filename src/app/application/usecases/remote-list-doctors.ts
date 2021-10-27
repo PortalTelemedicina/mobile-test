@@ -20,7 +20,7 @@ export class RemoteListDoctors implements ListDoctors {
 
     switch (httpResponse.statusCode) {
       case HttpStatusCode.ok:
-        break;
+        return httpResponse.data;
       case HttpStatusCode.connectionError:
         throw new ConnectionError();
       case HttpStatusCode.serverError:
