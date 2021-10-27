@@ -1,3 +1,8 @@
+export type AvailableMedicalSpecialties =
+  | 'cardiologist'
+  | 'dentist'
+  | 'dermatologist';
+
 export interface MedicalSpecialties {
   name: string;
   amountAvailable: number;
