@@ -61,14 +61,15 @@ describe('RemoteListDoctors', () => {
     await expect(promise).rejects.toThrow(new ConnectionError());
   });
 
-  //   test('should throw ServerError if status code is 500', async () => {
-  //     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
-  //     httpGetClientSpy.response = {
-  //       statusCode: HttpStatusCode.serverError,
-  //     };
-  //     const promise = sut.run();
-  //     await expect(promise).rejects.toThrow(new ServerError());
-  //   });
+  test('should throw ServerError if status code is 500', async () => {
+    const type = makeFakeType();
+    const {sut, httpGetClientSpy} = getInitialState();
+    httpGetClientSpy.response = {
+      statusCode: HttpStatusCode.serverError,
+    };
+    const promise = sut.run({type});
+    await expect(promise).rejects.toThrow(new ServerError());
+  });
 
   //   test('should return MedicalSpecialties[] if status code is 200', async () => {
   //     const {sut, httpGetClientSpy} = getInitialState(faker.internet.url());
