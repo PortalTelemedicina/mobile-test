@@ -134,12 +134,13 @@ describe('ListSpecialists', () => {
   });
 
   test('should call navigate on medical specialty press', async () => {
-    const {sut, navigationStub} = getInitialState();
+    const {sut, navigationStub, listMedicalSpecialtiesSpy} = getInitialState();
     const spy = jest.spyOn(navigationStub, 'navigate');
     await waitFor(() => {
       fireEvent.press(sut.getAllByTestId('touchable')[0]);
       expect(spy).toHaveBeenCalledWith('LIST-DOCTORS', {
         type: 'cardiologist',
+        title: listMedicalSpecialtiesSpy.medicalSpecialties[0].name,
       });
     });
   });
