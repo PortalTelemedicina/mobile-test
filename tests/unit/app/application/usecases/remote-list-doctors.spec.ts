@@ -3,7 +3,7 @@ import {HttpGetClientSpy} from '@/../tests/mocks/spies/http/http-get-client-spy'
 import {
   RemoteListDoctors,
   RemoteListDoctorsRoute,
-} from '@/app/application/usecases/remote-list-doctors';
+} from '@/app/application/usecases';
 import {AvailableMedicalSpecialties, Doctor} from '@/app/domain/entities';
 import {ConnectionError, ServerError} from '@/app/domain/errors';
 import {HttpStatusCode} from '@/app/domain/protocols/http';
