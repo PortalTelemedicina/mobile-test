@@ -4286,6 +4286,11 @@ ini@^1.3.4:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
+initials@^3.0.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/initials/-/initials-3.1.1.tgz#a63395b2c46bc56207b4b964a6eb185dbd8458e6"
+  integrity sha512-imRkwIpCUer+w9NB41dTENhJrTQTGOJthRa3URF0O9+L7MOMBPmN8njwkiX4u8YnzxbjEp4Is0ohiW6NSA8ZCw==
+
 internal-slot@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.3.tgz#7347e307deeea2faac2ac6205d4bc7d34967f59c"
@@ -6897,6 +6902,14 @@ react-native-svg@^12.1.1:
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
+
+react-native-user-avatar@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-user-avatar/-/react-native-user-avatar-1.0.7.tgz#be7a3912e3babad8780c8b83cff9a7e14d15cff7"
+  integrity sha512-ROWoH0yqHbs6yc5hruEI5n0yjpnw5fNAiEwTiVHbqOSPsgKU4Zwy+Ftr/8EaFzIrVRqxY7QXXZY/EWUll1YY+Q==
+  dependencies:
+    initials "^3.0.1"
+    prop-types "^15.7.2"
 
 react-native@0.66.1:
   version "0.66.1"
