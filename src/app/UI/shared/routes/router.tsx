@@ -1,8 +1,9 @@
+import {MakeListDoctors} from '@/app/main/factories/pages';
 import {Login} from '@/app/UI/pages';
 import {HomeRoutes, RouteList} from '@/app/UI/shared/routes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
-import ListDoctors from '../../pages/list-doctors/list-doctors';
+import {CommonHeader} from '../components';
 
 const Stack = createNativeStackNavigator<RouteList>();
 const Router: React.FC = () => {
@@ -23,12 +24,13 @@ const Router: React.FC = () => {
 
       <Stack.Group>
         <Stack.Screen
-          options={({route}) => ({
+          options={({route, navigation}) => ({
             title: route.params.title,
             headerShown: true,
+            header: () => <CommonHeader navigation={navigation} />,
           })}
           name="LIST-DOCTORS"
-          component={ListDoctors}
+          component={MakeListDoctors}
         />
       </Stack.Group>
     </Stack.Navigator>
