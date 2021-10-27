@@ -1,9 +1,15 @@
-import {MedicalSpecialties, QuickAction} from '@/app/domain/entities';
+import {
+  AvailableMedicalSpecialties,
+  MedicalSpecialties,
+  QuickAction,
+} from '@/app/domain/entities';
 import {ListMedicalSpecialties, ListQuickActions} from '@/app/domain/usecases';
 import {ListSpecialistsI18n, SharedI18n, translate} from '@/config/locale';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Layout, Text} from '@ui-kitten/components';
 import React, {useCallback, useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
+import {RouteList} from '../../shared/routes';
 import {
   MedicalSpecialtiesErrorMessage,
   MedicalSpecialtyCard,
@@ -13,11 +19,13 @@ import {
 export type ListSpecialistsProps = {
   listMedicalSpecialties: ListMedicalSpecialties;
   listQuickActions: ListQuickActions;
+  navigation: NativeStackNavigationProp<RouteList, 'APPOINTMENT'>;
 };
 
 const ListSpecialists: React.FC<ListSpecialistsProps> = ({
   listQuickActions,
   listMedicalSpecialties,
+  navigation,
 }) => {
   const [actions, setActions] = useState<QuickAction[]>(null);
   const [medicalSpecialties, setMedicalSpecialties] =
@@ -58,6 +66,15 @@ const ListSpecialists: React.FC<ListSpecialistsProps> = ({
     return () => {};
   }, [listQuickActions, getMedicalSpecialties]);
 
+  const mapTitleToRoute = (name: string): AvailableMedicalSpecialties => {
+    const mapping = {
+      'Heart Specialist': 'cardiologist',
+      'Dental Care': 'dentist',
+      'Dermatology Specialist': 'dermatologist',
+    };
+    return mapping[name] || 'cardiologist';
+  };
+
   const renderActions = ({item}: {item: QuickAction}) => {
     return (
       <View style={styles.quickActionWrapper}>
@@ -75,7 +92,11 @@ const ListSpecialists: React.FC<ListSpecialistsProps> = ({
       <View style={styles.medicalSpecialtyWrapper}>
         <MedicalSpecialtyCard
           medicalSpecialty={item}
-          onPress={() => {}}
+          onPress={() =>
+            navigation.navigate('LIST-DOCTORS', {
+              type: mapTitleToRoute(item.name),
+            })
+          }
           loading={loadingMedicalSpecialties}
         />
       </View>
