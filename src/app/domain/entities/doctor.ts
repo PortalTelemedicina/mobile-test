@@ -5,5 +5,5 @@ export interface Doctor {
   description: string;
   avatar: string;
   distance: number;
-  actions: ContactAction;
+  actions?: ContactAction;
 }
