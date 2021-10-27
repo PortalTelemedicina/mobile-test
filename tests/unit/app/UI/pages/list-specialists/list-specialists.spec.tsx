@@ -141,6 +141,7 @@ describe('ListSpecialists', () => {
       expect(spy).toHaveBeenCalledWith('LIST-DOCTORS', {
         type: 'cardiologist',
         title: listMedicalSpecialtiesSpy.medicalSpecialties[0].name,
+        amount: listMedicalSpecialtiesSpy.medicalSpecialties[0].amountAvailable,
       });
     });
   });
