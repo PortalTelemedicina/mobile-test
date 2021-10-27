@@ -5,8 +5,12 @@ import {ListQuickActionsSpy} from '@/../tests/mocks/spies/usecases/list-quick-ac
 import {ConnectionError} from '@/app/domain/errors';
 import {ListSpecialists} from '@/app/UI/pages';
 import {UIKittenProvider} from '@/app/UI/shared/components';
+import {RouteList} from '@/app/UI/shared/routes';
+import {NavigationContainer} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   cleanup,
+  fireEvent,
   render,
   RenderAPI,
   waitFor,
@@ -35,6 +39,7 @@ type InitialState = {
   sut: RenderAPI;
   listQuickActionsSpy: ListQuickActionsSpy;
   listMedicalSpecialtiesSpy: ListMedicalSpecialtiesSpy;
+  navigationStub: any;
 };
 
 const getInitialState = (
@@ -49,15 +54,28 @@ const getInitialState = (
       throw error;
     });
   }
+
+  const navigationStub: Partial<
+    NativeStackNavigationProp<RouteList, 'APPOINTMENT'>
+  > = {
+    navigate: jest.fn(),
+  };
+
   const sut = render(
-    <UIKittenProvider>
-      <ListSpecialists
-        listQuickActions={listQuickActionsSpy}
-        listMedicalSpecialties={listMedicalSpecialtiesSpy}
-      />
-    </UIKittenProvider>,
+    <NavigationContainer>
+      <UIKittenProvider>
+        <ListSpecialists
+          listQuickActions={listQuickActionsSpy}
+          listMedicalSpecialties={listMedicalSpecialtiesSpy}
+          // NOTICE: Ignore for now because we just want a mocked version of the navigation prop
+          // On the perfect case we need to make an actual NavigationStub class implementing NativeStackNavigationProp
+          // @ts-ignore:next-line
+          navigation={navigationStub}
+        />
+      </UIKittenProvider>
+    </NavigationContainer>,
   );
-  return {sut, listQuickActionsSpy, listMedicalSpecialtiesSpy};
+  return {sut, listQuickActionsSpy, listMedicalSpecialtiesSpy, navigationStub};
 };
 
 describe('ListSpecialists', () => {
@@ -107,11 +125,22 @@ describe('ListSpecialists', () => {
   test('should show error if ListMedicalSpecialties throws error', async () => {
     jest.dontMock('react-native-svg');
     const error = new ConnectionError();
-    const {sut, listMedicalSpecialtiesSpy} = getInitialState({error});
+    const {sut} = getInitialState({error});
 
     await waitFor(() => {
       expect(sut.getByTestId('view-internet-error')).toBeDefined();
       expect(sut.getByText(error.message)).toBeDefined();
+    });
+  });
+
+  test('should call navigate on medical specialty press', async () => {
+    const {sut, navigationStub} = getInitialState();
+    const spy = jest.spyOn(navigationStub, 'navigate');
+    await waitFor(() => {
+      fireEvent.press(sut.getAllByTestId('touchable')[0]);
+      expect(spy).toHaveBeenCalledWith('LIST-DOCTORS', {
+        type: 'cardiologist',
+      });
     });
   });
 });
