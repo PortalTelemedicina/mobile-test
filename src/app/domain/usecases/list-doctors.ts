@@ -1,5 +1,8 @@
-import {Doctor} from '../entities';
+import {AvailableMedicalSpecialties, Doctor} from '../entities';
 
+export type ListDoctorsParams = {
+  type: AvailableMedicalSpecialties;
+};
 export interface ListDoctors {
-  run(): Promise<Doctor[]>;
+  run(params: ListDoctorsParams): Promise<Doctor[]>;
 }
