@@ -37,5 +37,5 @@ export const CommonHeader: React.FC<CommonHeaderProps> = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  headerContainer: {paddingHorizontal: 20},
+  headerContainer: {paddingHorizontal: 10},
 });
