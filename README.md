@@ -20,9 +20,9 @@ Seu objetivo é criar um app com duas telas, uma que exibe uma tela principal qu
   <th>Listagem</th>
 </tr>
 <tr>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/home.png?raw=true" style="height:300px">
+<td><img src="https://github.com/maxgarcia123/mobile-test/blob/main/screens/home.png?raw=true" style="height:300px">
 </td>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/list.PNG?raw=true" style="height:300px">
+<td><img src="https://github.com/maxgarcia123/mobile-test/blob/main/screens/list.PNG?raw=true" style="height:300px">
 </td>
 </tr>
 </tbody>
@@ -34,9 +34,9 @@ Seu objetivo é criar um app com duas telas, uma que exibe uma tela principal qu
   <th>Ajuda</th>
 </tr>
 <tr>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/loading.PNG?raw=true" style="height:300px">
+<td><img src="https://github.com/maxgarcia123/mobile-test/blob/main/screens/loading.PNG?raw=true" style="height:300px">
 </td>
-<td><img src="https://github.com/PortalTelemedicina/mobile-test/blob/main/screens/font_and_colors.PNG?raw=true"style="height:300px">
+<td><img src="https://github.com/maxgarcia123/mobile-test/blob/main/screens/font_and_colors.PNG?raw=true"style="height:300px">
 </td>
 </tr>
 </tbody>
