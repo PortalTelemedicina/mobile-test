@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:padding="16sp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvInitialsName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="@dimen/fonte_size_H1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="HT"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSpecialistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="80dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/fonte_size_H2"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvInitialsName"
+            app:layout_constraintTop_toTopOf="@+id/tvInitialsName"
+            tools:text="Pedro Silvestre" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSpecialistProcimity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="44dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/fonte_size_H3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvSpecialistName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpecialistName"
+            tools:text="Nearby 0.6 milies"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSpecialistDescription"
+            style="@style/ThemeTextViewParagraph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="@dimen/fonte_size_H3"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnChat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvSpecialistProcimity"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpecialistProcimity"
+            tools:text=" type specimen book. It has survived not only five centuries" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            style="@style/ThemeMaterialComponents"
+            android:text="Chat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvSpecialistDescription" />
+
+        <Button
+            android:id="@+id/btnCall"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="3dp"
+            android:text="Call"
+            android:textColor="@color/secondaryColor"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/secondaryDarkColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/btnChat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
