@@ -17,16 +17,13 @@ Clique para abrir (youtube)
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
 > - **Método**: GET
 
-#### <i class="icon-pencil"></i> Pré-requisitos
-- Tela deve ajustar em devices menores.
-
-#### <i class="icon-folder-open"></i> Requisitos atendidos
+#### <i class="icon-folder-open"></i> Requisitos que atendi
 - Arquitetura mvc
 - Testes unitários
 - Cache de imagens
 - Tratamentos de erros
 - Padrão de Projeto e boas práticas de Orientação a Objetos.
 
-#### <i class="icon-hdd"></i> Plus
+#### <i class="icon-hdd"></i> Fui além com:
 - Layout com animação
 - Trabalhar offline (cache dos dados)
