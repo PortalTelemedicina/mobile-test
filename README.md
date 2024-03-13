@@ -1,17 +1,10 @@
-Teste de Mobile
-===================
-
-
-Desafio
+Desafio do teste
 -------------
 Criar um app com duas telas, uma que exibe uma tela principal que exibe opções de acesso e outra mostra uma listagem de especialistas que estão mais próximos do usuário
 
-
-
 #### <i class="icon-file"></i> Vídeo funcional
-Clique para abrir (youtube)
-
-[![Demo](https://github.com/diogoroos/mobile-test/blob/main/TM.png)](https://www.youtube.com/watch?v=GbB4gaQxlBw)
+Aguarde o vídeo abaixo carregar (acredite, há um vídeo) ou <a href="https://youtu.be/GbB4gaQxlBw" target="_blank">ou clique aqui</a> para abrir no youtube.<br/><br/>
+[<img src="https://github.com/diogoroos/mobile-test/assets/78812662/d0191b82-567c-4674-b986-9cd40dc30f73" heigth="300" width="300px">](https://youtu.be/GbB4gaQxlBw)
 
 #### <i class="icon-folder-open"></i> Serviço
 > - **URL** https://raw.githubusercontent.com/PortalTelemedicina/mobile-test/main/api/list_specialist_heart.json
@@ -22,8 +15,9 @@ Clique para abrir (youtube)
 - Testes unitários
 - Cache de imagens
 - Tratamentos de erros
-- Padrão de Projeto e boas práticas de Orientação a Objetos.
+
+NÃO UTILIZEI: gerenciamento de estado/injeção de dependência/princípios SOLID
 
 #### <i class="icon-hdd"></i> Fui além com:
-- Layout com animação
+- Layout com animação (shimmer)
 - Trabalhar offline (cache dos dados)
