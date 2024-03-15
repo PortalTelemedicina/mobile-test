@@ -12,8 +12,9 @@ Aguarde o vídeo abaixo carregar ou <a href="https://youtu.be/GbB4gaQxlBw" targe
 
 #### <i class="icon-folder-open"></i> Requisitos que atendi
 - Arquitetura mvc
+- Consumo de API Rest
 - Testes unitários
-- Cache de imagens
+- Cache de imagens e do json da API consumida
 - Tratamentos de erros
 
 NÃO UTILIZEI: gerenciamento de estado/injeção de dependência/princípios SOLID
